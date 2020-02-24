@@ -30,11 +30,11 @@
         {
             this.NumberOfPlayersLabel = new System.Windows.Forms.Label();
             this.NumberOfPlayersTextBox = new System.Windows.Forms.TextBox();
-            this.CourseBoxLabel = new System.Windows.Forms.Label();
             this.CourseBox = new System.Windows.Forms.ListBox();
             this.CancelButton = new System.Windows.Forms.Button();
             this.StartButton = new System.Windows.Forms.Button();
             this.NewGameLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NumberOfPlayersLabel
@@ -52,15 +52,6 @@
             this.NumberOfPlayersTextBox.Name = "NumberOfPlayersTextBox";
             this.NumberOfPlayersTextBox.Size = new System.Drawing.Size(120, 34);
             this.NumberOfPlayersTextBox.TabIndex = 1;
-            // 
-            // CourseBoxLabel
-            // 
-            this.CourseBoxLabel.AutoSize = true;
-            this.CourseBoxLabel.Location = new System.Drawing.Point(137, 169);
-            this.CourseBoxLabel.Name = "CourseBoxLabel";
-            this.CourseBoxLabel.Size = new System.Drawing.Size(160, 28);
-            this.CourseBoxLabel.TabIndex = 2;
-            this.CourseBoxLabel.Text = "Choose A Course";
             // 
             // CourseBox
             // 
@@ -80,6 +71,7 @@
             this.CancelButton.TabIndex = 4;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click_1);
             // 
             // StartButton
             // 
@@ -89,6 +81,7 @@
             this.StartButton.TabIndex = 5;
             this.StartButton.Text = "Start";
             this.StartButton.UseVisualStyleBackColor = true;
+            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // NewGameLabel
             // 
@@ -100,16 +93,27 @@
             this.NewGameLabel.TabIndex = 6;
             this.NewGameLabel.Text = "New Game";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(142, 169);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(158, 39);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Choose A Course";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // NewGame
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.CancelButton = this.CancelButton;
             this.ClientSize = new System.Drawing.Size(825, 348);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.NewGameLabel);
             this.Controls.Add(this.StartButton);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.CourseBox);
-            this.Controls.Add(this.CourseBoxLabel);
             this.Controls.Add(this.NumberOfPlayersTextBox);
             this.Controls.Add(this.NumberOfPlayersLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -125,10 +129,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label NumberOfPlayersLabel;
         private System.Windows.Forms.TextBox NumberOfPlayersTextBox;
-        private System.Windows.Forms.Label CourseBoxLabel;
         private System.Windows.Forms.ListBox CourseBox;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Label NewGameLabel;
+        private System.Windows.Forms.Button button1;
     }
 }

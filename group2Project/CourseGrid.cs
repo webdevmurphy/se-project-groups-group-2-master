@@ -16,5 +16,15 @@ namespace group2Project
         {
             InitializeComponent();
         }
+
+        private void CoursesLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

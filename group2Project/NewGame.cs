@@ -22,9 +22,22 @@ namespace group2Project
 
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
+        private void StartButton_Click(object sender, EventArgs e)
+        {
+            /*
+             * Start game and show map
+             */
+        }
+
+        private void CancelButton_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form CourseGrid = new CourseGrid();
+            CourseGrid.Show();
         }
     }
 }
