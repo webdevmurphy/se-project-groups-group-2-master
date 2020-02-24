@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.CoursesLabel = new System.Windows.Forms.Label();
-            this.Select = new System.Windows.Forms.Button();
-            this.DeleteButton = new System.Windows.Forms.Button();
+            this.AddCourseBtn = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -46,32 +45,23 @@
             this.CoursesLabel.Text = "Courses";
             this.CoursesLabel.Click += new System.EventHandler(this.CoursesLabel_Click);
             // 
-            // Select
+            // AddCourseBtn
             // 
-            this.Select.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Select.Location = new System.Drawing.Point(703, 398);
-            this.Select.Name = "Select";
-            this.Select.Size = new System.Drawing.Size(85, 40);
-            this.Select.TabIndex = 1;
-            this.Select.Text = "Select";
-            this.Select.UseVisualStyleBackColor = true;
-            // 
-            // DeleteButton
-            // 
-            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteButton.Location = new System.Drawing.Point(101, 398);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(86, 40);
-            this.DeleteButton.TabIndex = 2;
-            this.DeleteButton.Text = "Delete";
-            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.AddCourseBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddCourseBtn.Location = new System.Drawing.Point(651, 398);
+            this.AddCourseBtn.Name = "AddCourseBtn";
+            this.AddCourseBtn.Size = new System.Drawing.Size(137, 40);
+            this.AddCourseBtn.TabIndex = 1;
+            this.AddCourseBtn.Text = "Add Course";
+            this.AddCourseBtn.UseVisualStyleBackColor = true;
+            this.AddCourseBtn.Click += new System.EventHandler(this.AddCourseBtn_Click);
             // 
             // CancelButton
             // 
             this.CancelButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelButton.Location = new System.Drawing.Point(12, 398);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(83, 40);
+            this.CancelButton.Size = new System.Drawing.Size(95, 40);
             this.CancelButton.TabIndex = 3;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
@@ -84,8 +74,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 445);
             this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.DeleteButton);
-            this.Controls.Add(this.Select);
+            this.Controls.Add(this.AddCourseBtn);
             this.Controls.Add(this.CoursesLabel);
             this.Name = "CourseGrid";
             this.Text = "CourseGrid";
@@ -97,8 +86,7 @@
         #endregion
 
         private System.Windows.Forms.Label CoursesLabel;
-        private System.Windows.Forms.Button Select;
-        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button AddCourseBtn;
         private System.Windows.Forms.Button CancelButton;
     }
 }

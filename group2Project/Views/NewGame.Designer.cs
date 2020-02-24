@@ -52,6 +52,7 @@
             this.NumberOfPlayersTextBox.Name = "NumberOfPlayersTextBox";
             this.NumberOfPlayersTextBox.Size = new System.Drawing.Size(120, 34);
             this.NumberOfPlayersTextBox.TabIndex = 1;
+            this.NumberOfPlayersTextBox.TextChanged += new System.EventHandler(this.NumberOfPlayersTextBox_TextChanged);
             // 
             // CourseBox
             // 

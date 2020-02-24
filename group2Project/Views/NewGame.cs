@@ -12,6 +12,8 @@ namespace group2Project
 {
     public partial class NewGame : Form
     {
+        private int numPlayers;
+
         public NewGame()
         {
             InitializeComponent();
@@ -38,6 +40,11 @@ namespace group2Project
         {
             Form CourseGrid = new CourseGrid();
             CourseGrid.Show();
+        }
+
+        private void NumberOfPlayersTextBox_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

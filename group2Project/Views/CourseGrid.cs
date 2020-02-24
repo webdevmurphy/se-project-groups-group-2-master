@@ -26,5 +26,10 @@ namespace group2Project
         {
             this.Close();
         }
+
+        private void AddCourseBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
