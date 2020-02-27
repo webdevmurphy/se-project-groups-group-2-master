@@ -40,23 +40,25 @@
             // 
             // formPanel
             // 
+            this.formPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.formPanel.Controls.Add(this.CancelBtn);
             this.formPanel.Controls.Add(this.SubmitBtn);
             this.formPanel.Controls.Add(this.Answerlbl);
             this.formPanel.Controls.Add(this.Questionlbl);
             this.formPanel.Controls.Add(this.Answertxt);
             this.formPanel.Controls.Add(this.Questiontxt);
-            this.formPanel.Location = new System.Drawing.Point(-2, 0);
+            this.formPanel.Location = new System.Drawing.Point(-3, 0);
+            this.formPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.formPanel.Name = "formPanel";
-            this.formPanel.Size = new System.Drawing.Size(803, 232);
+            this.formPanel.Size = new System.Drawing.Size(1204, 375);
             this.formPanel.TabIndex = 0;
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelBtn.Location = new System.Drawing.Point(583, 189);
+            this.CancelBtn.Location = new System.Drawing.Point(874, 305);
+            this.CancelBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(75, 31);
+            this.CancelBtn.Size = new System.Drawing.Size(112, 50);
             this.CancelBtn.TabIndex = 5;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = true;
@@ -64,10 +66,10 @@
             // 
             // SubmitBtn
             // 
-            this.SubmitBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubmitBtn.Location = new System.Drawing.Point(675, 189);
+            this.SubmitBtn.Location = new System.Drawing.Point(1012, 305);
+            this.SubmitBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SubmitBtn.Name = "SubmitBtn";
-            this.SubmitBtn.Size = new System.Drawing.Size(75, 31);
+            this.SubmitBtn.Size = new System.Drawing.Size(112, 50);
             this.SubmitBtn.TabIndex = 4;
             this.SubmitBtn.Text = "Submit";
             this.SubmitBtn.UseVisualStyleBackColor = true;
@@ -75,8 +77,8 @@
             // Answerlbl
             // 
             this.Answerlbl.AutoSize = true;
-            this.Answerlbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Answerlbl.Location = new System.Drawing.Point(199, 99);
+            this.Answerlbl.Location = new System.Drawing.Point(298, 160);
+            this.Answerlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Answerlbl.Name = "Answerlbl";
             this.Answerlbl.Size = new System.Drawing.Size(62, 21);
             this.Answerlbl.TabIndex = 3;
@@ -85,8 +87,8 @@
             // Questionlbl
             // 
             this.Questionlbl.AutoSize = true;
-            this.Questionlbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Questionlbl.Location = new System.Drawing.Point(199, 54);
+            this.Questionlbl.Location = new System.Drawing.Point(298, 87);
+            this.Questionlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Questionlbl.Name = "Questionlbl";
             this.Questionlbl.Size = new System.Drawing.Size(73, 21);
             this.Questionlbl.TabIndex = 2;
@@ -94,26 +96,28 @@
             // 
             // Answertxt
             // 
-            this.Answertxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Answertxt.Location = new System.Drawing.Point(296, 96);
+            this.Answertxt.Location = new System.Drawing.Point(444, 155);
+            this.Answertxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Answertxt.Name = "Answertxt";
-            this.Answertxt.Size = new System.Drawing.Size(245, 29);
+            this.Answertxt.Size = new System.Drawing.Size(366, 29);
             this.Answertxt.TabIndex = 1;
             // 
             // Questiontxt
             // 
-            this.Questiontxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Questiontxt.Location = new System.Drawing.Point(296, 51);
+            this.Questiontxt.Location = new System.Drawing.Point(444, 82);
+            this.Questiontxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Questiontxt.Name = "Questiontxt";
-            this.Questiontxt.Size = new System.Drawing.Size(245, 29);
+            this.Questiontxt.Size = new System.Drawing.Size(366, 29);
             this.Questiontxt.TabIndex = 0;
             // 
             // UpdateQuestion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 232);
+            this.ClientSize = new System.Drawing.Size(1200, 375);
             this.Controls.Add(this.formPanel);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UpdateQuestion";
             this.Text = "Update Question";
             this.formPanel.ResumeLayout(false);

@@ -42,7 +42,7 @@
             this.NumberOfPlayersLabel.AutoSize = true;
             this.NumberOfPlayersLabel.Location = new System.Drawing.Point(137, 92);
             this.NumberOfPlayersLabel.Name = "NumberOfPlayersLabel";
-            this.NumberOfPlayersLabel.Size = new System.Drawing.Size(163, 28);
+            this.NumberOfPlayersLabel.Size = new System.Drawing.Size(131, 21);
             this.NumberOfPlayersLabel.TabIndex = 0;
             this.NumberOfPlayersLabel.Text = "Enter # of Players";
             // 
@@ -50,14 +50,14 @@
             // 
             this.NumberOfPlayersTextBox.Location = new System.Drawing.Point(352, 92);
             this.NumberOfPlayersTextBox.Name = "NumberOfPlayersTextBox";
-            this.NumberOfPlayersTextBox.Size = new System.Drawing.Size(120, 34);
+            this.NumberOfPlayersTextBox.Size = new System.Drawing.Size(120, 29);
             this.NumberOfPlayersTextBox.TabIndex = 1;
             this.NumberOfPlayersTextBox.TextChanged += new System.EventHandler(this.NumberOfPlayersTextBox_TextChanged);
             // 
             // CourseBox
             // 
             this.CourseBox.FormattingEnabled = true;
-            this.CourseBox.ItemHeight = 28;
+            this.CourseBox.ItemHeight = 21;
             this.CourseBox.Location = new System.Drawing.Point(352, 169);
             this.CourseBox.Name = "CourseBox";
             this.CourseBox.Size = new System.Drawing.Size(120, 88);
@@ -90,7 +90,7 @@
             this.NewGameLabel.Font = new System.Drawing.Font("Segoe UI", 24F);
             this.NewGameLabel.Location = new System.Drawing.Point(304, 9);
             this.NewGameLabel.Name = "NewGameLabel";
-            this.NewGameLabel.Size = new System.Drawing.Size(216, 54);
+            this.NewGameLabel.Size = new System.Drawing.Size(176, 45);
             this.NewGameLabel.TabIndex = 6;
             this.NewGameLabel.Text = "New Game";
             // 
@@ -108,7 +108,6 @@
             // NewGame
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.CancelButton = this.CancelButton;
             this.ClientSize = new System.Drawing.Size(825, 348);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.NewGameLabel);

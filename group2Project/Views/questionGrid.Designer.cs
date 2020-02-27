@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.QuestionRecords = new System.Windows.Forms.DataGridView();
-            this.CancelBtn = new System.Windows.Forms.Button();
-            this.DeleteBtn = new System.Windows.Forms.Button();
             this.UpdateBtn = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.CancelBtn = new System.Windows.Forms.Button();
+            this.QuestionRecords = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QuestionRecords)).BeginInit();
             this.SuspendLayout();
@@ -49,14 +49,26 @@
             this.panel1.Size = new System.Drawing.Size(805, 453);
             this.panel1.TabIndex = 0;
             // 
-            // QuestionRecords
+            // UpdateBtn
             // 
-            this.QuestionRecords.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.QuestionRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.QuestionRecords.Location = new System.Drawing.Point(0, 5);
-            this.QuestionRecords.Name = "QuestionRecords";
-            this.QuestionRecords.Size = new System.Drawing.Size(802, 394);
-            this.QuestionRecords.TabIndex = 0;
+            this.UpdateBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateBtn.Location = new System.Drawing.Point(670, 405);
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Size = new System.Drawing.Size(75, 35);
+            this.UpdateBtn.TabIndex = 3;
+            this.UpdateBtn.Text = "Update";
+            this.UpdateBtn.UseVisualStyleBackColor = true;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
+            // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteBtn.Location = new System.Drawing.Point(589, 405);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(75, 35);
+            this.DeleteBtn.TabIndex = 2;
+            this.DeleteBtn.Text = "Delete";
+            this.DeleteBtn.UseVisualStyleBackColor = true;
             // 
             // CancelBtn
             // 
@@ -69,31 +81,20 @@
             this.CancelBtn.UseVisualStyleBackColor = true;
             this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
-            // DeleteBtn
+            // QuestionRecords
             // 
-            this.DeleteBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteBtn.Location = new System.Drawing.Point(589, 405);
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(75, 35);
-            this.DeleteBtn.TabIndex = 2;
-            this.DeleteBtn.Text = "Delete";
-            this.DeleteBtn.UseVisualStyleBackColor = true;
-            // 
-            // UpdateBtn
-            // 
-            this.UpdateBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateBtn.Location = new System.Drawing.Point(670, 405);
-            this.UpdateBtn.Name = "UpdateBtn";
-            this.UpdateBtn.Size = new System.Drawing.Size(75, 35);
-            this.UpdateBtn.TabIndex = 3;
-            this.UpdateBtn.Text = "Update";
-            this.UpdateBtn.UseVisualStyleBackColor = true;
-            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
+            this.QuestionRecords.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.QuestionRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.QuestionRecords.Location = new System.Drawing.Point(0, 5);
+            this.QuestionRecords.Name = "QuestionRecords";
+            this.QuestionRecords.Size = new System.Drawing.Size(802, 394);
+            this.QuestionRecords.TabIndex = 0;
             // 
             // questionGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "questionGrid";
