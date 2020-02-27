@@ -66,6 +66,9 @@
     <Compile Include="Views\CourseGrid.Designer.cs">
       <DependentUpon>CourseGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\NewGame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CourseGrid.resx">
       <DependentUpon>CourseGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NewGame.resx">
       <DependentUpon>NewGame.cs</DependentUpon>
