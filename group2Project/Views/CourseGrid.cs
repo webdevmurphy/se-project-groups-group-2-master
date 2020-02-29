@@ -10,11 +10,13 @@ using System.Windows.Forms;
 using group2Project.Controllers;
 using group2Project.Models;
 
-namespace group2Project
+namespace group2Project.Views
 {
     public partial class CourseGrid : Form
     {
         private CourseList courseList;
+        private ListView listViewCourses;
+
         public CourseGrid()
         {
             InitializeComponent();
@@ -32,12 +34,8 @@ namespace group2Project
 
         private void AddCourseBtn_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            CreateCourse createCourse = new CreateCourse();
+            createCourse.Show();
         }
 
         private void CourseGrid_Load(object sender, EventArgs e)

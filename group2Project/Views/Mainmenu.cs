@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using group2Project.Views;
 
 namespace group2Project
 {
@@ -21,6 +22,18 @@ namespace group2Project
         {
             NewGame newGame = new NewGame();
             newGame.Show();
+        }
+
+        private void CoursesBtn_Click(object sender, EventArgs e)
+        {
+            CourseGrid courseGrid = new CourseGrid();
+            courseGrid.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            about about = new about();
+            about.Show();
         }
     }
 }

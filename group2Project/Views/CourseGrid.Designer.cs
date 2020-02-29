@@ -1,4 +1,4 @@
-﻿namespace group2Project
+﻿namespace group2Project.Views
 {
     partial class CourseGrid
     {
@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.CoursesLabel = new System.Windows.Forms.Label();
             this.AddCourseBtn = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.listViewCourses = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // CoursesLabel
@@ -86,7 +89,11 @@
             this.listViewCourses.Size = new System.Drawing.Size(670, 260);
             this.listViewCourses.TabIndex = 4;
             this.listViewCourses.UseCompatibleStateImageBehavior = false;
-            this.listViewCourses.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+           // this.listViewCourses.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // bindingSource1
+            // 
+            //this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
             // 
             // CourseGrid
             // 
@@ -101,6 +108,7 @@
             this.Name = "CourseGrid";
             this.Text = "CourseGrid";
             this.Load += new System.EventHandler(this.CourseGrid_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,7 +119,8 @@
         private System.Windows.Forms.Label CoursesLabel;
         private System.Windows.Forms.Button AddCourseBtn;
         private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.ListView listViewCourses;
+        //private System.Windows.Forms.ListView listViewCourses;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

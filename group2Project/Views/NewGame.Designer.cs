@@ -1,4 +1,4 @@
-﻿namespace group2Project
+﻿namespace group2Project.Views
 {
     partial class NewGame
     {
