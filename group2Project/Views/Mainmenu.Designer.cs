@@ -45,7 +45,7 @@
             this.MainMenuHeaderText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MainMenuHeaderText.Name = "MainMenuHeaderText";
             this.MainMenuHeaderText.ReadOnly = true;
-            this.MainMenuHeaderText.Size = new System.Drawing.Size(663, 73);
+            this.MainMenuHeaderText.Size = new System.Drawing.Size(663, 91);
             this.MainMenuHeaderText.TabIndex = 5;
             this.MainMenuHeaderText.Text = "Main Menu";
             this.MainMenuHeaderText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -60,6 +60,7 @@
             this.NewGameBtn.TabIndex = 6;
             this.NewGameBtn.Text = "New Game";
             this.NewGameBtn.UseVisualStyleBackColor = true;
+            this.NewGameBtn.Click += new System.EventHandler(this.NewGameBtn_Click);
             // 
             // LoadGameBtn
             // 
@@ -107,7 +108,7 @@
             // 
             // Mainmenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(958, 727);

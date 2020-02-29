@@ -46,10 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mainmenu.cs">
+    <Compile Include="Controllers\CourseList.cs" />
+    <Compile Include="Views\CreateCourse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mainmenu.Designer.cs">
+    <Compile Include="Views\CreateCourse.Designer.cs">
+      <DependentUpon>CreateCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Mainmenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Mainmenu.Designer.cs">
       <DependentUpon>Mainmenu.cs</DependentUpon>
     </Compile>
     <Compile Include="PopupQuestion.cs">
@@ -97,7 +104,10 @@
     <Compile Include="Views\UpdateQuestion.Designer.cs">
       <DependentUpon>UpdateQuestion.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Mainmenu.resx">
+    <EmbeddedResource Include="Views\CreateCourse.resx">
+      <DependentUpon>CreateCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Mainmenu.resx">
       <DependentUpon>Mainmenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopupQuestion.resx">
@@ -126,7 +136,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,12 +8,19 @@ namespace group2Project.Models
 {
     class Course
     {
-        private Question[] questions;
+        public string name { get; set; }
 
         public Course()
         {
             
         }
+
+        public Course(string name)
+        {
+            this.name = name;
+        }
+
+        
 
     }
 }

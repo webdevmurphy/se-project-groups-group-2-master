@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace group2Project
+namespace group2Project.Views
 {
-    public partial class Mainmenu : Form
+    public partial class Form1 : Form
     {
-        public Mainmenu()
+        public Form1()
         {
             InitializeComponent();
         }

@@ -31,6 +31,8 @@
             this.CoursesLabel = new System.Windows.Forms.Label();
             this.AddCourseBtn = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
+            this.listViewCourses = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // CoursesLabel
@@ -67,17 +69,38 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
+            // listViewCourses
+            // 
+            this.listViewCourses.AllowColumnReorder = true;
+            this.listViewCourses.AllowDrop = true;
+            this.listViewCourses.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.listViewCourses.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewCourses.FullRowSelect = true;
+            this.listViewCourses.GridLines = true;
+            this.listViewCourses.HideSelection = false;
+            this.listViewCourses.Location = new System.Drawing.Point(62, 96);
+            this.listViewCourses.Name = "listViewCourses";
+            this.listViewCourses.RightToLeftLayout = true;
+            this.listViewCourses.ShowItemToolTips = true;
+            this.listViewCourses.Size = new System.Drawing.Size(670, 260);
+            this.listViewCourses.TabIndex = 4;
+            this.listViewCourses.UseCompatibleStateImageBehavior = false;
+            this.listViewCourses.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
             // CourseGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 445);
+            this.Controls.Add(this.listViewCourses);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.AddCourseBtn);
             this.Controls.Add(this.CoursesLabel);
             this.Name = "CourseGrid";
             this.Text = "CourseGrid";
+            this.Load += new System.EventHandler(this.CourseGrid_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,5 +111,7 @@
         private System.Windows.Forms.Label CoursesLabel;
         private System.Windows.Forms.Button AddCourseBtn;
         private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.ListView listViewCourses;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }
