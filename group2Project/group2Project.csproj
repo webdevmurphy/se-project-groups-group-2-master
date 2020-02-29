@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mainmenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mainmenu.Designer.cs">
+      <DependentUpon>Mainmenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopupQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,9 +71,6 @@
     </Compile>
     <Compile Include="Views\CourseGrid.Designer.cs">
       <DependentUpon>CourseGrid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MainMenu.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\NewGame.cs">
       <SubType>Form</SubType>
@@ -94,6 +97,9 @@
     <Compile Include="Views\UpdateQuestion.Designer.cs">
       <DependentUpon>UpdateQuestion.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Mainmenu.resx">
+      <DependentUpon>Mainmenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopupQuestion.resx">
       <DependentUpon>PopupQuestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,9 +108,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CourseGrid.resx">
       <DependentUpon>CourseGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NewGame.resx">
       <DependentUpon>NewGame.cs</DependentUpon>
