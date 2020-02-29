@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using group2Project.Views;
 
-namespace group2Project
+namespace group2Project.Views
 {
     public partial class Mainmenu : Form
     {

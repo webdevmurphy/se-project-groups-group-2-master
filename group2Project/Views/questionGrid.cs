@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace group2Project
+namespace group2Project.Views
 {
     public partial class questionGrid : Form
     {

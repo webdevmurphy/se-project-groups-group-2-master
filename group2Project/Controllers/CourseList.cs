@@ -22,14 +22,27 @@ namespace group2Project.Controllers
             courses.Add(c);
         }
 
+        public void deleteCourse(Course c)
+        {
+            if(courses.Contains(c))
+            {
+                courses.Remove(c);
+            }
+        }
+
         public List<Course> GetCourses()
         {
             return this.courses;
         }
 
-        public Course getCourse(int i)
+        public Course getCourse(Course c)
         {
-            return courses[i];
+            if (courses.Contains(c))
+            {
+                int x = courses.IndexOf(c);
+                return courses[x];
+            }
+            else return null;
         }
 
         public void InitializeCourseList()
