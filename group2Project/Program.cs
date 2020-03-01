@@ -19,7 +19,7 @@ namespace group2Project
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new NewGame());
             //Application.Run(new Questions());
-            Application.Run(new Mainmenu());
+            Application.Run(new Login());
         }
     }
 }
