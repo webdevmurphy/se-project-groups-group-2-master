@@ -125,6 +125,9 @@
     <EmbeddedResource Include="Views\CourseGrid.resx">
       <DependentUpon>CourseGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\mapView.resx">
+      <DependentUpon>mapView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\NewGame.resx">
       <DependentUpon>NewGame.cs</DependentUpon>
     </EmbeddedResource>
