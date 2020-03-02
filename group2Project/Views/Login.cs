@@ -58,12 +58,14 @@ namespace group2Project.Views
         private void button1_Click(object sender, EventArgs e)
         {
 
+            
             Boolean loginInfo = true;
 
             do
             {
                 
-
+                //I wanted this to be noisy, just to make sure the textboxes were getting info, and to watch database output.
+                //I removed the database calls from here until I get it working.
             string username = textBox1.Text;
                 Console.WriteLine(username);
             string password = textBox2.Text;

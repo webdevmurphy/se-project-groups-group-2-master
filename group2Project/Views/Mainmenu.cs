@@ -35,5 +35,15 @@ namespace group2Project.Views
             about about = new about();
             about.Show();
         }
+
+        private void MainMenuHeaderText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
