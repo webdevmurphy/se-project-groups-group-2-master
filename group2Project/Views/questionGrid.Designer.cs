@@ -44,17 +44,19 @@
             this.panel1.Controls.Add(this.DeleteBtn);
             this.panel1.Controls.Add(this.CancelBtn);
             this.panel1.Controls.Add(this.QuestionRecords);
-            this.panel1.Location = new System.Drawing.Point(-2, -2);
+            this.panel1.Location = new System.Drawing.Point(-3, -3);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(805, 453);
+            this.panel1.Size = new System.Drawing.Size(933, 732);
             this.panel1.TabIndex = 0;
             // 
             // UpdateBtn
             // 
             this.UpdateBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateBtn.Location = new System.Drawing.Point(670, 405);
+            this.UpdateBtn.Location = new System.Drawing.Point(806, 654);
+            this.UpdateBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.UpdateBtn.Name = "UpdateBtn";
-            this.UpdateBtn.Size = new System.Drawing.Size(75, 35);
+            this.UpdateBtn.Size = new System.Drawing.Size(112, 57);
             this.UpdateBtn.TabIndex = 3;
             this.UpdateBtn.Text = "Update";
             this.UpdateBtn.UseVisualStyleBackColor = true;
@@ -63,9 +65,10 @@
             // DeleteBtn
             // 
             this.DeleteBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteBtn.Location = new System.Drawing.Point(589, 405);
+            this.DeleteBtn.Location = new System.Drawing.Point(632, 654);
+            this.DeleteBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(75, 35);
+            this.DeleteBtn.Size = new System.Drawing.Size(112, 57);
             this.DeleteBtn.TabIndex = 2;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = true;
@@ -73,9 +76,10 @@
             // CancelBtn
             // 
             this.CancelBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelBtn.Location = new System.Drawing.Point(14, 405);
+            this.CancelBtn.Location = new System.Drawing.Point(21, 654);
+            this.CancelBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(75, 35);
+            this.CancelBtn.Size = new System.Drawing.Size(112, 57);
             this.CancelBtn.TabIndex = 1;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = true;
@@ -85,18 +89,21 @@
             // 
             this.QuestionRecords.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.QuestionRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.QuestionRecords.Location = new System.Drawing.Point(0, 5);
+            this.QuestionRecords.Location = new System.Drawing.Point(0, 8);
+            this.QuestionRecords.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.QuestionRecords.Name = "QuestionRecords";
-            this.QuestionRecords.Size = new System.Drawing.Size(802, 394);
+            this.QuestionRecords.Size = new System.Drawing.Size(929, 636);
             this.QuestionRecords.TabIndex = 0;
             // 
             // questionGrid
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(929, 727);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "questionGrid";
             this.Text = "Question Records";
             this.panel1.ResumeLayout(false);

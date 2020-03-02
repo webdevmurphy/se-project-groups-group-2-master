@@ -45,7 +45,7 @@
             this.MainMenuHeaderText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MainMenuHeaderText.Name = "MainMenuHeaderText";
             this.MainMenuHeaderText.ReadOnly = true;
-            this.MainMenuHeaderText.Size = new System.Drawing.Size(663, 91);
+            this.MainMenuHeaderText.Size = new System.Drawing.Size(663, 73);
             this.MainMenuHeaderText.TabIndex = 5;
             this.MainMenuHeaderText.Text = "Main Menu";
             this.MainMenuHeaderText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -110,7 +110,7 @@
             // 
             // Mainmenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(958, 727);
@@ -123,7 +123,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Mainmenu";
-            this.Text = "Mainmenu";
+            this.Text = "Main Menu";
             this.ResumeLayout(false);
             this.PerformLayout();
 

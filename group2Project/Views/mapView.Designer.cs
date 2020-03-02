@@ -27,31 +27,38 @@
             this.picGrid = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picGrid)).BeginInit();
             this.SuspendLayout();
-          
-            this.picGrid.Anchor = ((System.Windows.Forms.AnchorStyles)
-                        ((((System.Windows.Forms.AnchorStyles.Top 
-                        | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // picGrid
+            // 
+            this.picGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picGrid.BackColor = System.Drawing.Color.White;
-            this.picGrid.Location = new System.Drawing.Point(12, 12);
+            this.picGrid.Location = new System.Drawing.Point(18, 19);
+            this.picGrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picGrid.Name = "picGrid";
-            this.picGrid.Size = new System.Drawing.Size(260, 237);
+            this.picGrid.Size = new System.Drawing.Size(390, 383);
             this.picGrid.TabIndex = 1;
             this.picGrid.TabStop = false;
+            this.picGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.picGrid_Paint);
+            this.picGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.picGrid_MouseClick);
             this.picGrid.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picGrid_MouseMove);
             this.picGrid.Resize += new System.EventHandler(this.picGrid_Resize);
-            this.picGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.picGrid_MouseClick);
-            this.picGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.picGrid_Paint);
-         
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            // 
+            // mapView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(426, 422);
             this.Controls.Add(this.picGrid);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "mapView";
             this.Text = "Trivia Nation World Map";
             ((System.ComponentModel.ISupportInitialize)(this.picGrid)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion

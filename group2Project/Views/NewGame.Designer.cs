@@ -76,7 +76,7 @@
             // 
             // StartButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(712, 294);
+            this.StartButton.Location = new System.Drawing.Point(547, 294);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(101, 42);
             this.StartButton.TabIndex = 5;
@@ -108,7 +108,7 @@
             // NewGame
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(825, 348);
+            this.ClientSize = new System.Drawing.Size(723, 348);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.NewGameLabel);
             this.Controls.Add(this.StartButton);
@@ -118,6 +118,7 @@
             this.Controls.Add(this.NumberOfPlayersLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "NewGame";
+            this.Text = "New Game";
             this.Load += new System.EventHandler(this.NewGame_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
