@@ -117,6 +117,7 @@
             this.Controls.Add(this.CoursesBtn);
             this.Controls.Add(this.LoadGameBtn);
             this.Controls.Add(this.NewGameBtn);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Mainmenu";
