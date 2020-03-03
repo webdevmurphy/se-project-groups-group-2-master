@@ -28,27 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MainMenuHeaderText = new System.Windows.Forms.TextBox();
             this.NewGameBtn = new System.Windows.Forms.Button();
             this.LoadGameBtn = new System.Windows.Forms.Button();
             this.CoursesBtn = new System.Windows.Forms.Button();
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // MainMenuHeaderText
-            // 
-            this.MainMenuHeaderText.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.MainMenuHeaderText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.MainMenuHeaderText.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainMenuHeaderText.Location = new System.Drawing.Point(162, 19);
-            this.MainMenuHeaderText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MainMenuHeaderText.Name = "MainMenuHeaderText";
-            this.MainMenuHeaderText.ReadOnly = true;
-            this.MainMenuHeaderText.Size = new System.Drawing.Size(663, 73);
-            this.MainMenuHeaderText.TabIndex = 5;
-            this.MainMenuHeaderText.Text = "Main Menu";
-            this.MainMenuHeaderText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NewGameBtn
             // 
@@ -95,6 +81,7 @@
             this.LogoutBtn.TabIndex = 9;
             this.LogoutBtn.Text = "Logout";
             this.LogoutBtn.UseVisualStyleBackColor = true;
+            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
             // button1
             // 
@@ -108,18 +95,28 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(294, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(405, 96);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Main Menu";
+            // 
             // Mainmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(958, 727);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.LogoutBtn);
             this.Controls.Add(this.CoursesBtn);
             this.Controls.Add(this.LoadGameBtn);
             this.Controls.Add(this.NewGameBtn);
-            this.Controls.Add(this.MainMenuHeaderText);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Mainmenu";
@@ -130,12 +127,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox MainMenuHeaderText;
         private System.Windows.Forms.Button NewGameBtn;
         private System.Windows.Forms.Button LoadGameBtn;
         private System.Windows.Forms.Button CoursesBtn;
         private System.Windows.Forms.Button LogoutBtn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }

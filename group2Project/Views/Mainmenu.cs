@@ -45,5 +45,23 @@ namespace group2Project.Views
         {
 
         }
+
+        private void MainMenuHeaderText_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to exit?", "Exit Application", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                System.Windows.Forms.Application.Exit();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                
+            }
+        }
     }
 }

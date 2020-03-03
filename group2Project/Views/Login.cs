@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using group2Project.DataConnection;
 
 namespace group2Project.Views
 {
@@ -57,7 +57,13 @@ namespace group2Project.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
 
+            // Uncomment the code below to get a response from the database. This is still being worked on, so dont expect much =)
+
+            // AzureCosmos.getSpecficDatabase("TriviaNation");
+
+   
             
             Boolean loginInfo = true;
 

@@ -20,7 +20,7 @@ namespace group2Project.DataConnection
 
         static DocumentClient client;
 
-        public static async Task displayAllDatabases()
+        public static async Task  displayAllDatabases()
         {
             try
             {
