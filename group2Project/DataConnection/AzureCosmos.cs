@@ -129,7 +129,7 @@ namespace group2Project.DataConnection
 
                     foreach (var item in collections)
                     {
-                        Console.WriteLine(item);
+                        Console.WriteLine(item.Id);
                         Console.WriteLine("****************Collection Return************");
                     }
 

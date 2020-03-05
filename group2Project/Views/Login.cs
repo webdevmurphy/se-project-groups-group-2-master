@@ -62,7 +62,7 @@ namespace group2Project.Views
             // Uncomment the code below to get a response from the database. This is still being worked on, so dont expect much =)
 
            
-            AzureCosmos.getCollection();
+           // AzureCosmos.getCollection();
 
    
             
