@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using group2Project.DataConnection;
+using group2Project.CosmosDemo;
 
 namespace group2Project.Views
 {
@@ -57,15 +57,17 @@ namespace group2Project.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            string username = textBox1.Text;
+            Console.WriteLine(username);
+            string password = textBox2.Text;
+            Console.WriteLine(password);
+
+            //run async operations for cosmosDb
+            CosmosConnection aNew = new CosmosConnection();
+            aNew.getPassword( username, password);
             
 
-            // Uncomment the code below to get a response from the database. This is still being worked on, so dont expect much =)
-
-           
-           // AzureCosmos.getCollection();
-
-   
-            
             Boolean loginInfo = true;
 
             do
@@ -73,10 +75,10 @@ namespace group2Project.Views
                 
                 //I wanted this to be noisy, just to make sure the textboxes were getting info, and to watch database output.
                 //I removed the database calls from here until I get it working.
-            string username = textBox1.Text;
-                Console.WriteLine(username);
-            string password = textBox2.Text;
-                Console.WriteLine(password);
+           
+
+
+
 
             Console.WriteLine();
             Console.WriteLine();
@@ -107,6 +109,11 @@ namespace group2Project.Views
             Mainmenu menu1 = new Mainmenu();
             menu1.Location = this.Location;
             menu1.ShowDialog();
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

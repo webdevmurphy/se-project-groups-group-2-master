@@ -5,15 +5,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using group2Project.Views;
 
+
+
+using System.Configuration;
+using System.Net;
+using Microsoft.Azure.Cosmos;
+
+using group2Project.Models;
+using group2Project.CosmosDemo;
+
+
+
 namespace group2Project
 {
-    static class Program
+   public class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+    
         [STAThread]
-        static void Main()
+        public static async Task Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -21,5 +30,10 @@ namespace group2Project
             //Application.Run(new Questions());
             Application.Run(new Login());
         }
+
+
+       
+
+
     }
 }
