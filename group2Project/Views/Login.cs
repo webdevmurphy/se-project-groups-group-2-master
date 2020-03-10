@@ -63,7 +63,10 @@ namespace group2Project.Views
             string password = textBox2.Text;
             Console.WriteLine(password);
 
-            //run async operations for cosmosDb
+            //test with username: lisa@gmail.com
+            //password: 1234
+            //and you will see it query the database and return the results.
+
             CosmosConnection aNew = new CosmosConnection();
             aNew.getPassword( username, password);
             
