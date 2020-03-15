@@ -110,6 +110,7 @@
             this.SubmitBtn.TabIndex = 1;
             this.SubmitBtn.Text = "Submit";
             this.SubmitBtn.UseVisualStyleBackColor = true;
+            this.SubmitBtn.Click += new System.EventHandler(this.SubmitBtn_Click);
             // 
             // QuestionTxtBox
             // 

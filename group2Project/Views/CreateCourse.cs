@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using group2Project.Models;
+using group2Project.CosmosDemo;
 
 namespace group2Project.Views
 {
@@ -37,7 +38,15 @@ namespace group2Project.Views
 
         private void SubmitBtn_Click(object sender, EventArgs e)
         {
-            
+            string courseName;
+            courseName = textBox1.Text;
+            textBox1.Text = "";
+            CosmosConnection aNew = new CosmosConnection();
+            {
+                aNew.addCourse(courseName);
+            }
+            MessageBox.Show("Course added");
+
         }
     }
 }

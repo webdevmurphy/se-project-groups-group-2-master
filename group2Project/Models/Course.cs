@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace group2Project.Models
 {
@@ -15,12 +16,11 @@ namespace group2Project.Models
             
         }
 
-        public Course(string name)
+        public override string ToString()
         {
-            this.name = name;
+            return JsonConvert.SerializeObject(this);
         }
 
-        
 
     }
 }

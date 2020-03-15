@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace group2Project.Models
 {
     class Question
     {
-        private string question;
-        private string answer;
-       
+        public string question { get; set; }
+        public string answer { get; set; }
+        public string course { get; set; }
+
         public Question()
         {
-
+     
         }
-
-        public Question(string question, string answer)
+        public override string ToString()
         {
-            this.question = question;
-            this.answer = answer;
+            return JsonConvert.SerializeObject(this);
         }
     }
 }

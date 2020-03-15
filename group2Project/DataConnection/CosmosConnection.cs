@@ -33,6 +33,7 @@ namespace group2Project.CosmosDemo
         // The name of the database and container we will create
         private string databaseId = "TriviaNation";
         private string containerId = "UserNames";
+        private string containerId2 = "Courses";
 
         public async Task GetStartedDemoAsync()
         {
@@ -55,6 +56,7 @@ namespace group2Project.CosmosDemo
         {
             // Create a new container
             this.container = await this.database.CreateContainerIfNotExistsAsync(containerId, "/userName");
+            this.container = await this.database.CreateContainerIfNotExistsAsync(containerId2, "/Courses");
             Console.WriteLine("Created Container: {0}\n", this.container.Id);
         }
 
@@ -65,7 +67,14 @@ namespace group2Project.CosmosDemo
             await this.CreateContainerAsync();
             await this.AddItemsToContainerAsync(Id, firstName, lastName, userName, password, phoneNumber);
         }
-        
+        public async Task addCourse (String CourseName)
+        {
+            await this.AddItemsToContainerCourse(CourseName);
+        }
+        public async Task addTrivia(String Question, String Answer, String Course)
+        {
+            await this.AddItemsToContainerTrivia(Question, Answer, Course);
+        }
         public async Task getPassword(String userName, String password)
         {
 
@@ -146,6 +155,22 @@ namespace group2Project.CosmosDemo
             }
         }
 
+        private async Task AddItemsToContainerCourse(String CourseName)
+        {
+            Course newCourse = new Course
+            {
+                name = CourseName
+            };
+        }
+        private async Task AddItemsToContainerTrivia(String Question, String Answer, String Course)
+        {
+            Question triviaInfo = new Question
+            {
+                question = Question,
+                answer = Answer,
+                course = Course
+            };
+        }
         /// <summary>
         /// Run a query (using Azure Cosmos DB SQL syntax) against the container
         /// </summary>
