@@ -70,19 +70,14 @@ namespace group2Project.Views
             CosmosConnection aNew = new CosmosConnection();
             aNew.getPassword( username, password);
             
-
             Boolean loginInfo = true;
 
             do
             {
-                
+              
                 //I wanted this to be noisy, just to make sure the textboxes were getting info, and to watch database output.
                 //I removed the database calls from here until I get it working.
-           
-
-
-
-
+  
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("*****************************************************");
@@ -95,9 +90,6 @@ namespace group2Project.Views
             Console.WriteLine("***END TEXT BOX**************************************");
             Console.WriteLine();
             Console.WriteLine();
-
-             
-            
 
             if (String.IsNullOrEmpty(textBox1.Text) || String.IsNullOrEmpty(textBox2.Text))
                 {

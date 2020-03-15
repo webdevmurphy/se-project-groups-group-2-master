@@ -80,16 +80,16 @@ namespace group2Project.CosmosDemo
                 Console.WriteLine("Running query: {0}\n", sqlQueryText);
 
                 QueryDefinition queryDefinition = new QueryDefinition(sqlQueryText);
-                FeedIterator<aUser> queryResultSetIterator = this.container.GetItemQueryIterator<aUser>(queryDefinition);
+                FeedIterator<triviaPlayer> queryResultSetIterator = this.container.GetItemQueryIterator<triviaPlayer>(queryDefinition);
                 
                 
-                List<aUser> aPerson = new List<aUser>();
+                List<triviaPlayer> aPerson = new List<triviaPlayer>();
                  
 
                 while (queryResultSetIterator.HasMoreResults)
                 {
-                    FeedResponse<aUser> currentResultSet = await queryResultSetIterator.ReadNextAsync();
-                    foreach (aUser lastName in currentResultSet)
+                    FeedResponse<triviaPlayer> currentResultSet = await queryResultSetIterator.ReadNextAsync();
+                    foreach (triviaPlayer lastName in currentResultSet)
                     {
                         aPerson.Add(lastName);
 
@@ -99,7 +99,7 @@ namespace group2Project.CosmosDemo
 
                         if (password.Equals(lastName)) ;
                         {
-
+                            Console.WriteLine("C A L L E D");
                             MessageBox.Show("UserName: " + userName + "Password: " + password);
                             Console.WriteLine(password);
                             Console.WriteLine(lastName);
@@ -118,7 +118,7 @@ namespace group2Project.CosmosDemo
         /// </summary>
         private async Task AddItemsToContainerAsync(String Id, String firstName, String lastName, String username,String password, String phoneNumber)
         {
-            aUser newPerson = new aUser
+            triviaPlayer newPerson = new triviaPlayer
             {
                 Id = Id,
                 firstName = firstName,
@@ -131,7 +131,7 @@ namespace group2Project.CosmosDemo
             try
             {
                 // Read the item to see if it exists.  
-                ItemResponse<aUser> userResponse = await this.container.ReadItemAsync<aUser>(newPerson.Id, new PartitionKey(newPerson.userName));
+                ItemResponse<triviaPlayer> userResponse = await this.container.ReadItemAsync<triviaPlayer>(newPerson.Id, new PartitionKey(newPerson.userName));
                 Console.WriteLine("Item in database with id: {0} already exists\n", userResponse.Resource.Id);
             }
             catch (CosmosException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
@@ -139,7 +139,7 @@ namespace group2Project.CosmosDemo
 
                 Console.WriteLine("***************************************************************");
                 // Create an item in the container representing the aUser. Note we provide the value of the partition key for this item, which is "newPerson"
-                ItemResponse<aUser> userResponse = await this.container.CreateItemAsync<aUser>(newPerson, new PartitionKey(newPerson.userName));
+                ItemResponse<triviaPlayer> userResponse = await this.container.CreateItemAsync<triviaPlayer>(newPerson, new PartitionKey(newPerson.userName));
 
                 // Note that after creating the item, we can access the body of the item with the Resource property off the ItemResponse. We can also access the RequestCharge property to see the amount of RUs consumed on this request.
                 Console.WriteLine("Created item in database with id: {0} Operation consumed {1} RUs.\n", userResponse.Resource.Id, userResponse.RequestCharge);
@@ -156,14 +156,14 @@ namespace group2Project.CosmosDemo
             Console.WriteLine("Running query: {0}\n", sqlQueryText);
 
             QueryDefinition queryDefinition = new QueryDefinition(sqlQueryText);
-            FeedIterator<Family> queryResultSetIterator = this.container.GetItemQueryIterator<Family>(queryDefinition);
+            FeedIterator<triviaPlayer> queryResultSetIterator = this.container.GetItemQueryIterator<triviaPlayer>(queryDefinition);
 
-            List<Family> families = new List<Family>();
+            List<triviaPlayer> families = new List<triviaPlayer>();
 
             while (queryResultSetIterator.HasMoreResults)
             {
-                FeedResponse<Family> currentResultSet = await queryResultSetIterator.ReadNextAsync();
-                foreach (Family family in currentResultSet)
+                FeedResponse<triviaPlayer> currentResultSet = await queryResultSetIterator.ReadNextAsync();
+                foreach (triviaPlayer family in currentResultSet)
                 {
                     families.Add(family);
                     Console.WriteLine(family);
