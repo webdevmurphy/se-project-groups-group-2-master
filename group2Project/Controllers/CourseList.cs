@@ -47,6 +47,14 @@ namespace group2Project.Controllers
 
         public void InitializeCourseList()
         {
+            /*
+             * 
+             * 
+             * Need to connect this to database next
+             * 
+             * 
+             */
+
             //This is purely for testing purposes for getting the courses to display
             //Actual courses will be pulled from the database
             courses.Add(new Course("Physics"));

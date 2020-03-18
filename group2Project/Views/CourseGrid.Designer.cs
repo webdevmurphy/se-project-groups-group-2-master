@@ -33,8 +33,8 @@
             this.AddCourseBtn = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.listViewCourses = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.SubmitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +43,7 @@
             this.CoursesLabel.AutoSize = true;
             this.CoursesLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.CoursesLabel.Font = new System.Drawing.Font("Segoe UI", 24F);
-            this.CoursesLabel.Location = new System.Drawing.Point(344, 11);
+            this.CoursesLabel.Location = new System.Drawing.Point(333, 9);
             this.CoursesLabel.Name = "CoursesLabel";
             this.CoursesLabel.Size = new System.Drawing.Size(133, 45);
             this.CoursesLabel.TabIndex = 0;
@@ -53,9 +53,9 @@
             // AddCourseBtn
             // 
             this.AddCourseBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCourseBtn.Location = new System.Drawing.Point(595, 522);
+            this.AddCourseBtn.Location = new System.Drawing.Point(681, 261);
             this.AddCourseBtn.Name = "AddCourseBtn";
-            this.AddCourseBtn.Size = new System.Drawing.Size(154, 52);
+            this.AddCourseBtn.Size = new System.Drawing.Size(91, 59);
             this.AddCourseBtn.TabIndex = 1;
             this.AddCourseBtn.Text = "Add Course";
             this.AddCourseBtn.UseVisualStyleBackColor = true;
@@ -76,19 +76,27 @@
             // 
             this.listViewCourses.AllowColumnReorder = true;
             this.listViewCourses.AllowDrop = true;
-            this.listViewCourses.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
             this.listViewCourses.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewCourses.FullRowSelect = true;
             this.listViewCourses.GridLines = true;
             this.listViewCourses.HideSelection = false;
-            this.listViewCourses.Location = new System.Drawing.Point(69, 126);
+            this.listViewCourses.Location = new System.Drawing.Point(179, 113);
             this.listViewCourses.Name = "listViewCourses";
             this.listViewCourses.RightToLeftLayout = true;
             this.listViewCourses.ShowItemToolTips = true;
-            this.listViewCourses.Size = new System.Drawing.Size(622, 340);
+            this.listViewCourses.Size = new System.Drawing.Size(465, 336);
             this.listViewCourses.TabIndex = 4;
             this.listViewCourses.UseCompatibleStateImageBehavior = false;
+            // 
+            // SubmitButton
+            // 
+            this.SubmitButton.Location = new System.Drawing.Point(681, 522);
+            this.SubmitButton.Name = "SubmitButton";
+            this.SubmitButton.Size = new System.Drawing.Size(91, 38);
+            this.SubmitButton.TabIndex = 5;
+            this.SubmitButton.Text = "Submit";
+            this.SubmitButton.UseVisualStyleBackColor = true;
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // CourseGrid
             // 
@@ -96,6 +104,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(798, 585);
+            this.Controls.Add(this.SubmitButton);
             this.Controls.Add(this.listViewCourses);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.AddCourseBtn);
@@ -115,8 +124,7 @@
         private System.Windows.Forms.Label CoursesLabel;
         private System.Windows.Forms.Button AddCourseBtn;
         private System.Windows.Forms.Button CancelButton;
-        //private System.Windows.Forms.ListView listViewCourses;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Button SubmitButton;
     }
 }

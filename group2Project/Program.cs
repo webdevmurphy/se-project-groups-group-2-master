@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 using group2Project.Views;
 
 
@@ -25,10 +26,24 @@ namespace group2Project
         public static async Task Main(string[] args)
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new NewGame());
-            //Application.Run(new Questions());
-            Application.Run(new Login());
+            Application.SetCompatibleTextRenderingDefault(false);           
+            //Moved Application.run inside of a new thread to fix STA exception error.
+            Thread t = new Thread(new ThreadStart(() =>
+            {
+                try
+                {
+                    Application.Run(new Login());
+                    //Application.Run(new CourseGrid());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+
+            }));
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();           
         }
 
 

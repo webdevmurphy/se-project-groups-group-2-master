@@ -16,6 +16,11 @@ namespace group2Project.Models
             
         }
 
+        public Course(string name)
+        {
+            this.name = name;
+        }
+
         public override string ToString()
         {
             return JsonConvert.SerializeObject(this);
