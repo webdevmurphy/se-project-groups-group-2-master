@@ -19,11 +19,9 @@ namespace group2Project.Models
 
         public string phoneNumber { get; set; }
 
-
         public override string ToString()
         {
             return JsonConvert.SerializeObject(this);
         }
-
     }
 }

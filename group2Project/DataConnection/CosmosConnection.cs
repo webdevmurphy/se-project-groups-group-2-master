@@ -4,8 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using group2Project.Views;
-
-
 using System.Net;
 using Microsoft.Azure.Cosmos;
 
@@ -85,7 +83,6 @@ namespace group2Project.CosmosDemo
                 await this.CreateContainerAsync();
           
                 var sqlQueryText = "SELECT * FROM c WHERE c.userName = " + "'" + userName + "'" + " AND c.password = '" + password + "'";
-
                 Console.WriteLine("Running query: {0}\n", sqlQueryText);
 
                 QueryDefinition queryDefinition = new QueryDefinition(sqlQueryText);
@@ -101,7 +98,6 @@ namespace group2Project.CosmosDemo
                     foreach (triviaPlayer lastName in currentResultSet)
                     {
                         aPerson.Add(lastName);
-
                         Console.WriteLine(lastName);
 
                         MessageBox.Show(lastName.ToString());

@@ -20,11 +20,6 @@ namespace group2Project.Views
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string name = sender.ToString();
@@ -46,7 +41,6 @@ namespace group2Project.Views
                 aNew.addCourse(courseName);
             }
             MessageBox.Show("Course added");
-
         }
     }
 }

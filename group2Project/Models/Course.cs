@@ -25,7 +25,5 @@ namespace group2Project.Models
         {
             return JsonConvert.SerializeObject(this);
         }
-
-
     }
 }

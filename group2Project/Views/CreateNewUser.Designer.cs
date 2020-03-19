@@ -34,15 +34,15 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.FirstNameLbl = new System.Windows.Forms.Label();
+            this.LstNameLbl = new System.Windows.Forms.Label();
+            this.UserNameLbl = new System.Windows.Forms.Label();
+            this.Passwordlbl = new System.Windows.Forms.Label();
+            this.CofirmLbl = new System.Windows.Forms.Label();
+            this.PhoneLbl = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.CrtAccntLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -99,69 +99,65 @@
             this.textBox6.TabIndex = 5;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // label1
+            // FirstNameLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 78);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 21);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "First Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.FirstNameLbl.AutoSize = true;
+            this.FirstNameLbl.Location = new System.Drawing.Point(15, 78);
+            this.FirstNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.FirstNameLbl.Name = "FirstNameLbl";
+            this.FirstNameLbl.Size = new System.Drawing.Size(86, 21);
+            this.FirstNameLbl.TabIndex = 6;
+            this.FirstNameLbl.Text = "First Name";
             // 
-            // label2
+            // LstNameLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 138);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 21);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Last Name";
+            this.LstNameLbl.AutoSize = true;
+            this.LstNameLbl.Location = new System.Drawing.Point(14, 138);
+            this.LstNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LstNameLbl.Name = "LstNameLbl";
+            this.LstNameLbl.Size = new System.Drawing.Size(84, 21);
+            this.LstNameLbl.TabIndex = 7;
+            this.LstNameLbl.Text = "Last Name";
             // 
-            // label3
+            // UserNameLbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 204);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 21);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "UserName";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.UserNameLbl.AutoSize = true;
+            this.UserNameLbl.Location = new System.Drawing.Point(15, 204);
+            this.UserNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UserNameLbl.Name = "UserNameLbl";
+            this.UserNameLbl.Size = new System.Drawing.Size(84, 21);
+            this.UserNameLbl.TabIndex = 8;
+            this.UserNameLbl.Text = "UserName";
             // 
-            // label4
+            // Passwordlbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(344, 78);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 21);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Password";
+            this.Passwordlbl.AutoSize = true;
+            this.Passwordlbl.Location = new System.Drawing.Point(344, 78);
+            this.Passwordlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Passwordlbl.Name = "Passwordlbl";
+            this.Passwordlbl.Size = new System.Drawing.Size(76, 21);
+            this.Passwordlbl.TabIndex = 9;
+            this.Passwordlbl.Text = "Password";
             // 
-            // label5
+            // CofirmLbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(286, 138);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 21);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Confirm Password";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.CofirmLbl.AutoSize = true;
+            this.CofirmLbl.Location = new System.Drawing.Point(286, 138);
+            this.CofirmLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CofirmLbl.Name = "CofirmLbl";
+            this.CofirmLbl.Size = new System.Drawing.Size(137, 21);
+            this.CofirmLbl.TabIndex = 10;
+            this.CofirmLbl.Text = "Confirm Password";
             // 
-            // label6
+            // PhoneLbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(362, 199);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 21);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Phone";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.PhoneLbl.AutoSize = true;
+            this.PhoneLbl.Location = new System.Drawing.Point(362, 199);
+            this.PhoneLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PhoneLbl.Name = "PhoneLbl";
+            this.PhoneLbl.Size = new System.Drawing.Size(54, 21);
+            this.PhoneLbl.TabIndex = 11;
+            this.PhoneLbl.Text = "Phone";
             // 
             // button1
             // 
@@ -185,17 +181,16 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label7
+            // CrtAccntLbl
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(215, 19);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(202, 24);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Create New Account";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.CrtAccntLbl.AutoSize = true;
+            this.CrtAccntLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CrtAccntLbl.Location = new System.Drawing.Point(215, 19);
+            this.CrtAccntLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CrtAccntLbl.Name = "CrtAccntLbl";
+            this.CrtAccntLbl.Size = new System.Drawing.Size(202, 24);
+            this.CrtAccntLbl.TabIndex = 14;
+            this.CrtAccntLbl.Text = "Create New Account";
             // 
             // CreateNewUser
             // 
@@ -203,15 +198,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(632, 338);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.CrtAccntLbl);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.PhoneLbl);
+            this.Controls.Add(this.CofirmLbl);
+            this.Controls.Add(this.Passwordlbl);
+            this.Controls.Add(this.UserNameLbl);
+            this.Controls.Add(this.LstNameLbl);
+            this.Controls.Add(this.FirstNameLbl);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
@@ -237,14 +232,14 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label FirstNameLbl;
+        private System.Windows.Forms.Label LstNameLbl;
+        private System.Windows.Forms.Label UserNameLbl;
+        private System.Windows.Forms.Label Passwordlbl;
+        private System.Windows.Forms.Label CofirmLbl;
+        private System.Windows.Forms.Label PhoneLbl;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label CrtAccntLbl;
     }
 }

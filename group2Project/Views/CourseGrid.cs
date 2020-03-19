@@ -23,11 +23,6 @@ namespace group2Project.Views
             InitializeComponent();
         }
 
-        private void CoursesLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void CancelButton_Click(object sender, EventArgs e)
         {
             listViewCourses.Dispose();
@@ -90,7 +85,7 @@ namespace group2Project.Views
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-
+            //save the state of courses and return to the previous form
         }
     }
 }
