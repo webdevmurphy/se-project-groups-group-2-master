@@ -19,6 +19,13 @@ namespace group2Project.Models
 
         public string phoneNumber { get; set; }
 
+        public bool IsRegistered { get; set; }
+
+        public void StartTrivia()
+        {
+            //should start trivia player
+        }
+
         public override string ToString()
         {
             return JsonConvert.SerializeObject(this);

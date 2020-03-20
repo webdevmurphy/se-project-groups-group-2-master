@@ -9,14 +9,25 @@ namespace group2Project.Models
 {
     class Question
     {
-        public string question { get; set; }
-        public string answer { get; set; }
-        public string course { get; set; }
-
+        public String question { get; set; }
+        public String answer { get; set; }
+        public String course { get; set; }
+        
+        //default constructor
         public Question()
         {
      
         }
+
+        //overloaded constructor with all parameters
+        public Question(String question, String answer, String course)
+        {
+            this.question = question;
+            this.answer = answer;
+            this.course = course;
+        }
+
+        //converts object to JSON string
         public override string ToString()
         {
             return JsonConvert.SerializeObject(this);
