@@ -48,14 +48,13 @@
             this.CoursesLabel.Size = new System.Drawing.Size(133, 45);
             this.CoursesLabel.TabIndex = 0;
             this.CoursesLabel.Text = "Courses";
-            this.CoursesLabel.Click += new System.EventHandler(this.CoursesLabel_Click);
             // 
             // AddCourseBtn
             // 
             this.AddCourseBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCourseBtn.Location = new System.Drawing.Point(681, 261);
+            this.AddCourseBtn.Location = new System.Drawing.Point(667, 261);
             this.AddCourseBtn.Name = "AddCourseBtn";
-            this.AddCourseBtn.Size = new System.Drawing.Size(91, 59);
+            this.AddCourseBtn.Size = new System.Drawing.Size(105, 59);
             this.AddCourseBtn.TabIndex = 1;
             this.AddCourseBtn.Text = "Add Course";
             this.AddCourseBtn.UseVisualStyleBackColor = true;
@@ -84,15 +83,15 @@
             this.listViewCourses.Name = "listViewCourses";
             this.listViewCourses.RightToLeftLayout = true;
             this.listViewCourses.ShowItemToolTips = true;
-            this.listViewCourses.Size = new System.Drawing.Size(465, 336);
+            this.listViewCourses.Size = new System.Drawing.Size(465, 368);
             this.listViewCourses.TabIndex = 4;
             this.listViewCourses.UseCompatibleStateImageBehavior = false;
             // 
             // SubmitButton
             // 
-            this.SubmitButton.Location = new System.Drawing.Point(681, 522);
+            this.SubmitButton.Location = new System.Drawing.Point(667, 523);
             this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(91, 38);
+            this.SubmitButton.Size = new System.Drawing.Size(105, 51);
             this.SubmitButton.TabIndex = 5;
             this.SubmitButton.Text = "Submit";
             this.SubmitButton.UseVisualStyleBackColor = true;
