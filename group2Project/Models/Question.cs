@@ -11,7 +11,7 @@ namespace group2Project.Models
     {
         public String question { get; set; }
         public String answer { get; set; }
-        public Course course { get; set; }
+        public String course { get; set; }
         
         //default constructor
         public Question()
@@ -20,7 +20,7 @@ namespace group2Project.Models
         }
 
         //overloaded constructor with all parameters
-        public Question(String question, String answer, Course course)
+        public Question(String question, String answer, String course)
         {
             this.question = question;
             this.answer = answer;
