@@ -270,9 +270,7 @@
   <ItemGroup>
     <Compile Include="Controllers\CourseList.cs" />
     <Compile Include="DataConnection\CosmosConnection.cs" />
-    <Compile Include="DataConnection\Robot.cs" />
     <Compile Include="Models\triviaPlayer.cs" />
-    <Compile Include="Models\Family.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

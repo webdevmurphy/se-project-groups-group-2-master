@@ -9,6 +9,8 @@ namespace group2Project.Models
 {
     class Course
     {
+        [JsonProperty(PropertyName = "id")]
+        public string Id { get; set; }
         public string name { get; set; }
 
         public Course()
