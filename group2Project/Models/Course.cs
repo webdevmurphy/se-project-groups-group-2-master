@@ -9,9 +9,15 @@ namespace group2Project.Models
 {
     class Course
     {
+<<<<<<< HEAD
         private int ID;
         private String courseName;
         private List<Question> questions;
+=======
+        [JsonProperty(PropertyName = "id")]
+        public string Id { get; set; }
+        public string name { get; set; }
+>>>>>>> f068bb723c5eaebb8e2c04eb56f95df79941ae41
 
         //Default constructor
         public Course()

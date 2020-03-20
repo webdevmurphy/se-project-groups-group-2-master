@@ -90,5 +90,15 @@ namespace group2Project.Views
         {
              phoneNumber = textBox6.Text;
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

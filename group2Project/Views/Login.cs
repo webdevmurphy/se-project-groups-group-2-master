@@ -69,6 +69,7 @@ namespace group2Project.Views
 
             CosmosConnection aNew = new CosmosConnection();
             aNew.getPassword( username, password);
+            //aNew.addCourse("fishing");
             
             Boolean loginInfo = true;
 
@@ -76,7 +77,7 @@ namespace group2Project.Views
             {
               
                 //I wanted this to be noisy, just to make sure the textboxes were getting info, and to watch database output.
-                //I removed the database calls from here until I get it working.
+                //I removed the database calls from here until I get it working. Have to incorporate SOLID Principles! 
   
             Console.WriteLine();
             Console.WriteLine();
