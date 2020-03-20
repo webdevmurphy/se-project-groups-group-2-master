@@ -153,10 +153,8 @@ namespace group2Project.CosmosDemo
 
         private async Task AddItemsToContainerCourse(String CourseName)
         {
-            Course newCourse = new Course
-            {
-                name = CourseName
-            };
+            Course newCourse = new Course();
+            newCourse.SetCourseName(CourseName);
         }
         private async Task AddItemsToContainerTrivia(String Question, String Answer, String Course)
         {
@@ -196,17 +194,17 @@ namespace group2Project.CosmosDemo
 
         private async Task ReplaceFamilyItemAsync()
         {
-            ItemResponse<Family> wakefieldFamilyResponse = await this.container.ReadItemAsync<Family>("Wakefield.7", new PartitionKey("Wakefield"));
+            ItemResponse<triviaPlayer> wakefieldFamilyResponse = await this.container.ReadItemAsync<triviaPlayer>("Wakefield.7", new PartitionKey("Wakefield"));
             var itemBody = wakefieldFamilyResponse.Resource;
 
             // update registration status from false to true
             itemBody.IsRegistered = true;
             // update grade of child
-            itemBody.Children[0].Grade = 999;
+            //itemBody.Children[0].Grade = 999;
 
             // replace the item with the updated content
-            wakefieldFamilyResponse = await this.container.ReplaceItemAsync<Family>(itemBody, itemBody.Id, new PartitionKey(itemBody.LastName));
-            Console.WriteLine("Updated Family [{0},{1}].\n \tBody is now: {2}\n", itemBody.LastName, itemBody.Id, wakefieldFamilyResponse.Resource);
+            wakefieldFamilyResponse = await this.container.ReplaceItemAsync<triviaPlayer>(itemBody, itemBody.Id, new PartitionKey(itemBody.lastName));
+            Console.WriteLine("Updated Family [{0},{1}].\n \tBody is now: {2}\n", itemBody.lastName, itemBody.Id, wakefieldFamilyResponse.Resource);
         }
 
         /// <summary>
@@ -218,7 +216,7 @@ namespace group2Project.CosmosDemo
             var familyId = "Wakefield.7";
 
             // Delete an item. Note we must provide the partition key value and id of the item to delete
-            ItemResponse<Family> wakefieldFamilyResponse = await this.container.DeleteItemAsync<Family>(familyId, new PartitionKey(partitionKeyValue));
+            ItemResponse<triviaPlayer> wakefieldFamilyResponse = await this.container.DeleteItemAsync<triviaPlayer>(familyId, new PartitionKey(partitionKeyValue));
             Console.WriteLine("Deleted Family [{0},{1}]\n", partitionKeyValue, familyId);
         }
 

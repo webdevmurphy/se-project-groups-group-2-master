@@ -20,8 +20,7 @@ using group2Project.CosmosDemo;
 namespace group2Project
 {
    public class Program
-    {
-    
+    {   
         [STAThread]
         public static async Task Main(string[] args)
         {
@@ -45,10 +44,5 @@ namespace group2Project
             t.Start();
             t.Join();           
         }
-
-
-       
-
-
     }
 }

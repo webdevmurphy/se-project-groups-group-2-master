@@ -60,8 +60,9 @@ namespace group2Project.Views
 
             foreach (var course in courses)
             {
-                var row = new string[] { course.name };
-                var lvi = new ListViewItem(row);
+                var courseRow = new string[] { course.GetCourseName()};
+                var lvi = new ListViewItem(courseRow);
+                Console.WriteLine(courseRow);
                 //Add the whole object to the Tag property
                 //to later display details about the item
                 lvi.Tag = course;
@@ -75,6 +76,7 @@ namespace group2Project.Views
 
         }
 
+        //Should check and see if a box is checked. If trying to check a new box, uncheck any checked boxes.
         private void listViewCourses_ItemChecked(Object sender, ItemCheckedEventArgs e)
         {
             foreach (var checkBox in listViewCourses.Items)
