@@ -14,6 +14,7 @@ using Microsoft.Azure.Cosmos;
 
 using group2Project.Models;
 using group2Project.CosmosDemo;
+using group2Project.Controllers;
 
 
 
@@ -26,13 +27,11 @@ namespace group2Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);           
-            //Moved Application.run inside of a new thread to fix STA exception error.
             Thread t = new Thread(new ThreadStart(() =>
             {
                 try
                 {
                     Application.Run(new Login());
-                    //Application.Run(new CourseGrid());
                 }
                 catch (Exception e)
                 {

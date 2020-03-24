@@ -1,6 +1,6 @@
 ﻿namespace group2Project.Views
 {
-    partial class CreateNewUser
+    partial class CreateNewAccount
     {
         /// <summary>
         /// Required designer variable.

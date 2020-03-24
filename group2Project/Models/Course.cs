@@ -14,7 +14,7 @@ namespace group2Project.Models
         private String courseName;
         private List<Question> questions;
 
-        [JsonProperty(PropertyName = "id")]
+        
         public string Id { get; set; }
         public string name { get; set; }
 

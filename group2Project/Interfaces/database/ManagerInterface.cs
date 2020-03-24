@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace group2Project.Interfaces.database
 {
-    interface ListInterface
+    interface ManagerInterface <T>
     {
 
         void AddItem();

@@ -1,6 +1,6 @@
 ﻿namespace group2Project.Views
 {
-    partial class CreateCourse
+    partial class AddACourse
     {
         /// <summary>
         /// Required designer variable.

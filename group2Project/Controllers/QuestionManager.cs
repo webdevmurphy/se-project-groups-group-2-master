@@ -8,18 +8,18 @@ using group2Project.Models;
 
 namespace group2Project.Controllers
 {
-    class QuestionList
+    class QuestionManager
     {
         //A private list to hold the questions
         private List<Question> questionList;
         
         //Default Constructor
-        public QuestionList() 
+        public QuestionManager() 
         {
             questionList = new List<Question>();
         }
 
-        public QuestionList(List<Question> questionList)
+        public QuestionManager(List<Question> questionList)
         {
             this.questionList = questionList;
         }

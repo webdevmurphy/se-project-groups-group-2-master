@@ -45,7 +45,7 @@ namespace group2Project.Views
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            CreateNewUser newUser = new CreateNewUser();
+            CreateNewAccount newUser = new CreateNewAccount();
             newUser.Location = this.Location;
             newUser.ShowDialog();
         }

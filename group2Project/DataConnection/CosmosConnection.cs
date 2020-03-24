@@ -7,6 +7,7 @@ using group2Project.Views;
 using System.Net;
 using Microsoft.Azure.Cosmos;
 
+using group2Project.Interfaces.database;
 using group2Project.Models;
 
 namespace group2Project.CosmosDemo
@@ -84,7 +85,7 @@ namespace group2Project.CosmosDemo
             await this.CreateCoursesContainerAsync();
             await this.AddItemsToContainerCourse(CourseName);
         }
-        public async Task addTrivia(String Question, String Answer, String Course)
+        public async Task addItem(String Question, String Answer, String Course)
         {
             await this.AddItemsToContainerTrivia(Question, Answer, Course);
         }

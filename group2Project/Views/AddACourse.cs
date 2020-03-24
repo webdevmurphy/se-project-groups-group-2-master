@@ -7,23 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using group2Project.Controllers;
 using group2Project.Models;
 using group2Project.CosmosDemo;
 
 namespace group2Project.Views
 {
-    public partial class CreateCourse : Form
+    public partial class AddACourse : Form
     {
         Course course;
-        public CreateCourse()
+        CourseManager courseList;
+
+        public AddACourse()
         {
             InitializeComponent();
         }
+
+       /* public CreateCourse(CourseList courseList)
+        {
+            InitializeComponent();
+        }*/
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string name = sender.ToString();
             course = new Course(name);
+
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
@@ -35,11 +44,13 @@ namespace group2Project.Views
         {
             string courseName;
             courseName = textBox1.Text;
+            Course c = new Course(courseName);
+            
             textBox1.Text = "";
-            CosmosConnection aNew = new CosmosConnection();
+           /* CosmosConnection aNew = new CosmosConnection();
             {
                 aNew.addCourse(courseName);
-            }
+            }*/
             MessageBox.Show("Course added");
         }
     }

@@ -34,10 +34,10 @@ namespace group2Project.Views
             string Question = QuestionTxtBox.Text;
             string Answer = AnserTxtBox.Text;
             string course = "";//not sure what to put here as of yet
-            CosmosConnection aNew = new CosmosConnection();
+            /*CosmosConnection aNew = new CosmosConnection();
             {
                 aNew.addTrivia(Question, Answer, course);
-            }
+            }*/
             QuestionTxtBox.Text = "";
             AnserTxtBox.Text = "";
             MessageBox.Show("Trivia Added");

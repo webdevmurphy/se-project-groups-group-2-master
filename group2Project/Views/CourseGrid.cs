@@ -14,12 +14,12 @@ namespace group2Project.Views
 {
     public partial class CourseGrid : Form
     {
-        private CourseList courseList;
+        private CourseManager courseList;
         private ListView listViewCourses;
         public CourseGrid()
         {
             listViewCourses = new ListView();
-            courseList = new CourseList();
+            courseList = new CourseManager();
             InitializeComponent();
         }
 
@@ -31,7 +31,7 @@ namespace group2Project.Views
 
         private void AddCourseBtn_Click(object sender, EventArgs e)
         {
-            CreateCourse createCourse = new CreateCourse();
+            AddACourse createCourse = new AddACourse();
             createCourse.Show();
         }
 
@@ -55,7 +55,7 @@ namespace group2Project.Views
             //Allow User to select only one item
             listViewCourses.MultiSelect = false;
 
-            courseList = new CourseList();
+            courseList = new CourseManager();
             List<Course> courses = courseList.GetCourses();
 
             foreach (var course in courses)

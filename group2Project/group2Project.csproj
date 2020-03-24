@@ -268,28 +268,29 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\QuestionList.cs" />
-    <Compile Include="Controllers\CourseList.cs" />
+    <Compile Include="Controllers\QuestionManager.cs" />
+    <Compile Include="Controllers\CourseManager.cs" />
     <Compile Include="DataConnection\CosmosConnection.cs" />
     <Compile Include="Interfaces\database\TriviaPlayerInterface.cs" />
-    <Compile Include="Interfaces\database\ListInterface.cs" />
+    <Compile Include="Interfaces\database\ManagerInterface.cs" />
+    <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\triviaPlayer.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Views\CreateCourse.cs">
+    <Compile Include="Views\AddACourse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\CreateCourse.Designer.cs">
-      <DependentUpon>CreateCourse.cs</DependentUpon>
+    <Compile Include="Views\AddACourse.Designer.cs">
+      <DependentUpon>AddACourse.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\CreateNewUser.cs">
+    <Compile Include="Views\CreateNewAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\CreateNewUser.Designer.cs">
-      <DependentUpon>CreateNewUser.cs</DependentUpon>
+    <Compile Include="Views\CreateNewAccount.Designer.cs">
+      <DependentUpon>CreateNewAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
@@ -358,11 +359,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CreateCourse.resx">
-      <DependentUpon>CreateCourse.cs</DependentUpon>
+    <EmbeddedResource Include="Views\AddACourse.resx">
+      <DependentUpon>AddACourse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CreateNewUser.resx">
-      <DependentUpon>CreateNewUser.cs</DependentUpon>
+    <EmbeddedResource Include="Views\CreateNewAccount.resx">
+      <DependentUpon>CreateNewAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

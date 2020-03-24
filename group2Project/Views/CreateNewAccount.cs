@@ -11,7 +11,7 @@ using group2Project.CosmosDemo;
 
 namespace group2Project.Views
 {
-    public partial class CreateNewUser : Form
+    public partial class CreateNewAccount : Form
     {
         private String firstName;
         private String lastName;
@@ -20,7 +20,7 @@ namespace group2Project.Views
         private String confirmPassword;
         private String password;
 
-        public CreateNewUser()
+        public CreateNewAccount()
         {
             InitializeComponent();
         }

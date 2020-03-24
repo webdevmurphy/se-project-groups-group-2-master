@@ -7,23 +7,19 @@ using group2Project.Models;
 
 namespace group2Project.Controllers
 {
-    class CourseList
+    class CourseManager
     {
         //Private list to hold all the courses. Should be pulled from DB
+        //Needs to be instantiated at the start of the application.
         private List<Course> courseList;
 
         //Default Constructor
-        public CourseList()
+        public CourseManager()
         {
             courseList = new List<Course>();
             InitializeCourseList();
         }
 
-        public CourseList(List<Course> courseList)
-        {
-            this.courseList = courseList;
-        }
-        
         //Add a course to the list
         public void AddCourse(Course c)
         {

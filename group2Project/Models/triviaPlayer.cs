@@ -12,7 +12,7 @@ namespace group2Project.Models
         public string firstName { get; set; }
 
         public string lastName { get; set; }
-        [JsonProperty(PropertyName = "userName")]
+        
         public string userName { get; set; }
         
         public string password { get; set; }
