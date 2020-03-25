@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using group2Project.Models;
+using group2Project.CosmosDemo;
 
 namespace group2Project.Controllers
 {
@@ -12,6 +13,7 @@ namespace group2Project.Controllers
         //Private list to hold all the courses. Should be pulled from DB
         //Needs to be instantiated at the start of the application.
         private List<Course> courseList;
+        private CosmosConnection cosmosDB;
 
         //Default Constructor
         public CourseManager()
@@ -53,7 +55,7 @@ namespace group2Project.Controllers
         }
 
         //Initializes the CourseGrid view with the list of courses
-        public void InitializeCourseList()
+        public async void InitializeCourseList()
         {
             /*
              * 
@@ -65,12 +67,18 @@ namespace group2Project.Controllers
 
             //This is purely for testing purposes for getting the courses to display
             //Actual courses will be pulled from the database
-            courseList.Add(new Course("Physics"));
+            courseList.Add(new Course("Physics", "123"));
             courseList.Add(new Course("History"));
             courseList.Add(new Course("Science"));
             courseList.Add(new Course("English"));
             courseList.Add(new Course("Math"));
             courseList.Add(new Course("Computer Science"));
+            Console.WriteLine(courseList);
+            for (int i = 0; i < courseList.Count(); i++)
+            {
+                Console.WriteLine(courseList[i].GetCourseName(), courseList[i].GetID());
+                await cosmosDB.addCourse(courseList[i].GetCourseName(), courseList[i].GetID());
+            }
         }
     }
 }

@@ -10,35 +10,45 @@ namespace group2Project.Models
     class Course
     {
 
-        private int ID;
         private String courseName;
         private List<Question> questions;
 
-        
-        public string Id { get; set; }
+
+        public string Id;
         public string name { get; set; }
 
         //Default constructor
         public Course()
         {
-
+            Random rand = new Random();
+            this.Id = "Course1";
+            questions = new List<Question>();
         }
 
         //Overloaded constructor with only course name. Should generate a random ID if none is specified
         public Course(String courseName)
         {
             Random rand = new Random();
-            this.ID = rand.Next(999999);
-            this.courseName = courseName;
+            this.Id = "Course1";
+            SetCourseName(courseName);
+            this.questions = new List<Question>();
         }
 
-        //Fully overloaded constructor.
-        public Course(String courseName, int ID)
+        //overloaded constructor with name and ID.
+        public Course(String courseName, string ID)
         {
             this.courseName = courseName;
-            this.ID = ID;
+            this.Id = ID;
+            this.questions = new List<Question>();
         }
 
+        //Fully overloaded constructor
+        public Course(String courseName, string ID, List<Question>Questions)
+        {
+            this.courseName = courseName;
+            this.Id = ID;
+            this.questions = Questions;
+        }
         //Add a question to the list
         public void AddQuestion(Question q)
         {
@@ -53,10 +63,10 @@ namespace group2Project.Models
 
         //////getters and setters only below this line//////
         public String GetCourseName() { return this.courseName;  }
-        public int GetID() { return this.ID; }
+        public string GetID() { return this.Id; }
         public List<Question> GetQuestions() { return this.questions; }
-        public void SetCourseName(String coursename) { this.courseName = courseName; }
-        public void SetID(int ID) { this.ID = ID; }
+        public void SetCourseName(String coursename) { courseName = coursename; }
+        public void SetID(string ID) { this.Id = ID; }
         public void SetQuestionList(List<Question> questions) { this.questions = questions;  }
         
         /*public String getFirstName() { return this.firstName; }

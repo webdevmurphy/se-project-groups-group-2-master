@@ -12,7 +12,7 @@ using group2Project.Models;
 
 namespace group2Project.CosmosDemo
 {
-    public class CosmosConnection
+    public class CosmosConnection : ManagerInterface
     {
 
         // The Azure Cosmos DB endpoint for running this sample.
@@ -79,11 +79,11 @@ namespace group2Project.CosmosDemo
             await this.CreateUserContainerAsync();
             await this.AddItemsToContainerAsync(Id, firstName, lastName, userName, password, phoneNumber);
         }
-        public async Task addCourse(String CourseName)
+        public async Task addCourse(String CourseName, string ID)
         {
             await this.NewConnection();
             await this.CreateCoursesContainerAsync();
-            await this.AddItemsToContainerCourse(CourseName);
+            await this.AddItemsToContainerCourse(CourseName, ID);
         }
         public async Task addItem(String Question, String Answer, String Course)
         {
@@ -169,7 +169,7 @@ namespace group2Project.CosmosDemo
             }
         }
 
-        private async Task AddItemsToContainerCourse(String CourseName)
+        private async Task AddItemsToContainerCourse(String CourseName, string Id)
         {
             Course newCourse = new Course
             {

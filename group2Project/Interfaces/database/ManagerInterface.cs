@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace group2Project.Interfaces.database
 {
-    interface ManagerInterface <T>
+    interface ManagerInterface
     {
 
-        void AddItem();
-        void DeleteItem();
+        Task addCourse(String courseName, string ID);
+       /* void DeleteItem();
         void EditItem();
         String GetItems();
-        String GetItem();
+        String GetItem();*/
     }
 }
