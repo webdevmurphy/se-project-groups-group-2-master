@@ -21,7 +21,7 @@ namespace group2Project.Models
         public Course()
         {
             Random rand = new Random();
-            this.Id = "Course1";
+            this.Id = rand.Next(100,999).ToString();
             questions = new List<Question>();
         }
 
@@ -29,7 +29,7 @@ namespace group2Project.Models
         public Course(String courseName)
         {
             Random rand = new Random();
-            this.Id = "Course1";
+            this.Id = (rand.Next(100, 999)).ToString();
             SetCourseName(courseName);
             this.questions = new List<Question>();
         }

@@ -24,6 +24,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mapView));
             this.picGrid = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picGrid)).BeginInit();
             this.SuspendLayout();
@@ -34,6 +35,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.picGrid.BackColor = System.Drawing.Color.White;
+            this.picGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picGrid.BackgroundImage")));
             this.picGrid.Location = new System.Drawing.Point(18, 19);
             this.picGrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picGrid.Name = "picGrid";

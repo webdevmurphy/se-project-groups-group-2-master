@@ -42,13 +42,23 @@ namespace group2Project.Views
         [STAThread]
         private void button1_Click(object sender, EventArgs e)
         {
-            Form CourseGrid = new CourseGrid();
-            CourseGrid.Show();
+            String Course;
+            // Form CourseGrid = new CourseGrid();
+            CourseGrid example = new CourseGrid();
+            example.Show();
+            //should talk about which of these is the best way to access CourseGrid and any functions in it
+            Course = example.SelectedCourses(); //we need to pass the selected course from courseGrid to the listbox on this newGame form. I'm not really sure how to do it yet
+            
         }
 
         private void NumberOfPlayersTextBox_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void NewGame_Enter(object sender, EventArgs e)
+        {
+            Console.WriteLine("hey");
         }
     }
 }

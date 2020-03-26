@@ -16,6 +16,7 @@ namespace group2Project.Views
     {
         private CourseManager courseList;
         private ListView listViewCourses;
+        public String selectedCourse;
         public CourseGrid()
         {
             listViewCourses = new ListView();
@@ -87,7 +88,17 @@ namespace group2Project.Views
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
+
+            selectedCourse = listViewCourses.FocusedItem.Text;
+            Console.WriteLine(selectedCourse);
+            
             //save the state of courses and return to the previous form
+        }
+
+        public string SelectedCourses()
+        {
+            return selectedCourse;
+            //need to pass this to NewGame.cs
         }
     }
 }

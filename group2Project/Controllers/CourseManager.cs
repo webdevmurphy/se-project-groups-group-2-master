@@ -77,7 +77,7 @@ namespace group2Project.Controllers
             for (int i = 0; i < courseList.Count(); i++)
             {
                 Console.WriteLine(courseList[i].GetCourseName(), courseList[i].GetID());
-                await cosmosDB.addCourse(courseList[i].GetCourseName(), courseList[i].GetID());
+             //   await cosmosDB.addCourse(courseList[i].GetCourseName(), courseList[i].GetID());
             }
         }
     }
