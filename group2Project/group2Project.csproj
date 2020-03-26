@@ -273,6 +273,7 @@
     <Compile Include="DataConnection\CosmosConnection.cs" />
     <Compile Include="Interfaces\database\TriviaPlayerInterface.cs" />
     <Compile Include="Interfaces\database\ManagerInterface.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Models\triviaPlayer.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
