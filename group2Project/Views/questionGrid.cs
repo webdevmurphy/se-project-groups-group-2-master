@@ -23,6 +23,11 @@ namespace group2Project.Views
             UpdateQuestion.Show();
         }
 
+        public void addQuestion(String Question, String Answer)
+        {
+            QuestionRecords.Rows.Add(new string[] { Question, Answer });
+            //need to add course to this as well so that questions can be specifically pulled
+        }
         private void CancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();

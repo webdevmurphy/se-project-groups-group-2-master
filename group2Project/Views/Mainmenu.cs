@@ -63,5 +63,11 @@ namespace group2Project.Views
                 
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Questions question = new Questions();
+            question.Show();
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace group2Project.Views
 {
     public partial class Questions : Form
     {
+        questionGrid questionList = new questionGrid();
         public Questions()
         {
             InitializeComponent();
@@ -20,8 +21,7 @@ namespace group2Project.Views
 
         private void ViewBtn_Click(object sender, EventArgs e)
         {
-            Form questionGrid = new questionGrid();
-            questionGrid.Show();
+            questionList.Show();
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
@@ -40,6 +40,7 @@ namespace group2Project.Views
             }*/
             QuestionTxtBox.Text = "";
             AnserTxtBox.Text = "";
+            questionList.addQuestion(Question, Answer);
             MessageBox.Show("Trivia Added");
         }
     }

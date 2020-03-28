@@ -33,6 +33,8 @@
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.CancelBtn = new System.Windows.Forms.Button();
             this.QuestionRecords = new System.Windows.Forms.DataGridView();
+            this.Question = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Answer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QuestionRecords)).BeginInit();
             this.SuspendLayout();
@@ -89,11 +91,26 @@
             // 
             this.QuestionRecords.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.QuestionRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.QuestionRecords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Question,
+            this.Answer});
             this.QuestionRecords.Location = new System.Drawing.Point(0, 8);
             this.QuestionRecords.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.QuestionRecords.Name = "QuestionRecords";
             this.QuestionRecords.Size = new System.Drawing.Size(929, 636);
             this.QuestionRecords.TabIndex = 0;
+            // 
+            // Question
+            // 
+            this.Question.HeaderText = "Question";
+            this.Question.Name = "Question";
+            this.Question.ReadOnly = true;
+            // 
+            // Answer
+            // 
+            this.Answer.HeaderText = "Answer";
+            this.Answer.Name = "Answer";
+            this.Answer.ReadOnly = true;
             // 
             // questionGrid
             // 
@@ -120,5 +137,7 @@
         private System.Windows.Forms.Button UpdateBtn;
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Button CancelBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Question;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Answer;
     }
 }

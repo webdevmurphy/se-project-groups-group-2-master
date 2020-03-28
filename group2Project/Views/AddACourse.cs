@@ -23,18 +23,6 @@ namespace group2Project.Views
             InitializeComponent();
         }
 
-       /* public CreateCourse(CourseList courseList)
-        {
-            InitializeComponent();
-        }*/
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            string name = sender.ToString();
-            course = new Course(name);
-
-        }
-
         private void CancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();

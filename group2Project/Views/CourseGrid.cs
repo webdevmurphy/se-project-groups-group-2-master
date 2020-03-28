@@ -77,14 +77,6 @@ namespace group2Project.Views
 
         }
 
-        //Should check and see if a box is checked. If trying to check a new box, uncheck any checked boxes.
-        private void listViewCourses_ItemChecked(Object sender, ItemCheckedEventArgs e)
-        {
-            foreach (var checkBox in listViewCourses.Items)
-            {
-                
-            }
-        }
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {

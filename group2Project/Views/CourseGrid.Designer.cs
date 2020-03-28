@@ -80,6 +80,7 @@
             this.listViewCourses.GridLines = true;
             this.listViewCourses.HideSelection = false;
             this.listViewCourses.Location = new System.Drawing.Point(179, 113);
+            this.listViewCourses.MultiSelect = false;
             this.listViewCourses.Name = "listViewCourses";
             this.listViewCourses.RightToLeftLayout = true;
             this.listViewCourses.ShowItemToolTips = true;
