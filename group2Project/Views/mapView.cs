@@ -16,9 +16,11 @@ namespace group2Project.Views
 {
     public partial class mapView : Form
     {
-        public mapView()
+        public mapView(int NumOfPlayers, String Course)
         {
             InitializeComponent();
+            Console.WriteLine(NumOfPlayers);
+            Console.WriteLine(Course);
         }
 
         // The height of a hexagon.

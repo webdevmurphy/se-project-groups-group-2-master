@@ -91,7 +91,7 @@ namespace group2Project.Views
 
             selectedCourse = listViewCourses.FocusedItem.Text;
             Console.WriteLine(selectedCourse);
-            
+            this.Close();
             //save the state of courses and return to the previous form
         }
 
