@@ -34,7 +34,7 @@
             this.CancelButton = new System.Windows.Forms.Button();
             this.StartButton = new System.Windows.Forms.Button();
             this.NewGameLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ChooseCourseBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NumberOfPlayersLabel
@@ -94,22 +94,22 @@
             this.NewGameLabel.TabIndex = 6;
             this.NewGameLabel.Text = "New Game";
             // 
-            // button1
+            // ChooseCourseBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(142, 169);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 39);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Choose A Course";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ChooseCourseBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChooseCourseBtn.Location = new System.Drawing.Point(142, 169);
+            this.ChooseCourseBtn.Name = "ChooseCourseBtn";
+            this.ChooseCourseBtn.Size = new System.Drawing.Size(158, 39);
+            this.ChooseCourseBtn.TabIndex = 7;
+            this.ChooseCourseBtn.Text = "Choose A Course";
+            this.ChooseCourseBtn.UseVisualStyleBackColor = true;
+            this.ChooseCourseBtn.Click += new System.EventHandler(this.ChooseCourseBtnClk);
             // 
             // NewGame
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(723, 348);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ChooseCourseBtn);
             this.Controls.Add(this.NewGameLabel);
             this.Controls.Add(this.StartButton);
             this.Controls.Add(this.CancelButton);
@@ -134,6 +134,6 @@
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Label NewGameLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ChooseCourseBtn;
     }
 }

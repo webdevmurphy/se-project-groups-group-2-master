@@ -31,24 +31,25 @@ namespace group2Project.Views
             /*
              * Start game and show map
              */
+            this.Hide();
             mapView map = new mapView(numPlayers, Course);
-            map.Show();
-            this.Close();
+            map.ShowDialog();
+            this.Show();
         }
 
         private void CancelButton_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            this.DialogResult = DialogResult.OK;
         }
 
-        [STAThread]
-        private void button1_Click(object sender, EventArgs e)
+        private void ChooseCourseBtnClk(object sender, EventArgs e)
         {
             // Form CourseGrid = new CourseGrid();
+            this.Hide();
             CourseGrid example = new CourseGrid();
             example.ShowDialog();
-            Course = example.SelectedCourses(); 
-            CourseBox.Items.Add(Course);
+            this.Show();
+            
         }
 
         private void NumberOfPlayersTextBox_TextChanged(object sender, EventArgs e)

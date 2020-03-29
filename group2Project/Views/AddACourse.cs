@@ -15,30 +15,28 @@ namespace group2Project.Views
 {
     public partial class AddACourse : Form
     {
+        private CourseGrid courseGrid;
         Course course;
         CourseManager courseList;
 
-        public AddACourse()
+
+        public AddACourse(CourseGrid courseGrid)
         {
+            this.courseGrid = courseGrid;
             InitializeComponent();
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.DialogResult = DialogResult.OK;
         }
 
         private void SubmitBtn_Click(object sender, EventArgs e)
         {
-            string courseName;
-            courseName = textBox1.Text;
-            Course c = new Course(courseName);
-            
+            CourseManager.AddCourse(new Course(textBox1.Text));
+            CourseManager.ShowCourses();
+            courseGrid.UpdateCourses();
             textBox1.Text = "";
-           /* CosmosConnection aNew = new CosmosConnection();
-            {
-                aNew.addCourse(courseName);
-            }*/
             MessageBox.Show("Course added");
         }
     }

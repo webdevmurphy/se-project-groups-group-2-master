@@ -12,8 +12,8 @@ namespace group2Project.Controllers
     {
         //Private list to hold all the courses. Should be pulled from DB
         //Needs to be instantiated at the start of the application.
-        private List<Course> courseList;
-        private CosmosConnection cosmosDB;
+        private static List<Course> courseList;
+        private static CosmosConnection cosmosDB;
 
         //Default Constructor
         public CourseManager()
@@ -22,14 +22,26 @@ namespace group2Project.Controllers
             InitializeCourseList();
         }
 
+        public static void ShowCourses()
+        {
+            if(courseList.Count() == null)
+            {
+                Console.WriteLine("Empty");
+            } else
+            for(int i = 0; i < courseList.Count(); i++)
+            {
+                Console.WriteLine(courseList[i].GetCourseName() + " " + courseList[i].GetID()); ;
+            }
+        }
+
         //Add a course to the list
-        public void AddCourse(Course c)
+        public static void AddCourse(Course c)
         {
             courseList.Add(c);
         }
 
         //Delete a course from the list
-        public void DeleteCourse(Course c)
+        public static void DeleteCourse(Course c)
         {
             if(courseList.Contains(c))
             {
@@ -38,13 +50,13 @@ namespace group2Project.Controllers
         }
 
         //Returns all the courses from the list
-        public List<Course> GetCourses()
+        public static List<Course> GetCourses()
         {
-            return this.courseList;
+            return courseList;
         }
 
         //Returns a specific course from the list
-        public Course GetCourse(Course c)
+        public static Course GetCourse(Course c)
         {
             if (courseList.Contains(c))
             {
@@ -67,7 +79,7 @@ namespace group2Project.Controllers
 
             //This is purely for testing purposes for getting the courses to display
             //Actual courses will be pulled from the database
-            courseList.Add(new Course("Physics", "123"));
+            CourseManager.AddCourse(new Course("Physics", "123"));
             courseList.Add(new Course("History"));
             courseList.Add(new Course("Science"));
             courseList.Add(new Course("English"));

@@ -14,26 +14,30 @@ namespace group2Project.Views
 {
     public partial class CourseGrid : Form
     {
-        private CourseManager courseList;
         private ListView listViewCourses;
+        private List<Course> courses;
+        private CourseManager courseManager;
         public String selectedCourse;
         public CourseGrid()
         {
+            courseManager = new CourseManager();
             listViewCourses = new ListView();
-            courseList = new CourseManager();
+            courses = CourseManager.GetCourses();
             InitializeComponent();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
             listViewCourses.Dispose();
-            this.Close();
+            this.DialogResult = DialogResult.OK;
         }
 
         private void AddCourseBtn_Click(object sender, EventArgs e)
         {
-            AddACourse createCourse = new AddACourse();
-            createCourse.Show();
+            this.Hide();
+            AddACourse createCourse = new AddACourse(this);
+            createCourse.ShowDialog();
+            this.Show();
         }
 
         private void CourseGrid_Load(object sender, EventArgs e)
@@ -56,9 +60,6 @@ namespace group2Project.Views
             //Allow User to select only one item
             listViewCourses.MultiSelect = false;
 
-            courseList = new CourseManager();
-            List<Course> courses = courseList.GetCourses();
-
             foreach (var course in courses)
             {
                 var courseRow = new string[] { course.GetCourseName()};
@@ -75,6 +76,24 @@ namespace group2Project.Views
 
             this.Controls.Add(listViewCourses);
 
+        }
+
+        public void UpdateCourses()
+        {
+            listViewCourses.Items.Clear();
+            foreach (var course in courses)
+            {
+                var courseRow = new string[] { course.GetCourseName() };
+                var lvi = new ListViewItem(courseRow);
+                Console.WriteLine(courseRow);
+                //Add the whole object to the Tag property
+                //to later display details about the item
+                lvi.Tag = course;
+                //Initially box is not checked
+                lvi.Checked = false;
+                //Add item to list view
+                listViewCourses.Items.Add(lvi);
+            }
         }
 
 

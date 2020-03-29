@@ -20,20 +20,27 @@ namespace group2Project.Views
 
         private void NewGameBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
             NewGame newGame = new NewGame();
-            newGame.Show();
+            newGame.ShowDialog();
+            this.Show();
         }
 
         private void CoursesBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
             CourseGrid courseGrid = new CourseGrid();
-            courseGrid.Show();
+            courseGrid.ShowDialog();
+            this.Show();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             about about = new about();
-            about.Show();
+            about.ShowDialog();
+            this.Show();
         }
 
         private void MainMenuHeaderText_TextChanged(object sender, EventArgs e)
@@ -66,8 +73,10 @@ namespace group2Project.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Questions question = new Questions();
-            question.Show();
+            question.ShowDialog();
+            this.Show();
         }
     }
 }
