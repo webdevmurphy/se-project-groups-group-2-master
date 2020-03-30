@@ -268,7 +268,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\LoginManager.cs" />
+    <Compile Include="Controllers\AccountManager.cs" />
     <Compile Include="Controllers\QuestionManager.cs" />
     <Compile Include="Controllers\CourseManager.cs" />
     <Compile Include="DataConnection\CosmosConnection.cs" />

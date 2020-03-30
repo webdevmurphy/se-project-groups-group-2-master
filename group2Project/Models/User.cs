@@ -10,12 +10,21 @@ namespace group2Project.Models
     public class User
     {
         public string userName { get; set; }
-        public string password { get; set; }
-        public Boolean isTeacher { get; set; }
+        public string password;
+        public Boolean isTeacher = false;
+
+        private List<Course> CurrentCourses;
 
         public User()
         {
+            this.userName = "";
+            this.password = "";
+        }
 
+        public User(string username, string password)
+        {
+            this.userName = username;
+            this.password = password;
         }
 
         public override string ToString()

@@ -8,22 +8,27 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using group2Project.Models;
 
 namespace group2Project.Views
 {
     public partial class NewGame : Form
     {
         private int numPlayers;
-        private String Course;
+        private Course course;
+        private Label SelectedCourseLabel;
 
         public NewGame()
         {
+            course = new Course();
+            SelectedCourseLabel = new Label();
             InitializeComponent();
         }
 
         private void NewGame_Load_1(object sender, EventArgs e)
         {
-
+            this.Update();
+            SelectedCourseLabel.Text = course.GetCourseName();
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -32,7 +37,7 @@ namespace group2Project.Views
              * Start game and show map
              */
             this.Hide();
-            mapView map = new mapView(numPlayers, Course);
+            mapView map = new mapView(numPlayers, course.GetCourseName());
             map.ShowDialog();
             this.Show();
         }
@@ -65,5 +70,6 @@ namespace group2Project.Views
         { 
             Console.WriteLine("hey");
         }
+
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace group2Project.Views
+﻿using System;
+
+namespace group2Project.Views
 {
     partial class CourseGrid
     {
@@ -75,6 +77,7 @@
             // 
             this.listViewCourses.AllowColumnReorder = true;
             this.listViewCourses.AllowDrop = true;
+            this.listViewCourses.CheckBoxes = true;
             this.listViewCourses.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewCourses.FullRowSelect = true;
             this.listViewCourses.GridLines = true;
@@ -87,6 +90,8 @@
             this.listViewCourses.Size = new System.Drawing.Size(465, 368);
             this.listViewCourses.TabIndex = 4;
             this.listViewCourses.UseCompatibleStateImageBehavior = false;
+            this.listViewCourses.SelectedIndexChanged += new System.EventHandler(this.listViewCourses_SelectedIndexChanged);
+            //listViewCourses.ItemCheck += new EventHandler(listViewCourses_ItemCheck1);
             // 
             // SubmitButton
             // 

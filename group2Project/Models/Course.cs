@@ -12,6 +12,7 @@ namespace group2Project.Models
 
         private String courseName;
         private List<Question> questions;
+        
 
 
         public string Id;
@@ -21,6 +22,7 @@ namespace group2Project.Models
         public Course()
         {
             Random rand = new Random();
+            this.name = "";
             this.Id = rand.Next(100,999).ToString();
             questions = new List<Question>();
         }

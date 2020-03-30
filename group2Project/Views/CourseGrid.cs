@@ -18,14 +18,16 @@ namespace group2Project.Views
         private List<Course> courses;
         private CourseManager courseManager;
         public String selectedCourse;
+
+        CheckBox lastChecked;
         public CourseGrid()
-        {
+        {           
             courseManager = new CourseManager();
             listViewCourses = new ListView();
             courses = CourseManager.GetCourses();
-            InitializeComponent();
+            lastChecked = new CheckBox();
+            InitializeComponent();         
         }
-
         private void CancelButton_Click(object sender, EventArgs e)
         {
             listViewCourses.Dispose();
@@ -110,6 +112,29 @@ namespace group2Project.Views
         {
             return selectedCourse;
             //need to pass this to NewGame.cs
+        }
+
+        private void listViewCourses_ItemCheck1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listViewCourses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CheckBox activeCheckBox = sender as CheckBox;
+            foreach (var course in courses)
+            {
+                var courseRow = new string[] { course.GetCourseName() };
+                var lvi = new ListViewItem(courseRow);
+                Boolean currentCheck = lvi.Checked;
+                Boolean newCheck;
+                if(currentCheck)
+                {
+                    lvi.Checked = false;
+                }
+            }
+            if (activeCheckBox != lastChecked && lastChecked != null) lastChecked.Checked = false;
+            lastChecked = activeCheckBox.Checked ? activeCheckBox : null;
         }
     }
 }

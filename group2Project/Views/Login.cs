@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using group2Project.CosmosDemo;
+using group2Project.Models;
+using group2Project.Controllers;
 
 namespace group2Project.Views
 {
     public partial class Login : Form
     {
+        private AccountManager AC;
         public Login()
         {
             InitializeComponent();
@@ -57,48 +60,24 @@ namespace group2Project.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            string username = textBox1.Text;
-            Console.WriteLine(username);
-            string password = textBox2.Text;
-            Console.WriteLine(password);
-
-            //test with username: lisa@gmail.com
-            //password: 1234
-            //and you will see it query the database and return the results.
-
-            CosmosConnection aNew = new CosmosConnection();
-            aNew.getPassword( username, password);
             
-            Boolean loginInfo = true;
-
-            do
-            {
-              
-                //I wanted this to be noisy, just to make sure the textboxes were getting info, and to watch database output.
-                //I removed the database calls from here until I get it working.
-  
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("*****************************************************");
-            Console.WriteLine("TEXT BOX SUBMISSION");
-            Console.WriteLine("*****************************************************");
-
+            string username = textBox1.Text;
+            string password = textBox2.Text;
             Console.WriteLine(username);
             Console.WriteLine(password);
 
-            Console.WriteLine("***END TEXT BOX**************************************");
-            Console.WriteLine();
-            Console.WriteLine();
+            var user = new User(username, password);
+            var AC = new AccountManager(user);
+            
 
-            if (String.IsNullOrEmpty(textBox1.Text) || String.IsNullOrEmpty(textBox2.Text))
-                {
-                    MessageBox.Show("Username or Password is blank, Please try again.");
-                   // loginInfo = false;
-                    return;
-                }
 
-            } while (loginInfo != true);
+            if (AC.Login(username, password))
+            {
+                Console.WriteLine("LOGIN SUCCESSFUL");
+            } else
+            {
+                Console.WriteLine("LOGIN FAILED");
+            }
 
             this.Hide();
             Mainmenu menu1 = new Mainmenu();

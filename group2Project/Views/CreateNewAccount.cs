@@ -42,17 +42,6 @@ namespace group2Project.Views
 
             }
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            firstName = textBox1.Text;
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            lastName = textBox2.Text;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             var Id = lastName + "." + 1;
@@ -71,24 +60,19 @@ namespace group2Project.Views
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void UserName_TextChanged(object sender, EventArgs e)
         {
             userName = textBox3.Text;
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void Password_TextChanged(object sender, EventArgs e)
         {
              password = textBox4.Text;
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        private void ConfirmPassword_TextChanged(object sender, EventArgs e)
         {
             confirmPassword = textBox5.Text;
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-             phoneNumber = textBox6.Text;
         }
     }
 }

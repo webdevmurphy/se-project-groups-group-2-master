@@ -30,11 +30,11 @@
         {
             this.NumberOfPlayersLabel = new System.Windows.Forms.Label();
             this.NumberOfPlayersTextBox = new System.Windows.Forms.TextBox();
-            this.CourseBox = new System.Windows.Forms.ListBox();
             this.CancelButton = new System.Windows.Forms.Button();
             this.StartButton = new System.Windows.Forms.Button();
             this.NewGameLabel = new System.Windows.Forms.Label();
             this.ChooseCourseBtn = new System.Windows.Forms.Button();
+            this.SelectedCourse = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // NumberOfPlayersLabel
@@ -53,15 +53,6 @@
             this.NumberOfPlayersTextBox.Size = new System.Drawing.Size(120, 29);
             this.NumberOfPlayersTextBox.TabIndex = 1;
             this.NumberOfPlayersTextBox.TextChanged += new System.EventHandler(this.NumberOfPlayersTextBox_TextChanged);
-            // 
-            // CourseBox
-            // 
-            this.CourseBox.FormattingEnabled = true;
-            this.CourseBox.ItemHeight = 21;
-            this.CourseBox.Location = new System.Drawing.Point(352, 169);
-            this.CourseBox.Name = "CourseBox";
-            this.CourseBox.Size = new System.Drawing.Size(120, 88);
-            this.CourseBox.TabIndex = 3;
             // 
             // CancelButton
             // 
@@ -105,15 +96,24 @@
             this.ChooseCourseBtn.UseVisualStyleBackColor = true;
             this.ChooseCourseBtn.Click += new System.EventHandler(this.ChooseCourseBtnClk);
             // 
+            // label2
+            // 
+            this.SelectedCourse.AutoSize = true;
+            this.SelectedCourse.Location = new System.Drawing.Point(348, 169);
+            this.SelectedCourse.Name = "SelectedCourseLabel";
+            this.SelectedCourse.Size = new System.Drawing.Size(52, 21);
+            this.SelectedCourse.TabIndex = 8;
+            this.SelectedCourse.Text = "";
+            // 
             // NewGame
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(723, 348);
+            this.Controls.Add(this.SelectedCourse);
             this.Controls.Add(this.ChooseCourseBtn);
             this.Controls.Add(this.NewGameLabel);
             this.Controls.Add(this.StartButton);
             this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.CourseBox);
             this.Controls.Add(this.NumberOfPlayersTextBox);
             this.Controls.Add(this.NumberOfPlayersLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,10 +130,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label NumberOfPlayersLabel;
         private System.Windows.Forms.TextBox NumberOfPlayersTextBox;
-        private System.Windows.Forms.ListBox CourseBox;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Label NewGameLabel;
         private System.Windows.Forms.Button ChooseCourseBtn;
+        private System.Windows.Forms.Label SelectedCourse;
     }
 }
