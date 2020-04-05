@@ -31,7 +31,9 @@ namespace group2Project
             {
                 try
                 {
-                    Application.Run(new Login());
+                    Course c = new Course();
+                    Application.Run(new QuizGame());
+                    //Application.Run(new Login());
                 }
                 catch (Exception e)
                 {

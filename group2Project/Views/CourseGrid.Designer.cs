@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace group2Project.Views
 {
@@ -90,8 +91,8 @@ namespace group2Project.Views
             this.listViewCourses.Size = new System.Drawing.Size(465, 368);
             this.listViewCourses.TabIndex = 4;
             this.listViewCourses.UseCompatibleStateImageBehavior = false;
-            this.listViewCourses.SelectedIndexChanged += new System.EventHandler(this.listViewCourses_SelectedIndexChanged);
-            //listViewCourses.ItemCheck += new EventHandler(listViewCourses_ItemCheck1);
+           // this.listViewCourses.SelectedIndexChanged += new System.EventHandler(this.listViewCourses_SelectedIndexChanged);
+            this.listViewCourses.ItemCheck += new ItemCheckEventHandler(this.listViewCourses_ItemCheck1);
             // 
             // SubmitButton
             // 

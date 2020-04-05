@@ -269,11 +269,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountManager.cs" />
+    <Compile Include="Controllers\QuizManager.cs" />
     <Compile Include="Controllers\QuestionManager.cs" />
     <Compile Include="Controllers\CourseManager.cs" />
     <Compile Include="DataConnection\CosmosConnection.cs" />
     <Compile Include="Interfaces\database\TriviaPlayerInterface.cs" />
     <Compile Include="Interfaces\database\ManagerInterface.cs" />
+    <Compile Include="Models\Quiz.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\triviaPlayer.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -292,6 +294,12 @@
     </Compile>
     <Compile Include="Views\CreateNewAccount.Designer.cs">
       <DependentUpon>CreateNewAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuizGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuizGame.Designer.cs">
+      <DependentUpon>QuizGame.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
@@ -392,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Questions.resx">
       <DependentUpon>Questions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuizGame.resx">
+      <DependentUpon>QuizGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UpdateQuestion.resx">
       <DependentUpon>UpdateQuestion.cs</DependentUpon>

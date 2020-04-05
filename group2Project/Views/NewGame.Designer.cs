@@ -35,6 +35,7 @@
             this.NewGameLabel = new System.Windows.Forms.Label();
             this.ChooseCourseBtn = new System.Windows.Forms.Button();
             this.SelectedCourse = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // NumberOfPlayersLabel
@@ -88,7 +89,7 @@
             // ChooseCourseBtn
             // 
             this.ChooseCourseBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChooseCourseBtn.Location = new System.Drawing.Point(142, 169);
+            this.ChooseCourseBtn.Location = new System.Drawing.Point(141, 164);
             this.ChooseCourseBtn.Name = "ChooseCourseBtn";
             this.ChooseCourseBtn.Size = new System.Drawing.Size(158, 39);
             this.ChooseCourseBtn.TabIndex = 7;
@@ -96,19 +97,29 @@
             this.ChooseCourseBtn.UseVisualStyleBackColor = true;
             this.ChooseCourseBtn.Click += new System.EventHandler(this.ChooseCourseBtnClk);
             // 
-            // label2
+            // SelectedCourse
             // 
             this.SelectedCourse.AutoSize = true;
             this.SelectedCourse.Location = new System.Drawing.Point(348, 169);
-            this.SelectedCourse.Name = "SelectedCourseLabel";
-            this.SelectedCourse.Size = new System.Drawing.Size(52, 21);
+            this.SelectedCourse.Name = "SelectedCourse";
+            this.SelectedCourse.Size = new System.Drawing.Size(0, 21);
             this.SelectedCourse.TabIndex = 8;
-            this.SelectedCourse.Text = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(348, 182);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(154, 21);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "SelectedCourseLabel";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // NewGame
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(723, 348);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.SelectedCourse);
             this.Controls.Add(this.ChooseCourseBtn);
             this.Controls.Add(this.NewGameLabel);
@@ -135,5 +146,6 @@
         private System.Windows.Forms.Label NewGameLabel;
         private System.Windows.Forms.Button ChooseCourseBtn;
         private System.Windows.Forms.Label SelectedCourse;
+        private System.Windows.Forms.Label label2;
     }
 }

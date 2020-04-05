@@ -7,13 +7,12 @@ using Newtonsoft.Json;
 
 namespace group2Project.Models
 {
-    class Course
+    public class Course
     {
 
         private String courseName;
         private List<Question> questions;
-        
-
+        private Boolean isSelected;
 
         public string Id;
         public string name { get; set; }
@@ -23,7 +22,7 @@ namespace group2Project.Models
         {
             Random rand = new Random();
             this.name = "";
-            this.Id = rand.Next(100,999).ToString();
+            this.Id = rand.Next(100, 999).ToString();
             questions = new List<Question>();
         }
 
@@ -32,8 +31,7 @@ namespace group2Project.Models
         {
             Random rand = new Random();
             this.Id = (rand.Next(100, 999)).ToString();
-            SetCourseName(courseName);
-            this.questions = new List<Question>();
+            SetCourseName(courseName);            this.questions = new List<Question>();
         }
 
         //overloaded constructor with name and ID.
@@ -44,8 +42,17 @@ namespace group2Project.Models
             this.questions = new List<Question>();
         }
 
+        //overloaded constructor with name and Questions.
+        public Course(String courseName, List<Question> Questions)
+        {
+            this.courseName = courseName;
+            Random rand = new Random();
+            this.Id = (rand.Next(100, 999)).ToString();
+            this.questions = Questions;
+        }
+
         //Fully overloaded constructor
-        public Course(String courseName, string ID, List<Question>Questions)
+        public Course(String courseName, string ID, List<Question> Questions)
         {
             this.courseName = courseName;
             this.Id = ID;
@@ -64,13 +71,26 @@ namespace group2Project.Models
         }
 
         //////getters and setters only below this line//////
-        public String GetCourseName() { return this.courseName;  }
+        public String GetCourseName() { return this.courseName; }
         public string GetID() { return this.Id; }
-        public List<Question> GetQuestions() { return this.questions; }
+        public List<Question> GetQuestions() {
+            if (this.questions != null)
+            {
+                return this.questions;
+            }
+            else 
+            {
+                return null;
+            }                     
+        }
+
+        public Boolean GetIsSelected() { return this.isSelected; }
         public void SetCourseName(String coursename) { courseName = coursename; }
         public void SetID(string ID) { this.Id = ID; }
-        public void SetQuestionList(List<Question> questions) { this.questions = questions;  }
-        
+        public void SetQuestionList(List<Question> questions) { this.questions = questions; }
+
+        public void SetIsSelected(Boolean IsSelected) { this.isSelected = IsSelected; }
+
         /*public String getFirstName() { return this.firstName; }
         public String getLastName() { return this.lastName; }
         public String getUserName() { return this.userName; }

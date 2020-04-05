@@ -79,7 +79,9 @@ namespace group2Project.Controllers
 
             //This is purely for testing purposes for getting the courses to display
             //Actual courses will be pulled from the database
+
             CourseManager.AddCourse(new Course("Physics", "123"));
+            Question q = new Question("This is a test");
             courseList.Add(new Course("History"));
             courseList.Add(new Course("Science"));
             courseList.Add(new Course("English"));
@@ -88,8 +90,9 @@ namespace group2Project.Controllers
             Console.WriteLine(courseList);
             for (int i = 0; i < courseList.Count(); i++)
             {
+                courseList[i].AddQuestion(q);
                 Console.WriteLine(courseList[i].GetCourseName(), courseList[i].GetID());
-             //   await cosmosDB.addCourse(courseList[i].GetCourseName(), courseList[i].GetID());
+                await cosmosDB.addCourse(courseList[i].GetCourseName(), courseList[i].GetID());
             }
         }
     }

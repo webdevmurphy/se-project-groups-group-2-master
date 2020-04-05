@@ -14,6 +14,8 @@ namespace group2Project.Views
 {
     public partial class CourseGrid : Form
     {
+        private NewGame newGame;
+
         private ListView listViewCourses;
         private List<Course> courses;
         private CourseManager courseManager;
@@ -28,6 +30,17 @@ namespace group2Project.Views
             lastChecked = new CheckBox();
             InitializeComponent();         
         }
+
+        public CourseGrid(NewGame newGame)
+        {
+            this.newGame = newGame;
+            courseManager = new CourseManager();
+            listViewCourses = new ListView();
+            courses = CourseManager.GetCourses();
+            lastChecked = new CheckBox();
+            InitializeComponent();
+        }
+
         private void CancelButton_Click(object sender, EventArgs e)
         {
             listViewCourses.Dispose();
@@ -103,6 +116,19 @@ namespace group2Project.Views
         {
 
             selectedCourse = listViewCourses.FocusedItem.Text;
+            List<Course> courses = CourseManager.GetCourses();
+            for(int i = 0; i < courses.Count(); i++)
+            {
+                if(selectedCourse == courses[i].GetCourseName())
+                {
+                    courses[i].SetIsSelected(true);
+                }
+                if (newGame != null)
+                {
+                    newGame.UpdateCourse(courses[i]);
+                }
+            }
+            
             Console.WriteLine(selectedCourse);
             this.Close();
             //save the state of courses and return to the previous form
@@ -114,12 +140,23 @@ namespace group2Project.Views
             //need to pass this to NewGame.cs
         }
 
-        private void listViewCourses_ItemCheck1(object sender, EventArgs e)
+        private ListViewItem lastItemChecked;
+        private void listViewCourses_ItemCheck1(object sender, ItemCheckEventArgs e)
         {
+            // if we have the lastItem set as checked, and it is different
+            // item than the one that fired the event, uncheck it
+            if (lastItemChecked != null && lastItemChecked.Checked
+                && lastItemChecked != listViewCourses.Items[e.Index])
+            {
+                // uncheck the last item and store the new one
+                lastItemChecked.Checked = false;
+            }
 
+            // store current item
+            lastItemChecked = listViewCourses.Items[e.Index];
         }
 
-        private void listViewCourses_SelectedIndexChanged(object sender, EventArgs e)
+/*        private void listViewCourses_SelectedIndexChanged(object sender, EventArgs e)
         {
             CheckBox activeCheckBox = sender as CheckBox;
             foreach (var course in courses)
@@ -135,6 +172,6 @@ namespace group2Project.Views
             }
             if (activeCheckBox != lastChecked && lastChecked != null) lastChecked.Checked = false;
             lastChecked = activeCheckBox.Checked ? activeCheckBox : null;
-        }
+        }*/
     }
 }
