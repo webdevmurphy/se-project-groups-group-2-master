@@ -19,8 +19,10 @@ namespace group2Project.Views
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            Form UpdateQuestion = new UpdateQuestion();
-            UpdateQuestion.Show();
+            UpdateQuestion UpdateTrivia = new UpdateQuestion(QuestionRecords.SelectedRows[0].Cells[0].Value.ToString(), this.QuestionRecords.SelectedRows[0].Cells[1].Value.ToString());
+            UpdateTrivia.ShowDialog();
+           QuestionRecords.SelectedRows[0].Cells[0].Value =  UpdateTrivia.ReturnQuestion();
+            QuestionRecords.SelectedRows[0].Cells[1].Value = UpdateTrivia.ReturnAnswer();
         }
 
         public void addQuestion(String Question, String Answer)
@@ -31,6 +33,14 @@ namespace group2Project.Views
         private void CancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            if (QuestionRecords.SelectedRows.Count > 0)
+            {
+                QuestionRecords.Rows.RemoveAt(QuestionRecords.SelectedRows[0].Index);
+            }
         }
     }
 }
