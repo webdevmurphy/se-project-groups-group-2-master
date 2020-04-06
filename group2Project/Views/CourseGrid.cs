@@ -142,14 +142,14 @@ namespace group2Project.Views
                 }
                 else
                 {
+                    this.Hide();
                     questionGrid = new questionGrid(this);
-                    questionGrid.Show();
+                    questionGrid.ShowDialog();
+                    this.Show();
                     break;
                 }
             }
             //I'm not sure this is working correctly, currently loops through all the courses and sets the label to each one if you look in code. eventually sets to null 
-
-
             Console.WriteLine(selectedCourse);
             this.Close();
             //save the state of courses and return to the previous form
@@ -176,23 +176,5 @@ namespace group2Project.Views
             // store current item
             lastItemChecked = listViewCourses.Items[e.Index];
         }
-
-/*        private void listViewCourses_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CheckBox activeCheckBox = sender as CheckBox;
-            foreach (var course in courses)
-            {
-                var courseRow = new string[] { course.GetCourseName() };
-                var lvi = new ListViewItem(courseRow);
-                Boolean currentCheck = lvi.Checked;
-                Boolean newCheck;
-                if(currentCheck)
-                {
-                    lvi.Checked = false;
-                }
-            }
-            if (activeCheckBox != lastChecked && lastChecked != null) lastChecked.Checked = false;
-            lastChecked = activeCheckBox.Checked ? activeCheckBox : null;
-        }*/
     }
 }

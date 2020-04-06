@@ -89,7 +89,7 @@
             // ChooseCourseBtn
             // 
             this.ChooseCourseBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChooseCourseBtn.Location = new System.Drawing.Point(141, 164);
+            this.ChooseCourseBtn.Location = new System.Drawing.Point(141, 161);
             this.ChooseCourseBtn.Name = "ChooseCourseBtn";
             this.ChooseCourseBtn.Size = new System.Drawing.Size(158, 39);
             this.ChooseCourseBtn.TabIndex = 7;
@@ -108,13 +108,13 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(348, 182);
+            this.label2.Location = new System.Drawing.Point(334, 169);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 21);
+            this.label2.Size = new System.Drawing.Size(146, 21);
             this.label2.TabIndex = 9;
-            this.label2.Text = "SelectedCourseLabel";
+            this.label2.Text = "No Course Selected";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Visible = false;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // NewGame
             // 

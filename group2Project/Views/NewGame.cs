@@ -81,10 +81,5 @@ namespace group2Project.Views
         { 
             Console.WriteLine("hey");
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

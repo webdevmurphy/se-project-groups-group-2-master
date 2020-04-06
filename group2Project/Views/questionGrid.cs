@@ -22,6 +22,7 @@ namespace group2Project.Views
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
+            //needs to be fixed
             UpdateQuestion UpdateTrivia = new UpdateQuestion(QuestionRecords.SelectedRows[0].Cells[0].Value.ToString(), this.QuestionRecords.SelectedRows[0].Cells[1].Value.ToString());
             UpdateTrivia.ShowDialog();
             QuestionRecords.SelectedRows[0].Cells[0].Value =  UpdateTrivia.ReturnQuestion();
