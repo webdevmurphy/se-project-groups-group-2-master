@@ -29,18 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.QuizTimer = new System.Windows.Forms.Timer(this.components);
+            this.quizTimer = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.questionLabel = new System.Windows.Forms.Label();
+            this.timerLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // quizTimer
+            // 
+            this.quizTimer.Interval = 1000;
+            this.quizTimer.Tick += new System.EventHandler(this.quizTimer_Tick);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.button1.Location = new System.Drawing.Point(176, 273);
+            this.button1.Location = new System.Drawing.Point(176, 211);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 66);
@@ -52,7 +59,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.button2.Location = new System.Drawing.Point(560, 273);
+            this.button2.Location = new System.Drawing.Point(560, 211);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 66);
@@ -85,27 +92,40 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label1
+            // questionLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F);
-            this.label1.Location = new System.Drawing.Point(217, 68);
-            this.label1.MaximumSize = new System.Drawing.Size(400, 150);
-            this.label1.MinimumSize = new System.Drawing.Size(400, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(400, 32);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "label1";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.questionLabel.AutoSize = true;
+            this.questionLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.questionLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.questionLabel.Location = new System.Drawing.Point(233, 78);
+            this.questionLabel.MaximumSize = new System.Drawing.Size(400, 150);
+            this.questionLabel.MinimumSize = new System.Drawing.Size(400, 0);
+            this.questionLabel.Name = "questionLabel";
+            this.questionLabel.Size = new System.Drawing.Size(400, 37);
+            this.questionLabel.TabIndex = 6;
+            this.questionLabel.Text = "label1";
+            this.questionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timerLabel
+            // 
+            this.timerLabel.AutoSize = true;
+            this.timerLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timerLabel.Location = new System.Drawing.Point(376, 221);
+            this.timerLabel.MinimumSize = new System.Drawing.Size(100, 0);
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Size = new System.Drawing.Size(100, 37);
+            this.timerLabel.TabIndex = 7;
+            this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // QuizGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(933, 588);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.timerLabel);
+            this.Controls.Add(this.questionLabel);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -122,11 +142,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Timer QuizTimer;
+        private System.Windows.Forms.Timer quizTimer;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label questionLabel;
+        private System.Windows.Forms.Label timerLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }

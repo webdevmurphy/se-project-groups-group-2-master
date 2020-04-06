@@ -19,7 +19,8 @@ namespace group2Project.Views
         private ListView listViewCourses;
         private List<Course> courses;
         private CourseManager courseManager;
-        public String selectedCourse;
+        private questionGrid questionGrid;
+        private String selectedCourse;
 
         CheckBox lastChecked;
         public CourseGrid()
@@ -34,6 +35,16 @@ namespace group2Project.Views
         public CourseGrid(NewGame newGame)
         {
             this.newGame = newGame;
+            courseManager = new CourseManager();
+            listViewCourses = new ListView();
+            courses = CourseManager.GetCourses();
+            lastChecked = new CheckBox();
+            InitializeComponent();
+        }
+
+        public CourseGrid(questionGrid qGrid)
+        {
+            this.questionGrid = qGrid;
             courseManager = new CourseManager();
             listViewCourses = new ListView();
             courses = CourseManager.GetCourses();
@@ -116,19 +127,29 @@ namespace group2Project.Views
         {
 
             selectedCourse = listViewCourses.FocusedItem.Text;
-          /*  List<Course> courses = CourseManager.GetCourses();
-            for(int i = 0; i < courses.Count(); i++)
+            List<Course> courses = CourseManager.GetCourses();
+            for (int i = 0; i < courses.Count(); i++)
             {
-                if(selectedCourse == courses[i].GetCourseName())
+                if (selectedCourse == courses[i].GetCourseName())
                 {
                     courses[i].SetIsSelected(true);
+                    break;
                 }
                 if (newGame != null)
                 {
                     newGame.UpdateCourse(courses[i]);
+                    break;
                 }
-            } I'm not sure this is working correctly, currently loops through all the courses and sets the label to each one if you look in code. eventually sets to null */
-            
+                else
+                {
+                    questionGrid = new questionGrid(this);
+                    questionGrid.Show();
+                    break;
+                }
+            }
+            //I'm not sure this is working correctly, currently loops through all the courses and sets the label to each one if you look in code. eventually sets to null 
+
+
             Console.WriteLine(selectedCourse);
             this.Close();
             //save the state of courses and return to the previous form

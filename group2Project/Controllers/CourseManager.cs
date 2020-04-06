@@ -88,12 +88,15 @@ namespace group2Project.Controllers
             courseList.Add(new Course("Math"));
             courseList.Add(new Course("Computer Science"));
             Console.WriteLine(courseList);
-           /* for (int i = 0; i < courseList.Count(); i++)
-            {
-                courseList[i].AddQuestion(q);
-                Console.WriteLine(courseList[i].GetCourseName(), courseList[i].GetID());
-                await cosmosDB.addCourse(courseList[i].GetCourseName(), courseList[i].GetID());
-            } had to comment out to test stuff */
+            /* for (int i = 0; i < courseList.Count(); i++)
+             {
+                 courseList[i].AddQuestion(q);
+                 Console.WriteLine(courseList[i].GetCourseName(), courseList[i].GetID());
+                 await cosmosDB.addCourse(courseList[i].GetCourseName(), courseList[i].GetID());
+             } had to comment out to test stuff */
+        }
         }
     }
-}
+
+
+

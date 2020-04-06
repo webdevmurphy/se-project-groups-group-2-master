@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using group2Project.Models;
+
 namespace group2Project.Views
 {
     public partial class questionGrid : Form
     {
-        public questionGrid()
+        private Course c;
+        public questionGrid(CourseGrid c)
         {
             InitializeComponent();
         }
@@ -21,7 +24,7 @@ namespace group2Project.Views
         {
             UpdateQuestion UpdateTrivia = new UpdateQuestion(QuestionRecords.SelectedRows[0].Cells[0].Value.ToString(), this.QuestionRecords.SelectedRows[0].Cells[1].Value.ToString());
             UpdateTrivia.ShowDialog();
-           QuestionRecords.SelectedRows[0].Cells[0].Value =  UpdateTrivia.ReturnQuestion();
+            QuestionRecords.SelectedRows[0].Cells[0].Value =  UpdateTrivia.ReturnQuestion();
             QuestionRecords.SelectedRows[0].Cells[1].Value = UpdateTrivia.ReturnAnswer();
         }
 

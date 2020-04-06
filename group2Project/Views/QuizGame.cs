@@ -19,10 +19,13 @@ namespace group2Project.Views
         private Course c;
         private Question currentQuestion;
         private List<Answer> Answers;
+
+        private int seconds;
         public QuizGame()
         {
             
             InitializeComponent();
+            quizTimer.Start();
         }
 
         public QuizGame(Question q)
@@ -47,7 +50,7 @@ namespace group2Project.Views
             c.AddQuestion(question1);
             
             currentQuestion = question1;
-            label1.Text = question1.getQuestion();
+            questionLabel.Text = question1.getQuestion();
             if(c.GetQuestions() != null)
             {
                 List<Question> list = c.GetQuestions();
@@ -83,45 +86,83 @@ namespace group2Project.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string text = "Wrong";
+            string caption = "Form Closing";
             if (Answers[0].IsCorrect())
             {
-                Console.WriteLine("Correct");
-            }
-            Console.WriteLine("Wrong");
-            
+                quizTimer.Stop();
+                text = "Correct";
+                Console.WriteLine("Correct");            
+            } else
+            {
+                quizTimer.Stop();
+                Console.WriteLine("Wrong");
+            }            
+            var result = MessageBox.Show(text, caption);
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(Answers[1].IsCorrect())
+            string text = "Wrong";
+            string caption = "Form Closing";
+            if (Answers[1].IsCorrect())
             {
+                quizTimer.Stop();
+                text = "Correct";
                 Console.WriteLine("Correct");
-            } else
+            }
+            else
             {
+                quizTimer.Stop();
                 Console.WriteLine("Wrong");
             }
+            var result = MessageBox.Show(text, caption);
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            string text = "Wrong";
+            string caption = "Form Closing";
             if (Answers[2].IsCorrect())
             {
+                quizTimer.Stop();
+                text = "Correct";
                 Console.WriteLine("Correct");
-            } else
+            }
+            else
             {
+                quizTimer.Stop();
                 Console.WriteLine("Wrong");
             }
+            var result = MessageBox.Show(text, caption);
+            this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            string text = "Wrong";
+            string caption = "Form Closing";
             if (Answers[3].IsCorrect())
             {
+                quizTimer.Stop();
+                text = "Correct";
                 Console.WriteLine("Correct");
-            } else
+            }
+            else
             {
+                quizTimer.Stop();
                 Console.WriteLine("Wrong");
             }
+            var result = MessageBox.Show(text, caption);
+            this.Close();
+        }
+
+        private void quizTimer_Tick(object sender, EventArgs e)
+        {
+            seconds++;
+            timerLabel.Text = seconds.ToString();
         }
     }
 }

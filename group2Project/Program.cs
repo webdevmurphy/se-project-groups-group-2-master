@@ -31,15 +31,14 @@ namespace group2Project
             {
                 try
                 {
-                    Course c = new Course();
-                   // Application.Run(new QuizGame());
+                    //Course c = new Course();
+                    //Application.Run(new QuizGame());
                     Application.Run(new Login());
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.ToString());
                 }
-
             }));
             t.SetApartmentState(ApartmentState.STA);
             t.Start();

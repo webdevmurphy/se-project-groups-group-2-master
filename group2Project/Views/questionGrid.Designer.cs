@@ -34,7 +34,10 @@
             this.CancelBtn = new System.Windows.Forms.Button();
             this.QuestionRecords = new System.Windows.Forms.DataGridView();
             this.Question = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Answer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Answer1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Answer2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Answer3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Answer4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QuestionRecords)).BeginInit();
             this.SuspendLayout();
@@ -94,8 +97,11 @@
             this.QuestionRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.QuestionRecords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Question,
-            this.Answer});
-            this.QuestionRecords.Location = new System.Drawing.Point(6, 8);
+            this.Answer1,
+            this.Answer2,
+            this.Answer3,
+            this.Answer4});
+            this.QuestionRecords.Location = new System.Drawing.Point(0, 8);
             this.QuestionRecords.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.QuestionRecords.MultiSelect = false;
             this.QuestionRecords.Name = "QuestionRecords";
@@ -106,15 +112,34 @@
             // 
             // Question
             // 
+            this.Question.Frozen = true;
             this.Question.HeaderText = "Question";
             this.Question.Name = "Question";
             this.Question.ReadOnly = true;
             // 
-            // Answer
+            // Answer1
             // 
-            this.Answer.HeaderText = "Answer";
-            this.Answer.Name = "Answer";
-            this.Answer.ReadOnly = true;
+            this.Answer1.HeaderText = "Answer1 (Correct Answer)";
+            this.Answer1.Name = "Answer1";
+            this.Answer1.ReadOnly = true;
+            // 
+            // Answer2
+            // 
+            this.Answer2.HeaderText = "Answer2";
+            this.Answer2.Name = "Answer2";
+            this.Answer2.ReadOnly = true;
+            // 
+            // Answer3
+            // 
+            this.Answer3.HeaderText = "Answer3";
+            this.Answer3.Name = "Answer3";
+            this.Answer3.ReadOnly = true;
+            // 
+            // Answer4
+            // 
+            this.Answer4.HeaderText = "Answer4";
+            this.Answer4.Name = "Answer4";
+            this.Answer4.ReadOnly = true;
             // 
             // questionGrid
             // 
@@ -143,6 +168,9 @@
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Button CancelBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Question;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Answer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Answer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Answer2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Answer3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Answer4;
     }
 }
