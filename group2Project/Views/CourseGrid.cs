@@ -116,7 +116,7 @@ namespace group2Project.Views
         {
 
             selectedCourse = listViewCourses.FocusedItem.Text;
-            List<Course> courses = CourseManager.GetCourses();
+          /*  List<Course> courses = CourseManager.GetCourses();
             for(int i = 0; i < courses.Count(); i++)
             {
                 if(selectedCourse == courses[i].GetCourseName())
@@ -127,7 +127,7 @@ namespace group2Project.Views
                 {
                     newGame.UpdateCourse(courses[i]);
                 }
-            }
+            } I'm not sure this is working correctly, currently loops through all the courses and sets the label to each one if you look in code. eventually sets to null */
             
             Console.WriteLine(selectedCourse);
             this.Close();

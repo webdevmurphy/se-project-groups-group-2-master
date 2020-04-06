@@ -29,7 +29,10 @@ namespace group2Project.Views
         {
             this.course = c;
             SelectedCourseLabel.Text = c.GetCourseName();
-            SelectedCourseLabel.Visible = true;
+            if (SelectedCourseLabel.Text != null)
+            {
+                SelectedCourseLabel.Visible = true;
+            }
             this.Update();
         }
 

@@ -95,10 +95,13 @@
             this.QuestionRecords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Question,
             this.Answer});
-            this.QuestionRecords.Location = new System.Drawing.Point(0, 8);
+            this.QuestionRecords.Location = new System.Drawing.Point(6, 8);
             this.QuestionRecords.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.QuestionRecords.MultiSelect = false;
             this.QuestionRecords.Name = "QuestionRecords";
-            this.QuestionRecords.Size = new System.Drawing.Size(929, 636);
+            this.QuestionRecords.ReadOnly = true;
+            this.QuestionRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.QuestionRecords.Size = new System.Drawing.Size(923, 636);
             this.QuestionRecords.TabIndex = 0;
             // 
             // Question
@@ -118,9 +121,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(929, 727);
+            this.ClientSize = new System.Drawing.Size(931, 727);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "questionGrid";
             this.Text = "Question Records";
