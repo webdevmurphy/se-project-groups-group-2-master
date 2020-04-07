@@ -438,6 +438,19 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\abstract-world-map.jpg" />
+    <Content Include="Resources\aniGlobe1.gif" />
+    <Content Include="Resources\EarthSmile.gif" />
+    <Content Include="Resources\icons8-close-window-64.png" />
+    <Content Include="Resources\icons8-course-128.png" />
+    <Content Include="Resources\icons8-fork-lift-128.png" />
+    <Content Include="Resources\icons8-geography-128.png" />
+    <Content Include="Resources\icons8-login-64.png" />
+    <Content Include="Resources\icons8-sign-out-128.png" />
+    <Content Include="Resources\triviaLogo.png" />
+    <Content Include="Resources\World_map-3.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
