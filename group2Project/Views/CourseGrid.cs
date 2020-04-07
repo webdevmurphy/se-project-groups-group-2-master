@@ -14,10 +14,13 @@ namespace group2Project.Views
 {
     public partial class CourseGrid : Form
     {
+        private NewGame newGame;
+
         private ListView listViewCourses;
         private List<Course> courses;
         private CourseManager courseManager;
-        public String selectedCourse;
+        private questionGrid questionGrid;
+        private String selectedCourse;
 
         CheckBox lastChecked;
         public CourseGrid()
@@ -28,6 +31,27 @@ namespace group2Project.Views
             lastChecked = new CheckBox();
             InitializeComponent();         
         }
+
+        public CourseGrid(NewGame newGame)
+        {
+            this.newGame = newGame;
+            courseManager = new CourseManager();
+            listViewCourses = new ListView();
+            courses = CourseManager.GetCourses();
+            lastChecked = new CheckBox();
+            InitializeComponent();
+        }
+
+        public CourseGrid(questionGrid qGrid)
+        {
+            this.questionGrid = qGrid;
+            courseManager = new CourseManager();
+            listViewCourses = new ListView();
+            courses = CourseManager.GetCourses();
+            lastChecked = new CheckBox();
+            InitializeComponent();
+        }
+
         private void CancelButton_Click(object sender, EventArgs e)
         {
             listViewCourses.Dispose();
@@ -45,34 +69,21 @@ namespace group2Project.Views
         private void CourseGrid_Load(object sender, EventArgs e)
         {
 
-            //Clear the list view initially
             listViewCourses.Items.Clear();
-            //Add Columns
             listViewCourses.Columns.Add("Course Name", 500, HorizontalAlignment.Center);
-            //Allow user to edit item text
             listViewCourses.LabelEdit = true;
-            //Enable Gridlines
             listViewCourses.GridLines = true;
-            //Show Details
             listViewCourses.View = View.Details;
-            //Allow the user to rearrange columns
             listViewCourses.AllowColumnReorder = true;
-            //Display Check Boxes
             listViewCourses.CheckBoxes = true;
-            //Allow User to select only one item
             listViewCourses.MultiSelect = false;
-
             foreach (var course in courses)
             {
                 var courseRow = new string[] { course.GetCourseName()};
                 var lvi = new ListViewItem(courseRow);
                 Console.WriteLine(courseRow);
-                //Add the whole object to the Tag property
-                //to later display details about the item
                 lvi.Tag = course;
-                //Initially box is not checked
                 lvi.Checked = false;
-                //Add item to list view
                 listViewCourses.Items.Add(lvi);
             }
 
@@ -88,12 +99,8 @@ namespace group2Project.Views
                 var courseRow = new string[] { course.GetCourseName() };
                 var lvi = new ListViewItem(courseRow);
                 Console.WriteLine(courseRow);
-                //Add the whole object to the Tag property
-                //to later display details about the item
                 lvi.Tag = course;
-                //Initially box is not checked
                 lvi.Checked = false;
-                //Add item to list view
                 listViewCourses.Items.Add(lvi);
             }
         }
@@ -103,6 +110,31 @@ namespace group2Project.Views
         {
 
             selectedCourse = listViewCourses.FocusedItem.Text;
+            List<Course> courses = CourseManager.GetCourses();
+            for (int i = 0; i < courses.Count(); i++)
+            {
+                if (selectedCourse == courses[i].GetCourseName())
+                {
+                    courses[i].SetIsSelected(true);
+                    newGame.UpdateCourse(courses[i]);
+                    break;
+                }
+                if (newGame != null)
+                {
+                    newGame.UpdateCourse(courses[i]);
+                    this.Close();
+                    break;
+                }
+                else
+                {
+                    this.Hide();
+                    questionGrid = new questionGrid(this);
+                    questionGrid.ShowDialog();
+                    this.Show();
+                    break;
+                }
+            }
+            //I'm not sure this is working correctly, currently loops through all the courses and sets the label to each one if you look in code. eventually sets to null 
             Console.WriteLine(selectedCourse);
             this.Close();
             //save the state of courses and return to the previous form
@@ -114,27 +146,21 @@ namespace group2Project.Views
             //need to pass this to NewGame.cs
         }
 
-        private void listViewCourses_ItemCheck1(object sender, EventArgs e)
+        private ListViewItem lastItemChecked;
+        private void listViewCourses_ItemCheck1(object sender, ItemCheckEventArgs e)
         {
-
-        }
-
-        private void listViewCourses_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CheckBox activeCheckBox = sender as CheckBox;
-            foreach (var course in courses)
+            // if we have the lastItem set as checked, and it is different
+            // item than the one that fired the event, uncheck it
+            if (lastItemChecked != null && lastItemChecked.Checked
+                && lastItemChecked != listViewCourses.Items[e.Index])
             {
-                var courseRow = new string[] { course.GetCourseName() };
-                var lvi = new ListViewItem(courseRow);
-                Boolean currentCheck = lvi.Checked;
-                Boolean newCheck;
-                if(currentCheck)
-                {
-                    lvi.Checked = false;
-                }
+                // uncheck the last item and store the new one
+                lastItemChecked.Checked = false;
             }
-            if (activeCheckBox != lastChecked && lastChecked != null) lastChecked.Checked = false;
-            lastChecked = activeCheckBox.Checked ? activeCheckBox : null;
+
+            // store current item
+            CoursesLabel.Text = listViewCourses.Items[e.Index].ToString();
+            lastItemChecked = listViewCourses.Items[e.Index];
         }
     }
 }

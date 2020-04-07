@@ -5,9 +5,7 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "group2Project", "group2Project.csproj", "{D18FBF3F-E0AB-4F12-A969-0026AD6CC8CC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{14697FF5-5E30-45A0-8849-22332DACE15F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "group2Project_TestingHarness", "..\group2Project_TestingHarness\group2Project_TestingHarness.csproj", "{7C755F85-D099-42B1-8D6A-57F64831389D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "group2Project_TestingHarness", "..\group2Project_TestingHarness\group2Project_TestingHarness.csproj", "{7C755F85-D099-42B1-8D6A-57F64831389D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

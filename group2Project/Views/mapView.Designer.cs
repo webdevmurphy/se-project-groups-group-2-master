@@ -58,6 +58,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "mapView";
             this.Text = "Trivia Nation World Map";
+            this.Load += new System.EventHandler(this.mapView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picGrid)).EndInit();
             this.ResumeLayout(false);
 

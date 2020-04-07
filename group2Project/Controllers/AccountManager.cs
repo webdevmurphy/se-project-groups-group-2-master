@@ -30,8 +30,7 @@ namespace group2Project.Controllers
             aNew.getPassword(username, password);
             Boolean loginInfo = true;
             do
-            {
-                
+            {               
                 //test with username: lisa@gmail.com
                 //password: 1234
                 //and you will see it query the database and return the results.

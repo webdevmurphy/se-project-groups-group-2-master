@@ -1,0 +1,13 @@
+dummy course
+
+name = "Course1"
+Question1 = "What is the capital of the USA?" 
+Answer1 = "Washington D.C" True
+Answer2 = "Florida" False
+Answer3 = "Seattle" False
+Answer4 = "Donald Trump" False
+
+
+Quiz Takes a Course
+Gets Questions and answers from course
+Displays to screen

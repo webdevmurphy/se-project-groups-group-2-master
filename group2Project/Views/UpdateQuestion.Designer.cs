@@ -73,6 +73,7 @@
             this.SubmitBtn.TabIndex = 4;
             this.SubmitBtn.Text = "Submit";
             this.SubmitBtn.UseVisualStyleBackColor = true;
+            this.SubmitBtn.Click += new System.EventHandler(this.SubmitBtn_Click);
             // 
             // Answerlbl
             // 
@@ -120,6 +121,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UpdateQuestion";
             this.Text = "Update Question";
+            this.Shown += new System.EventHandler(this.UpdateQuestion_Shown);
             this.formPanel.ResumeLayout(false);
             this.formPanel.PerformLayout();
             this.ResumeLayout(false);

@@ -35,6 +35,7 @@
             this.NewGameLabel = new System.Windows.Forms.Label();
             this.ChooseCourseBtn = new System.Windows.Forms.Button();
             this.SelectedCourse = new System.Windows.Forms.Label();
+            this.courseLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // NumberOfPlayersLabel
@@ -88,7 +89,7 @@
             // ChooseCourseBtn
             // 
             this.ChooseCourseBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChooseCourseBtn.Location = new System.Drawing.Point(142, 169);
+            this.ChooseCourseBtn.Location = new System.Drawing.Point(141, 161);
             this.ChooseCourseBtn.Name = "ChooseCourseBtn";
             this.ChooseCourseBtn.Size = new System.Drawing.Size(158, 39);
             this.ChooseCourseBtn.TabIndex = 7;
@@ -96,19 +97,30 @@
             this.ChooseCourseBtn.UseVisualStyleBackColor = true;
             this.ChooseCourseBtn.Click += new System.EventHandler(this.ChooseCourseBtnClk);
             // 
-            // label2
+            // SelectedCourse
             // 
             this.SelectedCourse.AutoSize = true;
             this.SelectedCourse.Location = new System.Drawing.Point(348, 169);
-            this.SelectedCourse.Name = "SelectedCourseLabel";
-            this.SelectedCourse.Size = new System.Drawing.Size(52, 21);
+            this.SelectedCourse.Name = "SelectedCourse";
+            this.SelectedCourse.Size = new System.Drawing.Size(0, 21);
             this.SelectedCourse.TabIndex = 8;
-            this.SelectedCourse.Text = "";
+            // 
+            // courseLabel
+            // 
+            this.courseLabel.AutoSize = true;
+            this.courseLabel.Location = new System.Drawing.Point(334, 169);
+            this.courseLabel.Name = "courseLabel";
+            this.courseLabel.Size = new System.Drawing.Size(146, 21);
+            this.courseLabel.TabIndex = 9;
+            this.courseLabel.Text = "No Course Selected";
+            this.courseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.courseLabel.Visible = false;
             // 
             // NewGame
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(723, 348);
+            this.Controls.Add(this.courseLabel);
             this.Controls.Add(this.SelectedCourse);
             this.Controls.Add(this.ChooseCourseBtn);
             this.Controls.Add(this.NewGameLabel);
@@ -135,5 +147,6 @@
         private System.Windows.Forms.Label NewGameLabel;
         private System.Windows.Forms.Button ChooseCourseBtn;
         private System.Windows.Forms.Label SelectedCourse;
+        private System.Windows.Forms.Label courseLabel;
     }
 }

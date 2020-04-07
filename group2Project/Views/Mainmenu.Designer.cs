@@ -68,7 +68,7 @@
             this.CoursesBtn.Name = "CoursesBtn";
             this.CoursesBtn.Size = new System.Drawing.Size(206, 92);
             this.CoursesBtn.TabIndex = 8;
-            this.CoursesBtn.Text = "Courses";
+            this.CoursesBtn.Text = "Edit Courses";
             this.CoursesBtn.UseVisualStyleBackColor = true;
             this.CoursesBtn.Click += new System.EventHandler(this.CoursesBtn_Click);
             // 

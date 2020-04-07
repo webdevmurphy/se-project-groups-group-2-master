@@ -9,20 +9,40 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using group2Project.Models;
 using System.Drawing.Drawing2D;
 
 namespace group2Project.Views
 {
     public partial class mapView : Form
     {
+        public int NumOfPlayers;
+        public string Course;
+        List<object> Players = new List<object>();
         public mapView(int NumOfPlayers, String Course)
         {
             InitializeComponent();
             Console.WriteLine(NumOfPlayers);
             Console.WriteLine(Course);
+            this.NumOfPlayers = NumOfPlayers;
+            this.Course = Course;
         }
 
+        public void initializePlayers(int NumOfPlayers)
+        {
+          int i = 0;
+            User person1 = new User("example", "testing");
+            //we will need to figure out how to get each player to have individual usernames and passwords, this will probably include the database
+          for (i = 0; i < NumOfPlayers; i++)
+            {
+                Players.Add(person1);
+                Console.WriteLine(person1.password);
+            }
+         }
+           
+
+            
+        
         // The height of a hexagon.
         private const float HexHeight = 50;
 
@@ -235,6 +255,11 @@ namespace group2Project.Views
                     new PointF(x + width * 0.75f, y + height / 2),
                     new PointF(x + width * 0.25f, y + height / 2),
                 };
+        }
+
+        private void mapView_Load(object sender, EventArgs e)
+        {
+            initializePlayers(NumOfPlayers);
         }
     }
 }

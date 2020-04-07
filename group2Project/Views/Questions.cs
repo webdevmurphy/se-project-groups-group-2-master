@@ -13,7 +13,7 @@ namespace group2Project.Views
 {
     public partial class Questions : Form
     {
-        questionGrid questionList = new questionGrid();
+        private questionGrid questionList;
         public Questions()
         {
             InitializeComponent();

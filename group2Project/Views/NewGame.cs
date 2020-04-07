@@ -16,19 +16,32 @@ namespace group2Project.Views
     {
         private int numPlayers;
         private Course course;
-        private Label SelectedCourseLabel;
 
         public NewGame()
         {
             course = new Course();
-            SelectedCourseLabel = new Label();
             InitializeComponent();
+        }
+
+        public void UpdateCourse(Course c)
+        {
+            this.course = c;
+            courseLabel.Text = c.GetCourseName();
+            if (courseLabel.Text != null)
+            {
+                courseLabel.Visible = true;
+            }
+            this.Update();
         }
 
         private void NewGame_Load_1(object sender, EventArgs e)
         {
+            if(courseLabel.Text == null)
+            {
+                courseLabel.Text = "No Course Selected";
+            }
+            courseLabel.Text = course.GetCourseName();
             this.Update();
-            SelectedCourseLabel.Text = course.GetCourseName();
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -51,10 +64,10 @@ namespace group2Project.Views
         {
             // Form CourseGrid = new CourseGrid();
             this.Hide();
-            CourseGrid example = new CourseGrid();
+            CourseGrid example = new CourseGrid(this);
             example.ShowDialog();
             this.Show();
-            
+            this.Update();
         }
 
         private void NumberOfPlayersTextBox_TextChanged(object sender, EventArgs e)
@@ -70,6 +83,5 @@ namespace group2Project.Views
         { 
             Console.WriteLine("hey");
         }
-
     }
 }
