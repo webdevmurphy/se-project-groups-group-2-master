@@ -295,6 +295,12 @@
     <Compile Include="Views\CreateNewAccount.Designer.cs">
       <DependentUpon>CreateNewAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\NewMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewMainMenu.Designer.cs">
+      <DependentUpon>NewMainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\QuizGame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,6 +380,9 @@
     <EmbeddedResource Include="Views\CreateNewAccount.resx">
       <DependentUpon>CreateNewAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewMainMenu.resx">
+      <DependentUpon>NewMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -440,14 +449,20 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\abstract-world-map.jpg" />
+    <None Include="Resources\abstract-world-map1.jpg" />
     <Content Include="Resources\aniGlobe1.gif" />
     <Content Include="Resources\EarthSmile.gif" />
+    <None Include="Resources\EarthSmile1.gif" />
     <Content Include="Resources\icons8-close-window-64.png" />
     <Content Include="Resources\icons8-course-128.png" />
+    <None Include="Resources\icons8-course-1281.png" />
     <Content Include="Resources\icons8-fork-lift-128.png" />
+    <None Include="Resources\icons8-fork-lift-1281.png" />
     <Content Include="Resources\icons8-geography-128.png" />
+    <None Include="Resources\icons8-geography-1281.png" />
     <Content Include="Resources\icons8-login-64.png" />
     <Content Include="Resources\icons8-sign-out-128.png" />
+    <None Include="Resources\icons8-sign-out-1281.png" />
     <Content Include="Resources\triviaLogo.png" />
     <Content Include="Resources\World_map-3.jpg" />
   </ItemGroup>

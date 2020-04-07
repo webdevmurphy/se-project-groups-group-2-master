@@ -11,17 +11,6 @@ C:\Users\Michael Murphy\source\repos\TriviaNationLayoutDemo\TriviaNationLayoutDe
 C:\Users\Michael Murphy\source\repos\TriviaNationLayoutDemo\TriviaNationLayoutDemo\obj\Debug\TriviaNationLayoutDemo.NewGame.resources
 C:\Users\Michael Murphy\source\repos\TriviaNationLayoutDemo\TriviaNationLayoutDemo\obj\Debug\TriviaNationLayoutDemo.about.resources
 =======
-C:\Users\Michael Murphy\source\repos\TriviaNationLayoutDemo\TriviaNationLayoutDemo\bin\Debug\TriviaNationLayoutDemo.exe.config
-C:\Users\Michael Murphy\source\repos\TriviaNationLayoutDemo\TriviaNationLayoutDemo\bin\Debug\TriviaNationLayoutDemo.exe
-C:\Users\Michael Murphy\source\repos\TriviaNationLayoutDemo\TriviaNationLayoutDemo\bin\Debug\TriviaNationLayoutDemo.pdb
-C:\Users\Michael Murphy\source\repos\TriviaNationLayoutDemo\TriviaNationLayoutDemo\obj\Debug\TriviaNationLayoutDemo.csprojAssemblyReference.cache
-C:\Users\Michael Murphy\source\repos\TriviaNationLayoutDemo\TriviaNationLayoutDemo\obj\Debug\TriviaNationLayoutDemo.Form1.resources
-C:\Users\Michael Murphy\source\repos\TriviaNationLayoutDemo\TriviaNationLayoutDemo\obj\Debug\TriviaNationLayoutDemo.Properties.Resources.resources
-C:\Users\Michael Murphy\source\repos\TriviaNationLayoutDemo\TriviaNationLayoutDemo\obj\Debug\TriviaNationLayoutDemo.csproj.GenerateResource.cache
-C:\Users\Michael Murphy\source\repos\TriviaNationLayoutDemo\TriviaNationLayoutDemo\obj\Debug\TriviaNationLayoutDemo.exe
-C:\Users\Michael Murphy\source\repos\TriviaNationLayoutDemo\TriviaNationLayoutDemo\obj\Debug\TriviaNationLayoutDemo.pdb
-C:\Users\Michael Murphy\source\repos\TriviaNationLayoutDemo\TriviaNationLayoutDemo\obj\Debug\TriviaNationLayoutDemo.NewGame.resources
-C:\Users\Michael Murphy\source\repos\TriviaNationLayoutDemo\TriviaNationLayoutDemo\obj\Debug\TriviaNationLayoutDemo.about.resources
 C:\Users\james\Documents\School\se-project-groups-group-2\TriviaNationLayoutDemo\TriviaNationLayoutDemo\bin\Debug\TriviaNationLayoutDemo.exe.config
 C:\Users\james\Documents\School\se-project-groups-group-2\TriviaNationLayoutDemo\TriviaNationLayoutDemo\bin\Debug\TriviaNationLayoutDemo.exe
 C:\Users\james\Documents\School\se-project-groups-group-2\TriviaNationLayoutDemo\TriviaNationLayoutDemo\bin\Debug\TriviaNationLayoutDemo.pdb
