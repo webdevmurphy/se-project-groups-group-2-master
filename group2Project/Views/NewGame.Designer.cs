@@ -35,7 +35,7 @@
             this.NewGameLabel = new System.Windows.Forms.Label();
             this.ChooseCourseBtn = new System.Windows.Forms.Button();
             this.SelectedCourse = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.courseLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // NumberOfPlayersLabel
@@ -105,22 +105,22 @@
             this.SelectedCourse.Size = new System.Drawing.Size(0, 21);
             this.SelectedCourse.TabIndex = 8;
             // 
-            // label2
+            // courseLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(334, 169);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 21);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "No Course Selected";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Visible = false;
+            this.courseLabel.AutoSize = true;
+            this.courseLabel.Location = new System.Drawing.Point(334, 169);
+            this.courseLabel.Name = "courseLabel";
+            this.courseLabel.Size = new System.Drawing.Size(146, 21);
+            this.courseLabel.TabIndex = 9;
+            this.courseLabel.Text = "No Course Selected";
+            this.courseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.courseLabel.Visible = false;
             // 
             // NewGame
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(723, 348);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.courseLabel);
             this.Controls.Add(this.SelectedCourse);
             this.Controls.Add(this.ChooseCourseBtn);
             this.Controls.Add(this.NewGameLabel);
@@ -147,6 +147,6 @@
         private System.Windows.Forms.Label NewGameLabel;
         private System.Windows.Forms.Button ChooseCourseBtn;
         private System.Windows.Forms.Label SelectedCourse;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label courseLabel;
     }
 }

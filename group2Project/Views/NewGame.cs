@@ -16,29 +16,31 @@ namespace group2Project.Views
     {
         private int numPlayers;
         private Course course;
-        private Label SelectedCourseLabel;
 
         public NewGame()
         {
             course = new Course();
-            SelectedCourseLabel = new Label();
             InitializeComponent();
         }
 
         public void UpdateCourse(Course c)
         {
             this.course = c;
-            SelectedCourseLabel.Text = c.GetCourseName();
-            if (SelectedCourseLabel.Text != null)
+            courseLabel.Text = c.GetCourseName();
+            if (courseLabel.Text != null)
             {
-                SelectedCourseLabel.Visible = true;
+                courseLabel.Visible = true;
             }
             this.Update();
         }
 
         private void NewGame_Load_1(object sender, EventArgs e)
         {
-            SelectedCourseLabel.Text = course.GetCourseName();
+            if(courseLabel.Text == null)
+            {
+                courseLabel.Text = "No Course Selected";
+            }
+            courseLabel.Text = course.GetCourseName();
             this.Update();
         }
 

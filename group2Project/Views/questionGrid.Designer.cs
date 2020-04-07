@@ -109,6 +109,7 @@
             this.QuestionRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.QuestionRecords.Size = new System.Drawing.Size(923, 636);
             this.QuestionRecords.TabIndex = 0;
+            this.QuestionRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QuestionRecords_CellContentClick);
             // 
             // Question
             // 

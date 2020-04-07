@@ -36,7 +36,7 @@ namespace group2Project.Views
         }
         private void CancelBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.DialogResult = DialogResult.OK;
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
@@ -45,6 +45,11 @@ namespace group2Project.Views
             {
                 QuestionRecords.Rows.RemoveAt(QuestionRecords.SelectedRows[0].Index);
             }
+        }
+
+        private void QuestionRecords_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -69,34 +69,21 @@ namespace group2Project.Views
         private void CourseGrid_Load(object sender, EventArgs e)
         {
 
-            //Clear the list view initially
             listViewCourses.Items.Clear();
-            //Add Columns
             listViewCourses.Columns.Add("Course Name", 500, HorizontalAlignment.Center);
-            //Allow user to edit item text
             listViewCourses.LabelEdit = true;
-            //Enable Gridlines
             listViewCourses.GridLines = true;
-            //Show Details
             listViewCourses.View = View.Details;
-            //Allow the user to rearrange columns
             listViewCourses.AllowColumnReorder = true;
-            //Display Check Boxes
             listViewCourses.CheckBoxes = true;
-            //Allow User to select only one item
             listViewCourses.MultiSelect = false;
-
             foreach (var course in courses)
             {
                 var courseRow = new string[] { course.GetCourseName()};
                 var lvi = new ListViewItem(courseRow);
                 Console.WriteLine(courseRow);
-                //Add the whole object to the Tag property
-                //to later display details about the item
                 lvi.Tag = course;
-                //Initially box is not checked
                 lvi.Checked = false;
-                //Add item to list view
                 listViewCourses.Items.Add(lvi);
             }
 
@@ -112,12 +99,8 @@ namespace group2Project.Views
                 var courseRow = new string[] { course.GetCourseName() };
                 var lvi = new ListViewItem(courseRow);
                 Console.WriteLine(courseRow);
-                //Add the whole object to the Tag property
-                //to later display details about the item
                 lvi.Tag = course;
-                //Initially box is not checked
                 lvi.Checked = false;
-                //Add item to list view
                 listViewCourses.Items.Add(lvi);
             }
         }
@@ -133,11 +116,13 @@ namespace group2Project.Views
                 if (selectedCourse == courses[i].GetCourseName())
                 {
                     courses[i].SetIsSelected(true);
+                    newGame.UpdateCourse(courses[i]);
                     break;
                 }
                 if (newGame != null)
                 {
                     newGame.UpdateCourse(courses[i]);
+                    this.Close();
                     break;
                 }
                 else
@@ -174,6 +159,7 @@ namespace group2Project.Views
             }
 
             // store current item
+            CoursesLabel.Text = listViewCourses.Items[e.Index].ToString();
             lastItemChecked = listViewCourses.Items[e.Index];
         }
     }
