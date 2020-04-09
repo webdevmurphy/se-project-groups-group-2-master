@@ -151,19 +151,30 @@ namespace group2Project.Views
         private void picGrid_MouseClick(object sender, MouseEventArgs e)
         {
             int row, col;
-            PointToHex(e.X, e.Y, HexHeight, out row, out col);
-            Hexagons.Add(new PointF(row, col));
+            Label label = new Label();
+            label.Text = "1"; //should be player number later on once we get that working
+            QuizGame quiz = new QuizGame();
+            quiz.ShowDialog();
+            if (quiz.returnCorrect() == true)
+            {
+                PointToHex(e.X, e.Y, HexHeight, out row, out col);
+                label.Location = new System.Drawing.Point(e.X , e.Y);
+                label.Size = new System.Drawing.Size((int)HexWidth(HexHeight - 20), (int)HexHeight - 15);
+                label.BackColor = Color.LightBlue;
+                picGrid.Controls.Add(label);
+                Hexagons.Add(new PointF(row, col));
 
 #if FIG34
-            // Used to draw reference rectangles.
-            PointF[] points = HexToPoints(HexHeight, row, col);
-            TestRects.Add(new RectangleF(
-                points[0].X, points[1].Y,
-                0.75f * (points[3].X - points[0].X),
-                points[4].Y - points[1].Y));
+                // Used to draw reference rectangles.
+                PointF[] points = HexToPoints(HexHeight, row, col);
+                TestRects.Add(new RectangleF(
+                    points[0].X, points[1].Y,
+                    0.75f * (points[3].X - points[0].X),
+                    points[4].Y - points[1].Y));
 #endif
-
-            picGrid.Refresh();
+                picGrid.Refresh();
+            }
+           
         }
         // Return the width of a hexagon.
         private float HexWidth(float height)

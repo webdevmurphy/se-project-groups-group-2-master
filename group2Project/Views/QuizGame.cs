@@ -19,7 +19,7 @@ namespace group2Project.Views
         private Course c;
         private Question currentQuestion;
         private List<Answer> Answers;
-
+        public Boolean isCorrect = false;
         private int seconds;
         public QuizGame()
         {
@@ -92,6 +92,7 @@ namespace group2Project.Views
             {
                 quizTimer.Stop();
                 text = "Correct";
+                isCorrect = true;
                 Console.WriteLine("Correct");            
             } else
             {
@@ -110,6 +111,7 @@ namespace group2Project.Views
             {
                 quizTimer.Stop();
                 text = "Correct";
+                isCorrect = true;
                 Console.WriteLine("Correct");
             }
             else
@@ -129,6 +131,7 @@ namespace group2Project.Views
             {
                 quizTimer.Stop();
                 text = "Correct";
+                isCorrect = true;
                 Console.WriteLine("Correct");
             }
             else
@@ -148,6 +151,7 @@ namespace group2Project.Views
             {
                 quizTimer.Stop();
                 text = "Correct";
+                isCorrect = true;
                 Console.WriteLine("Correct");
             }
             else
@@ -163,6 +167,11 @@ namespace group2Project.Views
         {
             seconds++;
             timerLabel.Text = seconds.ToString();
+        }
+
+        public Boolean returnCorrect()
+        {
+            return isCorrect;
         }
     }
 }

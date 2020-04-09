@@ -159,8 +159,8 @@ namespace group2Project.Views
             }
 
             // store current item
-            CoursesLabel.Text = listViewCourses.Items[e.Index].ToString();
-            lastItemChecked = listViewCourses.Items[e.Index];
+           CoursesLabel.Text = listViewCourses.Items[e.Index].Text;        
+           lastItemChecked = listViewCourses.Items[e.Index];
         }
     }
 }
