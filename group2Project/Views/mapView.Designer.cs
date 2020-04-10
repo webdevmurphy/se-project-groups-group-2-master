@@ -42,7 +42,7 @@
             this.picGrid.Location = new System.Drawing.Point(3, 3);
             this.picGrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picGrid.Name = "picGrid";
-            this.picGrid.Size = new System.Drawing.Size(818, 484);
+            this.picGrid.Size = new System.Drawing.Size(818, 496);
             this.picGrid.TabIndex = 1;
             this.picGrid.TabStop = false;
             this.picGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.picGrid_Paint);
@@ -66,7 +66,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(822, 491);
+            this.ClientSize = new System.Drawing.Size(822, 503);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.picGrid);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

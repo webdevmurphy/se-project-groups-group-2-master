@@ -18,7 +18,8 @@ namespace group2Project.Views
     {
         public int NumOfPlayers;
         public string Course;
-        List<object> Players = new List<object>();
+        public int PlayerTurn = 0;
+        List<User> Players = new List<User>();
         public mapView(int NumOfPlayers, String Course)
         {
             InitializeComponent();
@@ -30,15 +31,27 @@ namespace group2Project.Views
 
         public void initializePlayers(int NumOfPlayers)
         {
-          int i = 0;
-            User person1 = new User("example", "testing");
-            //we will need to figure out how to get each player to have individual usernames and passwords, this will probably include the database
-          for (i = 0; i < NumOfPlayers; i++)
+            int i = 0;
+            /* this next five lines is all for testing, due to this, we can only have 2 players until this is changed */
+            List<User> testData = new List<User>();
+            User person1 = new User("example", "testing", 0);
+            User person2 = new User("2ndexample", "testing", 0);
+            testData.Add(person1);
+            testData.Add(person2);
+
+            for (i = 0; i < testData.Count; i++)
             {
-                Players.Add(person1);
-                Console.WriteLine(person1.password);
+                Players.Add(testData[i]);
+                Console.WriteLine(Players[i].userName);
             }
-         }
+        }
+            //we will need to figure out how to get each player to have individual usernames and passwords, this will probably include the database
+         /* for (i = 0; i < NumOfPlayers; i++)
+            {
+                Players.Add(person1); //for now only test with 2 players 
+                Console.WriteLine(Players[i].password);
+            }
+         } */ //commented out for testing
            
 
             
@@ -152,15 +165,19 @@ namespace group2Project.Views
         {
             int row, col;
             Label label = new Label();
-            label.Text = "1"; //should be player number later on once we get that working
+            label.Text = ""; //should be player number later on once we get that working
             QuizGame quiz = new QuizGame();
             quiz.ShowDialog();
             if (quiz.returnCorrect() == true)
             {
                 PointToHex(e.X, e.Y, HexHeight, out row, out col);
-                label.Location = new System.Drawing.Point(e.X , e.Y);
+                label.Location = new System.Drawing.Point(e.X , e.Y); 
                 label.Size = new System.Drawing.Size((int)HexWidth(HexHeight - 20), (int)HexHeight - 15);
                 label.BackColor = Color.LightBlue;
+                Console.WriteLine(Players[PlayerTurn].score);
+                Players[PlayerTurn].score++;
+                label.Text = (PlayerTurn + 1).ToString();
+                Console.WriteLine(Players[PlayerTurn].score);
                 picGrid.Controls.Add(label);
                 Hexagons.Add(new PointF(row, col));
 
@@ -171,9 +188,18 @@ namespace group2Project.Views
                     points[0].X, points[1].Y,
                     0.75f * (points[3].X - points[0].X),
                     points[4].Y - points[1].Y));
-#endif
+#endif      
+            } 
+                if (PlayerTurn + 1 < Players.Count) {
+                    PlayerTurn++;
+                }
+                else
+                {
+                    PlayerTurn = 0;
+                }
+                
                 picGrid.Refresh();
-            }
+            
            
         }
         // Return the width of a hexagon.

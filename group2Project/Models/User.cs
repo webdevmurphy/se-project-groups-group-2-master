@@ -12,6 +12,7 @@ namespace group2Project.Models
         public string userName { get; set; }
         public string password;
         public Boolean isTeacher = false;
+        public int score;
 
         private List<Course> CurrentCourses;
 
@@ -19,12 +20,14 @@ namespace group2Project.Models
         {
             this.userName = "";
             this.password = "";
+            this.score = 0;
         }
 
-        public User(string username, string password)
+        public User(string username, string password, int score)
         {
             this.userName = username;
             this.password = password;
+            this.score = score;
         }
 
         public override string ToString()
@@ -60,5 +63,6 @@ namespace group2Project.Models
         }
 
         public double getTeacherKey() { return this.teacherKey; }
+        public string getUserName() { return this.userName; } // just testing with this, will delete when not being used - Dylan
     }
 }

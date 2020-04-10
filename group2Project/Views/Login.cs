@@ -66,7 +66,7 @@ namespace group2Project.Views
             Console.WriteLine(username);
             Console.WriteLine(password);
 
-            var user = new User(username, password);
+            var user = new User(username, password, 0);
             var AC = new AccountManager(user);
             
 
