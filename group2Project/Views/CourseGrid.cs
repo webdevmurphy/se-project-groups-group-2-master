@@ -22,9 +22,12 @@ namespace group2Project.Views
         private questionGrid questionGrid;
         private String selectedCourse;
 
+        private bool edit;
+
         CheckBox lastChecked;
-        public CourseGrid()
-        {           
+        public CourseGrid() //our default constructor
+        {
+            edit = false;
             courseManager = new CourseManager();
             listViewCourses = new ListView();
             courses = CourseManager.GetCourses();
@@ -32,9 +35,9 @@ namespace group2Project.Views
             InitializeComponent();         
         }
 
-        public CourseGrid(NewGame newGame)
+        public CourseGrid(bool edit) //used for when editing the courses in the MainMenu courses button
         {
-            this.newGame = newGame;
+            this.edit = edit;
             courseManager = new CourseManager();
             listViewCourses = new ListView();
             courses = CourseManager.GetCourses();
@@ -42,9 +45,9 @@ namespace group2Project.Views
             InitializeComponent();
         }
 
-        public CourseGrid(questionGrid qGrid)
+        public CourseGrid(NewGame newGame) //used for when accessing the courses from the newGame screen
         {
-            this.questionGrid = qGrid;
+            this.newGame = newGame;
             courseManager = new CourseManager();
             listViewCourses = new ListView();
             courses = CourseManager.GetCourses();
@@ -68,6 +71,7 @@ namespace group2Project.Views
 
         private void CourseGrid_Load(object sender, EventArgs e)
         {
+            if(edit) { SubmitButton.Text = "Edit"; } //if we are editing courses change the button to say Edit instead
 
             listViewCourses.Items.Clear();
             listViewCourses.Columns.Add("Course Name", 500, HorizontalAlignment.Center);
@@ -81,7 +85,7 @@ namespace group2Project.Views
             {
                 var courseRow = new string[] { course.GetCourseName()};
                 var lvi = new ListViewItem(courseRow);
-                Console.WriteLine(courseRow);
+                Console.WriteLine(courseRow.ToString());
                 lvi.Tag = course;
                 lvi.Checked = false;
                 listViewCourses.Items.Add(lvi);
@@ -108,36 +112,28 @@ namespace group2Project.Views
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-
-            selectedCourse = listViewCourses.FocusedItem.Text;
-            List<Course> courses = CourseManager.GetCourses();
-            for (int i = 0; i < courses.Count(); i++)
+            if (listViewCourses.FocusedItem == null) //Check and see if there is a selected item before setting. If no item selected display an error to the user.
             {
-                if (selectedCourse == courses[i].GetCourseName())
+                var result = MessageBox.Show("Please make a selection", "No selection");
+            } 
+            else
+            {
+                selectedCourse = listViewCourses.FocusedItem.Text;
+                if (newGame != null) //If we are creating a newGame. Submit button should update the newGame form with the selectedCourse
                 {
-                    courses[i].SetIsSelected(true);
-                    newGame.UpdateCourse(courses[i]);
-                    break;
-                }
-                if (newGame != null)
-                {
-                    newGame.UpdateCourse(courses[i]);
+                    newGame.UpdateCourse(selectedCourse);
                     this.Close();
-                    break;
                 }
-                else
+                else //If we are not creating a new game. Submit button should open the Questions for the course.
                 {
                     this.Hide();
                     questionGrid = new questionGrid(this);
                     questionGrid.ShowDialog();
                     this.Show();
-                    break;
                 }
-            }
-            //I'm not sure this is working correctly, currently loops through all the courses and sets the label to each one if you look in code. eventually sets to null 
-            Console.WriteLine(selectedCourse);
-            this.Close();
-            //save the state of courses and return to the previous form
+                Console.WriteLine(selectedCourse);
+                this.Close();
+            }                      
         }
 
         public string SelectedCourses()

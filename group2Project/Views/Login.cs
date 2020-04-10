@@ -80,7 +80,7 @@ namespace group2Project.Views
             }
 
             this.Hide();
-            Mainmenu menu1 = new Mainmenu();
+            MainMenu menu1 = new MainMenu();
             menu1.Location = this.Location;
             menu1.ShowDialog();
 

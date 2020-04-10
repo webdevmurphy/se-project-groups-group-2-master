@@ -295,11 +295,11 @@
     <Compile Include="Views\CreateNewAccount.Designer.cs">
       <DependentUpon>CreateNewAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\NewMainMenu.cs">
+    <Compile Include="Views\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\NewMainMenu.Designer.cs">
-      <DependentUpon>NewMainMenu.cs</DependentUpon>
+    <Compile Include="Views\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\QuizGame.cs">
       <SubType>Form</SubType>
@@ -312,12 +312,6 @@
     </Compile>
     <Compile Include="Views\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Mainmenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Mainmenu.Designer.cs">
-      <DependentUpon>Mainmenu.cs</DependentUpon>
     </Compile>
     <Compile Include="PopupQuestion.cs">
       <SubType>Form</SubType>
@@ -380,14 +374,11 @@
     <EmbeddedResource Include="Views\CreateNewAccount.resx">
       <DependentUpon>CreateNewAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\NewMainMenu.resx">
-      <DependentUpon>NewMainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Views\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Mainmenu.resx">
-      <DependentUpon>Mainmenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopupQuestion.resx">
       <DependentUpon>PopupQuestion.cs</DependentUpon>

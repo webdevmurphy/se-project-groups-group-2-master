@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,76 +8,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using group2Project.Views;
 
 namespace group2Project.Views
 {
-    public partial class Mainmenu : Form
+    public partial class MainMenu : Form
     {
-        public Mainmenu()
+        
+        public MainMenu()
         {
             InitializeComponent();
         }
 
-        private void NewGameBtn_Click(object sender, EventArgs e)
+        private void parentContainer_Paint(object sender, PaintEventArgs e)
         {
-            this.Hide();
-            NewGame newGame = new NewGame();
-            newGame.ShowDialog();
-            this.Show();
-        }
-
-        private void CoursesBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CourseGrid courseGrid = new CourseGrid();
-            courseGrid.ShowDialog();
-            this.Show();
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void newGameBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            about about = new about();
-            about.ShowDialog();
-            this.Show();
+            NewGame newPlayer = new NewGame() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.parentContainer.Controls.Add(newPlayer);
+            newPlayer.Show();
         }
 
-        private void MainMenuHeaderText_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void loadGameBtn_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void MainMenuHeaderText_TextChanged_1(object sender, EventArgs e)
+        private void coursesBtn_Click(object sender, EventArgs e)
         {
-
+            var courses = new CourseGrid(true) { Dock = DockStyle.Fill, TopLevel = false, TopMost = false  };
+            this.parentContainer.Controls.Add(courses);
+            courses.Show();
         }
 
-        private void LogoutBtn_Click(object sender, EventArgs e)
+        private void infoBtn_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to exit?", "Exit Application", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                System.Windows.Forms.Application.Exit();
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                
-            }
+            var about = new about() { Dock = DockStyle.Fill, TopLevel = false, TopMost = false };
+            this.parentContainer.Controls.Add(about);
+            about.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void exitBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Questions question = new Questions();
-            question.ShowDialog();
-            this.Show();
+            Application.Exit();
         }
     }
-}
+﻿}

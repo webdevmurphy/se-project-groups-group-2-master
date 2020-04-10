@@ -24,10 +24,9 @@ namespace group2Project.Views
             InitializeComponent();
         }
 
-        public void UpdateCourse(Course c)
+        public void UpdateCourse(string courseName)
         {
-            this.course = c;
-            courseLabel.Text = c.GetCourseName();
+            courseLabel.Text = courseName;
             if (courseLabel.Text != null)
             {
                 courseLabel.Visible = true;
@@ -66,8 +65,6 @@ namespace group2Project.Views
 
         private void ChooseCourseBtnClk(object sender, EventArgs e)
         {
-            // Form CourseGrid = new CourseGrid();
-            //this.Hide();
             CourseGrid example = new CourseGrid(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true }; ;
             this.NewGamePanel.Controls.Add(example);
             example.Show();
