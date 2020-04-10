@@ -451,9 +451,12 @@
     <Content Include="Resources\abstract-world-map.jpg" />
     <None Include="Resources\abstract-world-map1.jpg" />
     <Content Include="Resources\aniGlobe1.gif" />
+    <None Include="Resources\clipart2470540.png" />
     <Content Include="Resources\EarthSmile.gif" />
     <None Include="Resources\EarthSmile1.gif" />
     <Content Include="Resources\icons8-close-window-64.png" />
+    <None Include="Resources\icons8-close-window-641.png" />
+    <None Include="Resources\icons8-close-window-642.png" />
     <Content Include="Resources\icons8-course-128.png" />
     <None Include="Resources\icons8-course-1281.png" />
     <Content Include="Resources\icons8-fork-lift-128.png" />

@@ -162,5 +162,10 @@ namespace group2Project.Views
            CoursesLabel.Text = listViewCourses.Items[e.Index].Text;        
            lastItemChecked = listViewCourses.Items[e.Index];
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

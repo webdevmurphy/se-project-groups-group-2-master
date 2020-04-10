@@ -16,6 +16,7 @@ namespace group2Project.Views
     {
         private int numPlayers;
         private Course course;
+       
 
         public NewGame()
         {
@@ -63,11 +64,15 @@ namespace group2Project.Views
         private void ChooseCourseBtnClk(object sender, EventArgs e)
         {
             // Form CourseGrid = new CourseGrid();
-            this.Hide();
-            CourseGrid example = new CourseGrid(this);
-            example.ShowDialog();
-            this.Show();
-            this.Update();
+            //this.Hide();
+            CourseGrid example = new CourseGrid(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true }; ;
+            this.NewGamePanel.Controls.Add(example);
+            example.Show();
+
+            //L@@K @ ME  --Mike: Had to comment this out to get the coursegrid to display in our UI not sure what it does. If its broke, srry >.<
+           // this.Show();
+            //this.Update();
+            
         }
 
         private void NumberOfPlayersTextBox_TextChanged(object sender, EventArgs e)
@@ -82,6 +87,11 @@ namespace group2Project.Views
         private void NewGame_Enter(object sender, EventArgs e)
         { 
             Console.WriteLine("hey");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

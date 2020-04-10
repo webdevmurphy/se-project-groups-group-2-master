@@ -36,12 +36,14 @@
             this.ChooseCourseBtn = new System.Windows.Forms.Button();
             this.SelectedCourse = new System.Windows.Forms.Label();
             this.courseLabel = new System.Windows.Forms.Label();
+            this.NewGamePanel = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NumberOfPlayersLabel
             // 
             this.NumberOfPlayersLabel.AutoSize = true;
-            this.NumberOfPlayersLabel.Location = new System.Drawing.Point(137, 92);
+            this.NumberOfPlayersLabel.Location = new System.Drawing.Point(246, 33);
             this.NumberOfPlayersLabel.Name = "NumberOfPlayersLabel";
             this.NumberOfPlayersLabel.Size = new System.Drawing.Size(131, 21);
             this.NumberOfPlayersLabel.TabIndex = 0;
@@ -49,7 +51,7 @@
             // 
             // NumberOfPlayersTextBox
             // 
-            this.NumberOfPlayersTextBox.Location = new System.Drawing.Point(352, 92);
+            this.NumberOfPlayersTextBox.Location = new System.Drawing.Point(383, 25);
             this.NumberOfPlayersTextBox.Name = "NumberOfPlayersTextBox";
             this.NumberOfPlayersTextBox.Size = new System.Drawing.Size(120, 29);
             this.NumberOfPlayersTextBox.TabIndex = 1;
@@ -68,7 +70,7 @@
             // 
             // StartButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(547, 294);
+            this.StartButton.Location = new System.Drawing.Point(127, 294);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(101, 42);
             this.StartButton.TabIndex = 5;
@@ -80,7 +82,7 @@
             // 
             this.NewGameLabel.AutoSize = true;
             this.NewGameLabel.Font = new System.Drawing.Font("Segoe UI", 24F);
-            this.NewGameLabel.Location = new System.Drawing.Point(304, 9);
+            this.NewGameLabel.Location = new System.Drawing.Point(12, 9);
             this.NewGameLabel.Name = "NewGameLabel";
             this.NewGameLabel.Size = new System.Drawing.Size(176, 45);
             this.NewGameLabel.TabIndex = 6;
@@ -89,7 +91,7 @@
             // ChooseCourseBtn
             // 
             this.ChooseCourseBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChooseCourseBtn.Location = new System.Drawing.Point(141, 161);
+            this.ChooseCourseBtn.Location = new System.Drawing.Point(20, 57);
             this.ChooseCourseBtn.Name = "ChooseCourseBtn";
             this.ChooseCourseBtn.Size = new System.Drawing.Size(158, 39);
             this.ChooseCourseBtn.TabIndex = 7;
@@ -108,7 +110,7 @@
             // courseLabel
             // 
             this.courseLabel.AutoSize = true;
-            this.courseLabel.Location = new System.Drawing.Point(334, 169);
+            this.courseLabel.Location = new System.Drawing.Point(32, 117);
             this.courseLabel.Name = "courseLabel";
             this.courseLabel.Size = new System.Drawing.Size(146, 21);
             this.courseLabel.TabIndex = 9;
@@ -116,10 +118,31 @@
             this.courseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.courseLabel.Visible = false;
             // 
+            // NewGamePanel
+            // 
+            this.NewGamePanel.Location = new System.Drawing.Point(250, 60);
+            this.NewGamePanel.Name = "NewGamePanel";
+            this.NewGamePanel.Size = new System.Drawing.Size(385, 336);
+            this.NewGamePanel.TabIndex = 10;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::group2Project.Properties.Resources.icons8_close_window_641;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Location = new System.Drawing.Point(656, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(38, 35);
+            this.button2.TabIndex = 17;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // NewGame
             // 
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(723, 348);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(229)))), ((int)(((byte)(217)))));
+            this.ClientSize = new System.Drawing.Size(748, 408);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.NewGamePanel);
             this.Controls.Add(this.courseLabel);
             this.Controls.Add(this.SelectedCourse);
             this.Controls.Add(this.ChooseCourseBtn);
@@ -129,6 +152,7 @@
             this.Controls.Add(this.NumberOfPlayersTextBox);
             this.Controls.Add(this.NumberOfPlayersLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NewGame";
             this.Text = "New Game";
             this.Load += new System.EventHandler(this.NewGame_Load_1);
@@ -148,5 +172,7 @@
         private System.Windows.Forms.Button ChooseCourseBtn;
         private System.Windows.Forms.Label SelectedCourse;
         private System.Windows.Forms.Label courseLabel;
+        private System.Windows.Forms.Panel NewGamePanel;
+        private System.Windows.Forms.Button button2;
     }
 }

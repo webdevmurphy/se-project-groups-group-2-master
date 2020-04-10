@@ -13,6 +13,7 @@ namespace group2Project.Views
 {
     public partial class NewMainMenu : Form
     {
+        
         public NewMainMenu()
         {
             InitializeComponent();
@@ -38,14 +39,7 @@ namespace group2Project.Views
             System.Windows.Forms.Application.Exit();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            
-            
-            NewGame newPlayer = new NewGame() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.parentContainer.Controls.Add(newPlayer);
-            newPlayer.Show();
-        }
+      
 
         private void parentContainer_Paint(object sender, PaintEventArgs e)
         {
@@ -54,9 +48,7 @@ namespace group2Project.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var about = new about() { Dock = DockStyle.Fill, TopLevel = false, TopMost = false };
-            this.parentContainer.Controls.Add(about);
-            about.Show();
+            
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -67,6 +59,25 @@ namespace group2Project.Views
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            NewGame newPlayer = new NewGame() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.parentContainer.Controls.Add(newPlayer);
+            newPlayer.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            var about = new about() { Dock = DockStyle.Fill, TopLevel = false, TopMost = false };
+            this.parentContainer.Controls.Add(about);
+            about.Show();
         }
     }
 ﻿}
