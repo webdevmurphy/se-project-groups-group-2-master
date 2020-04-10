@@ -1,7 +1,4 @@
-﻿//#define FIG1
-#define FIG34
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,11 +59,6 @@ namespace group2Project.Views
         // Selected hexagons.
         private List<PointF> Hexagons = new List<PointF>();
 
-#if FIG34
-        // The selected search rectangle.
-        private List<RectangleF> TestRects = new List<RectangleF>();
-#endif
-
         // Redraw the grid.
         private void picGrid_Paint(object sender, PaintEventArgs e)
         {
@@ -84,18 +76,6 @@ namespace group2Project.Views
                 0, picGrid.ClientSize.Width,
                 0, picGrid.ClientSize.Height,
                 HexHeight);
-
-#if FIG34
-            // Draw the selected rectangles.
-            using (Pen pen = new Pen(Color.Red, 3))
-            {
-                pen.DashStyle = DashStyle.Dash;
-                foreach (RectangleF rect in TestRects)
-                {
-                    e.Graphics.DrawRectangle(pen, Rectangle.Round(rect));
-                }
-            }
-#endif
         }
 
         // Draw a hexagonal grid for the indicated area.
@@ -124,15 +104,14 @@ namespace group2Project.Views
                     {
                         break;
                     }
-
                     // If it fits vertically, draw it.
                     if (points[4].Y <= ymax)
                     {
                         gr.DrawPolygon(pen, points);
 
-#if FIG1
-                        // Label the hexagon (for Figure 1).
-                        using (StringFormat sf = new StringFormat())
+                        // This can be used to label the initial hexagon
+
+                        /*using (StringFormat sf = new StringFormat())
                         {
                             sf.Alignment = StringAlignment.Center;
                             sf.LineAlignment = StringAlignment.Center;
@@ -142,8 +121,7 @@ namespace group2Project.Views
                                 col.ToString() + ")";
                             gr.DrawString(label, this.Font,
                                 Brushes.Black, x, y, sf);
-                        }
-#endif
+                        }*/
                     }
                 }
             }
@@ -179,16 +157,7 @@ namespace group2Project.Views
                 label.Text = (PlayerTurn + 1).ToString();
                 Console.WriteLine(Players[PlayerTurn].score);
                 picGrid.Controls.Add(label);
-                Hexagons.Add(new PointF(row, col));
-
-#if FIG34
-                // Used to draw reference rectangles.
-                PointF[] points = HexToPoints(HexHeight, row, col);
-                TestRects.Add(new RectangleF(
-                    points[0].X, points[1].Y,
-                    0.75f * (points[3].X - points[0].X),
-                    points[4].Y - points[1].Y));
-#endif      
+                Hexagons.Add(new PointF(row, col));     
             } 
                 if (PlayerTurn + 1 < Players.Count) {
                     PlayerTurn++;
