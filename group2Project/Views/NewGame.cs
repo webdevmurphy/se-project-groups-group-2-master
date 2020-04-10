@@ -50,10 +50,13 @@ namespace group2Project.Views
             /*
              * Start game and show map
              */
-            this.Hide();
-            mapView map = new mapView(numPlayers, course.GetCourseName());
-            map.ShowDialog();
-            this.Show();
+           // this.Hide();
+            mapView map = new mapView(numPlayers, course.GetCourseName()) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.NewGamePanel.Size = new Size(800, 600);
+            this.NewGamePanel.Controls.Add(map);
+            map.Show();
+            
+            // this.Show();
         }
 
         private void CancelButton_Click_1(object sender, EventArgs e)

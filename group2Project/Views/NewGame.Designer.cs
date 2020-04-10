@@ -122,7 +122,7 @@
             // 
             this.NewGamePanel.Location = new System.Drawing.Point(250, 60);
             this.NewGamePanel.Name = "NewGamePanel";
-            this.NewGamePanel.Size = new System.Drawing.Size(385, 336);
+            this.NewGamePanel.Size = new System.Drawing.Size(486, 336);
             this.NewGamePanel.TabIndex = 10;
             // 
             // button2
