@@ -146,6 +146,11 @@ namespace group2Project.Views
             label.Text = ""; //should be player number later on once we get that working
             QuizGame quiz = new QuizGame();
             quiz.ShowDialog();
+            /*if (coordinate already has been clicked) 
+             * {
+             *      check if player is in cooldown;
+             *      enter a contested territory mode;
+             * }*/
             if (quiz.returnCorrect() == true)
             {
                 PointToHex(e.X, e.Y, HexHeight, out row, out col);
