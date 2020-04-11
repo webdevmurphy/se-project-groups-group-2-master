@@ -69,6 +69,29 @@ namespace group2Project.Views
             {
                 e.Graphics.FillPolygon(Brushes.LightBlue,
                     HexToPoints(HexHeight, point.X, point.Y));
+
+                // Find center point of hex
+                PointF[] clickedHexagons = HexToPoints(HexHeight, point.X, point.Y);
+                float centerX = 0;
+                float centerY = 0;
+                foreach (PointF clickedHex in HexToPoints(HexHeight, point.X, point.Y)) 
+                {
+                    centerX += clickedHex.X;
+                    centerY += clickedHex.Y;
+                }
+                centerX /= clickedHexagons.Length;
+                centerY /= clickedHexagons.Length;
+
+                using (StringFormat sf = new StringFormat())
+                {
+                    sf.Alignment = StringAlignment.Center;
+                    sf.LineAlignment = StringAlignment.Center;
+                    float x = point.X;
+                    float y = point.Y;
+                    string label = (PlayerTurn + 1).ToString();
+                    e.Graphics.DrawString(label, this.Font,
+                        Brushes.Black, centerX, centerY, sf);
+                }
             }
 
             // Draw the grid.
@@ -161,7 +184,7 @@ namespace group2Project.Views
                 Players[PlayerTurn].score++;
                 label.Text = (PlayerTurn + 1).ToString();
                 Console.WriteLine(Players[PlayerTurn].score);
-                picGrid.Controls.Add(label);
+                //picGrid.Controls.Add(label);
                 Hexagons.Add(new PointF(row, col));     
             } 
                 if (PlayerTurn + 1 < Players.Count) {
