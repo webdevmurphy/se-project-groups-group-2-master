@@ -57,8 +57,9 @@ namespace group2Project.Views
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            listViewCourses.Dispose();
-            this.DialogResult = DialogResult.OK;
+            this.Parent.Controls.Remove(this);
+            /*listViewCourses.Dispose();
+            this.DialogResult = DialogResult.OK;*/
         }
 
         private void AddCourseBtn_Click(object sender, EventArgs e)
@@ -109,7 +110,7 @@ namespace group2Project.Views
             }
         }
 
-
+        Course course;
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             if (listViewCourses.FocusedItem == null) //Check and see if there is a selected item before setting. If no item selected display an error to the user.
@@ -121,18 +122,18 @@ namespace group2Project.Views
                 selectedCourse = listViewCourses.FocusedItem.Text;
                 if (newGame != null) //If we are creating a newGame. Submit button should update the newGame form with the selectedCourse
                 {
-                    newGame.UpdateCourse(selectedCourse);
+                    newGame.UpdateCourseLabel(selectedCourse);
                     this.Close();
                 }
-                else //If we are not creating a new game. Submit button should open the Questions for the course.
+                else //If we are not creating a new game. Submit button should open the Questions for the checked course.
                 {
                     this.Hide();
-                    questionGrid = new questionGrid(this);
+                    course = (Course)listViewCourses.FocusedItem.Tag;
+                    questionGrid = new questionGrid(course);
                     questionGrid.ShowDialog();
                     this.Show();
                 }
                 Console.WriteLine(selectedCourse);
-                this.Close();
             }                      
         }
 
@@ -161,7 +162,8 @@ namespace group2Project.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Parent.Controls.Remove(this);
+            /*this.Close();*/
         }
     }
 }

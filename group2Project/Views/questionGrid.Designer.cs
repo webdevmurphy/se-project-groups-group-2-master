@@ -105,7 +105,6 @@
             this.QuestionRecords.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.QuestionRecords.MultiSelect = false;
             this.QuestionRecords.Name = "QuestionRecords";
-            this.QuestionRecords.ReadOnly = true;
             this.QuestionRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.QuestionRecords.Size = new System.Drawing.Size(923, 636);
             this.QuestionRecords.TabIndex = 0;
@@ -116,31 +115,26 @@
             this.Question.Frozen = true;
             this.Question.HeaderText = "Question";
             this.Question.Name = "Question";
-            this.Question.ReadOnly = true;
             // 
             // Answer1
             // 
             this.Answer1.HeaderText = "Answer1 (Correct Answer)";
             this.Answer1.Name = "Answer1";
-            this.Answer1.ReadOnly = true;
             // 
             // Answer2
             // 
             this.Answer2.HeaderText = "Answer2";
             this.Answer2.Name = "Answer2";
-            this.Answer2.ReadOnly = true;
             // 
             // Answer3
             // 
             this.Answer3.HeaderText = "Answer3";
             this.Answer3.Name = "Answer3";
-            this.Answer3.ReadOnly = true;
             // 
             // Answer4
             // 
             this.Answer4.HeaderText = "Answer4";
             this.Answer4.Name = "Answer4";
-            this.Answer4.ReadOnly = true;
             // 
             // questionGrid
             // 
@@ -154,6 +148,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "questionGrid";
             this.Text = "Question Records";
+            this.Load += new System.EventHandler(this.questionGrid_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QuestionRecords)).EndInit();
             this.ResumeLayout(false);

@@ -16,15 +16,13 @@ namespace group2Project.Views
     {
         private int numPlayers;
         private Course course;
-       
-
         public NewGame()
         {
             course = new Course();
             InitializeComponent();
         }
 
-        public void UpdateCourse(string courseName)
+        public void UpdateCourseLabel(string courseName)
         {
             courseLabel.Text = courseName;
             if (courseLabel.Text != null)
@@ -60,14 +58,20 @@ namespace group2Project.Views
 
         private void CancelButton_Click_1(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            this.Parent.Controls.Remove(this);
+            /*this.DialogResult = DialogResult.OK;*/
         }
 
+        
         private void ChooseCourseBtnClk(object sender, EventArgs e)
         {
-            CourseGrid example = new CourseGrid(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true }; ;
-            this.NewGamePanel.Controls.Add(example);
-            example.Show();
+            var example = new CourseGrid(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            if (!this.Parent.Controls.Contains(example))
+            {
+                this.NewGamePanel.Controls.Add(example);
+                example.Show();
+            }
+                
 
             //L@@K @ ME  --Mike: Had to comment this out to get the coursegrid to display in our UI not sure what it does. If its broke, srry >.<
            // this.Show();
@@ -91,7 +95,13 @@ namespace group2Project.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Parent.Controls.Remove(this);
+           /* this.Close();*/
+        }
+
+        private void courseLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -15,17 +15,23 @@ namespace group2Project.Views
     public partial class questionGrid : Form
     {
         private Course c;
-        public questionGrid(CourseGrid c)
+        public questionGrid(Course c)
         {
+            this.c = c;
             InitializeComponent();
         }
+        private void questionGrid_Load(object sender, EventArgs e)
+        {
+            Console.WriteLine("Course being edited: " + c.GetCourseName());
+        }
+
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
             //needs to be fixed
             UpdateQuestion UpdateTrivia = new UpdateQuestion(QuestionRecords.SelectedRows[0].Cells[0].Value.ToString(), this.QuestionRecords.SelectedRows[0].Cells[1].Value.ToString());
             UpdateTrivia.ShowDialog();
-            QuestionRecords.SelectedRows[0].Cells[0].Value =  UpdateTrivia.ReturnQuestion();
+            QuestionRecords.SelectedRows[0].Cells[0].Value = UpdateTrivia.ReturnQuestion();
             QuestionRecords.SelectedRows[0].Cells[1].Value = UpdateTrivia.ReturnAnswer();
         }
 
@@ -51,5 +57,7 @@ namespace group2Project.Views
         {
 
         }
+
     }
 }
+

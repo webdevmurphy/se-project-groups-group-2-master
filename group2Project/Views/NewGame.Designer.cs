@@ -117,6 +117,7 @@
             this.courseLabel.Text = "No Course Selected";
             this.courseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.courseLabel.Visible = false;
+            this.courseLabel.Click += new System.EventHandler(this.courseLabel_Click);
             // 
             // NewGamePanel
             // 
