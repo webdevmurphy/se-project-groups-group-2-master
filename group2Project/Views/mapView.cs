@@ -63,7 +63,7 @@ namespace group2Project.Views
         private void picGrid_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            int test = 0;
+            int test = 1;
 
             // Draw the selected hexagons.
             foreach (PointF point in Hexagons)
