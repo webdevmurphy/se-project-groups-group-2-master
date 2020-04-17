@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using group2Project.Models;
 using System.Drawing.Drawing2D;
+using System.Reflection;
 
 namespace group2Project.Views
 {
@@ -63,12 +64,12 @@ namespace group2Project.Views
         private void picGrid_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            int test = 1;
+            int playerNum = 1;
 
             // Draw the selected hexagons.
             foreach (PointF point in Hexagons)
             {
-                e.Graphics.FillPolygon(Brushes.LightBlue,
+                e.Graphics.FillPolygon(Brushes.LightSeaGreen,
                     HexToPoints(HexHeight, point.X, point.Y));
 
                 // Find center point of hex
@@ -89,20 +90,18 @@ namespace group2Project.Views
                     sf.LineAlignment = StringAlignment.Center;
                     float x = point.X;
                     float y = point.Y;
-                    string label = test.ToString();
+                    string label = playerNum.ToString();
                     e.Graphics.DrawString(label, this.Font,
                         Brushes.Black, centerX, centerY, sf);
                 }
-                test++;
+                playerNum++;
             }
-
             // Draw the grid.
             DrawHexGrid(e.Graphics, Pens.Black,
                 0, picGrid.ClientSize.Width,
                 0, picGrid.ClientSize.Height,
                 HexHeight);
         }
-
         // Draw a hexagonal grid for the indicated area.
         private void DrawHexGrid(Graphics gr, Pen pen,
             float xmin, float xmax, float ymin, float ymax,
