@@ -63,6 +63,7 @@ namespace group2Project.Views
         private void picGrid_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            int test = 0;
 
             // Draw the selected hexagons.
             foreach (PointF point in Hexagons)
@@ -88,10 +89,11 @@ namespace group2Project.Views
                     sf.LineAlignment = StringAlignment.Center;
                     float x = point.X;
                     float y = point.Y;
-                    string label = (PlayerTurn + 1).ToString();
+                    string label = test.ToString();
                     e.Graphics.DrawString(label, this.Font,
                         Brushes.Black, centerX, centerY, sf);
                 }
+                test++;
             }
 
             // Draw the grid.
