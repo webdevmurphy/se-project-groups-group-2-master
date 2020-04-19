@@ -37,6 +37,7 @@
             this.questionLabel = new System.Windows.Forms.Label();
             this.timerLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // quizTimer
@@ -117,6 +118,17 @@
             this.timerLabel.TabIndex = 7;
             this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button5
+            // 
+            this.button5.BackgroundImage = global::group2Project.Properties.Resources.icons8_close_window_64;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.Location = new System.Drawing.Point(864, 12);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(57, 57);
+            this.button5.TabIndex = 8;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // QuizGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -124,6 +136,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(229)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(933, 588);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.questionLabel);
             this.Controls.Add(this.button4);
@@ -150,5 +163,6 @@
         public System.Windows.Forms.Button button3;
         public System.Windows.Forms.Button button4;
         public System.Windows.Forms.Label questionLabel;
+        private System.Windows.Forms.Button button5;
     }
 }

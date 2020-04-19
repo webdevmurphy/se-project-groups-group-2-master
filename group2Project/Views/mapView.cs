@@ -17,7 +17,9 @@ namespace group2Project.Views
         public int NumOfPlayers;
         public Courses Course;
         public int PlayerTurn = 0;
+
         public int QuestionIndex { get; set; }
+        
         List<Student> Players = new List<Student>();
         List<Trivia> questions = new List<Trivia>();
         ScoreBoard scoreboard;
@@ -29,7 +31,6 @@ namespace group2Project.Views
             this.questions = questions;
             this.NumOfPlayers = NumOfPlayers;
             this.Course = Course;
-            this.QuestionIndex = 0;
             this.scoreboard = scoreBoard;
         }
 
@@ -179,7 +180,8 @@ namespace group2Project.Views
             int row, col;
             Label label = new Label();
             label.Text = ""; //should be player number later on once we get that working
-            QuizGame quiz = new QuizGame(Course, questions, QuestionIndex);
+            QuizGame quiz = new QuizGame(this, Course, questions, QuestionIndex);
+            quiz.FormBorderStyle = FormBorderStyle.None;
             quiz.ShowDialog();
             /*if (coordinate already has been clicked) 
              * {
@@ -189,10 +191,10 @@ namespace group2Project.Views
             if (quiz.returnCorrect() == true)
             {
                 scoreboard.territories++;
+                QuestionIndex++;
                 scoreboard.UpdateList();
                 Console.WriteLine(scoreboard.territories);
-                QuestionIndex++; //Increase question index if correct
-                if(QuestionIndex >= questions.Count()) //If we reach the end of the questions reset Index back to 0
+                if (QuestionIndex >= questions.Count()) //If we reach the end of the questions reset Index back to 0
                 {
                     QuestionIndex = 0;
                 }

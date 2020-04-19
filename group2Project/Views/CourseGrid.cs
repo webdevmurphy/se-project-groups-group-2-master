@@ -51,24 +51,29 @@ namespace group2Project.Views
 
             MongoClientConn database = new MongoClientConn("Courses"); //Create an instance of our DB
             courses = database.GetAll<Courses>("Courses"); //Grab all the courses from the DB
+            List<string> duplicateList = new List<string>();
             if (courses != null)
             {
-                foreach (var course in courses)
+                for (int i = 0; i < courses.Count; i++)
                 {
-                    var courseRow = new string[] { course.CourseName };
-                    var lvi = new ListViewItem(courseRow);
-                    if (listViewCourses.Items.Contains(lvi))
+                    Console.WriteLine(courses[i].CourseName);
+                    if (duplicateList.Contains(courses[i].CourseName))
                     {
                         Console.WriteLine("Preventing Duplicates");
                     }
                     else
-                        lvi.Tag = course;
-                    lvi.Checked = false;
-                    listViewCourses.Items.Add(lvi);
+                    {
+                        var courseName = new string[] { courses[i].CourseName };
+                        var lvi = new ListViewItem(courseName);
+                        duplicateList.Add(courses[i].CourseName);
+                        lvi.Tag = courses[i];
+                        lvi.Checked = false;
+                        listViewCourses.Items.Add(lvi);
+                    }                 
                 }
             }
+            duplicateList.Clear();
             this.Controls.Add(listViewCourses);
-
         }
 
         Courses selectedCourse;

@@ -17,28 +17,31 @@ namespace group2Project.Views
         private List<Trivia> questions;
         private QuizBuilder quizBuilder;
         private Courses course;
-        private int seconds;
-        private int Index;
+        private int QuestionIndex;
+        private int seconds = 0;
         private bool isCorrect = false;
+
+        mapView map;
         public QuizGame()
-        {
-            
+        {         
             InitializeComponent();
-            quizTimer.Start();
         }
 
-        public QuizGame(Courses course, List<Trivia>Questions, int QuestionIndex)
+        public QuizGame(mapView map, Courses course, List<Trivia>Questions, int QuestionIndex)
         {
-            this.Index = QuestionIndex;
+            this.map = map;
+            this.QuestionIndex = QuestionIndex;
             this.questions = Questions;
             this.course = course;
+            this.isCorrect = false;
             InitializeComponent();
         }
 
         private void QuizGame_Load(object sender, EventArgs e)
         {
             quizTimer.Start();
-            quizBuilder = new QuizBuilder(this, course, questions, Index);
+            timerLabel.Text = seconds.ToString();
+            quizBuilder = new QuizBuilder(this, map, course, questions, QuestionIndex);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -120,6 +123,11 @@ namespace group2Project.Views
         public Boolean returnCorrect()
         {
             return isCorrect;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -22,23 +22,6 @@ namespace group2Project.Models
         {
      
         }
-
-        public String getQuestion()
-        {
-            return this.Question;
-        }
-
-        public Trivia(String question)
-        {
-            this.Question = question;
-        }
-
-
-        //converts object to JSON string
-        public override string ToString()
-        {
-            return JsonConvert.SerializeObject(this);
-        }
     }   
-    }
+}
 
