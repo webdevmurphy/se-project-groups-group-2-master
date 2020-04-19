@@ -9,16 +9,27 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using group2Project.Models;
+using group2Project.DataConnection;
 
 namespace group2Project.Views
 {
     public partial class NewGame : Form
     {
-        private int numPlayers;
-        private Course course;
-        public NewGame()
+        public int numPlayers { get; set; }
+        public Courses course;
+        private Student student;
+        private List<Trivia> questions;
+        private List<Courses> courseList;
+        private MainLayout main;
+        public NewGame(MainLayout main, Student student)
         {
-            course = new Course();
+            this.student = student;
+            this.main = main;
+            questions = new List<Trivia>();
+            courseList = new List<Courses>();
+            MongoClientConn database = new MongoClientConn("Courses");
+            courseList = database.LoadRecords<Courses>("Courses");
+            numPlayers = 0;
             InitializeComponent();
         }
 
@@ -34,12 +45,8 @@ namespace group2Project.Views
 
         private void NewGame_Load_1(object sender, EventArgs e)
         {
-            if(courseLabel.Text == null)
-            {
-                courseLabel.Text = "No Course Selected";
-            }
-            courseLabel.Text = course.GetCourseName();
-            this.Update();
+            numPlayers = 0;
+            courseLabel.Text = "";
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -47,19 +54,46 @@ namespace group2Project.Views
             /*
              * Start game and show map
              */
-           // this.Hide();
-            mapView map = new mapView(numPlayers, course.GetCourseName()) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.NewGamePanel.Size = new Size(800, 600);
-            this.NewGamePanel.Controls.Add(map);
-            map.Show();
-            
-            // this.Show();
+             if(numPlayers <= 0)
+            {
+                string text = "Please enter the number of players";
+                string caption = "No players";
+                var result = MessageBox.Show(text, caption);
+            } 
+            else if(course == null)
+            {
+                string text = "Please select a course";
+                string caption = "No course";
+                var result = MessageBox.Show(text, caption);
+            } 
+            else
+            {
+                
+                for (int i = 0; i < courseList.Count; i++)
+                {
+                    if (String.Equals(courseList[i].CourseName,course.CourseName,StringComparison.Ordinal))
+                    {
+                        Console.WriteLine("Question added: " + courseList[i].courseQuestions);
+                        questions.Add(courseList[i].courseQuestions);
+                    }
+                }
+                
+                
+                Game game = new Game(numPlayers, course, questions, student) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                game.FormBorderStyle = FormBorderStyle.None;
+                main.AddGame(game);
+                // MainLayout.AddGame(game);
+                /*game.Show();*/
+                /*mapView map = new mapView(numPlayers, course, questions) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                this.NewGamePanel.Size = new Size(800, 600);
+                this.NewGamePanel.Controls.Add(map);
+                map.Show();*/
+            }          
         }
 
         private void CancelButton_Click_1(object sender, EventArgs e)
         {
             this.Parent.Controls.Remove(this);
-            /*this.DialogResult = DialogResult.OK;*/
         }
 
         
@@ -71,12 +105,6 @@ namespace group2Project.Views
                 this.NewGamePanel.Controls.Add(example);
                 example.Show();
             }
-                
-
-            //L@@K @ ME  --Mike: Had to comment this out to get the coursegrid to display in our UI not sure what it does. If its broke, srry >.<
-           // this.Show();
-            //this.Update();
-            
         }
 
         private void NumberOfPlayersTextBox_TextChanged(object sender, EventArgs e)
@@ -85,18 +113,10 @@ namespace group2Project.Views
                 MessageBox.Show("Please enter only numbers.");
                 NumberOfPlayersTextBox.Text = "";
             }
-            numPlayers = Int32.Parse(NumberOfPlayersTextBox.Text);
-        }
-
-        private void NewGame_Enter(object sender, EventArgs e)
-        { 
-            Console.WriteLine("hey");
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Parent.Controls.Remove(this);
-           /* this.Close();*/
+            if(NumberOfPlayersTextBox.Text != "")
+            {
+                numPlayers = Int32.Parse(NumberOfPlayersTextBox.Text);
+            }          
         }
 
         private void courseLabel_Click(object sender, EventArgs e)

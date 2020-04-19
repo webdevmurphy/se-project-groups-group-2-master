@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace group2Project.Views
 {
-    public partial class about : Form
+    public partial class About : Form
     {
-        public about()
+        public About()
         {
             InitializeComponent();
         }

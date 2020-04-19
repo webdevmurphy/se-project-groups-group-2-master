@@ -15,25 +15,32 @@ namespace group2Project.Views
     public partial class mapView : Form
     {
         public int NumOfPlayers;
-        public string Course;
+        public Courses Course;
         public int PlayerTurn = 0;
-        List<User> Players = new List<User>();
-        public mapView(int NumOfPlayers, String Course)
+        public int QuestionIndex { get; set; }
+        List<Student> Players = new List<Student>();
+        List<Trivia> questions = new List<Trivia>();
+        ScoreBoard scoreboard;
+        public mapView(int NumOfPlayers, Courses Course, List<Trivia> questions, ScoreBoard scoreBoard)
         {
             InitializeComponent();
             Console.WriteLine(NumOfPlayers);
             Console.WriteLine(Course);
+            this.questions = questions;
             this.NumOfPlayers = NumOfPlayers;
             this.Course = Course;
+            this.QuestionIndex = 0;
+            this.scoreboard = scoreBoard;
         }
 
         public void initializePlayers(int NumOfPlayers)
         {
             int i = 0;
+            //Had to remove for testing 
             /* this next five lines is all for testing, due to this, we can only have 2 players until this is changed */
-            List<User> testData = new List<User>();
-            User person1 = new User("example", "testing", 0);
-            User person2 = new User("2ndexample", "testing", 0);
+            /*List<Student> testData = new List<Student>();
+            Student person1 = new Student("example", "testing", 0);
+            Student person2 = new Student("2ndexample", "testing", 0);
             testData.Add(person1);
             testData.Add(person2);
 
@@ -41,7 +48,7 @@ namespace group2Project.Views
             {
                 Players.Add(testData[i]);
                 Console.WriteLine(Players[i].userName);
-            }
+            }*/
         }
             //we will need to figure out how to get each player to have individual usernames and passwords, this will probably include the database
          /* for (i = 0; i < NumOfPlayers; i++)
@@ -168,7 +175,7 @@ namespace group2Project.Views
             int row, col;
             Label label = new Label();
             label.Text = ""; //should be player number later on once we get that working
-            QuizGame quiz = new QuizGame();
+            QuizGame quiz = new QuizGame(Course, questions, QuestionIndex);
             quiz.ShowDialog();
             /*if (coordinate already has been clicked) 
              * {
@@ -177,14 +184,22 @@ namespace group2Project.Views
              * }*/
             if (quiz.returnCorrect() == true)
             {
+                scoreboard.territories++;
+                scoreboard.UpdateList();
+                Console.WriteLine(scoreboard.territories);
+                QuestionIndex++; //Increase question index if correct
+                if(QuestionIndex >= questions.Count()) //If we reach the end of the questions reset Index back to 0
+                {
+                    QuestionIndex = 0;
+                }
                 PointToHex(e.X, e.Y, HexHeight, out row, out col);
                 label.Location = new System.Drawing.Point(e.X , e.Y); 
                 label.Size = new System.Drawing.Size((int)HexWidth(HexHeight - 20), (int)HexHeight - 15);
                 label.BackColor = Color.LightBlue;
-                Console.WriteLine(Players[PlayerTurn].score);
-                Players[PlayerTurn].score++;
+                //Console.WriteLine(Players[PlayerTurn].score);
+                //Players[PlayerTurn].score++;
                 label.Text = (PlayerTurn + 1).ToString();
-                Console.WriteLine(Players[PlayerTurn].score);
+                //Console.WriteLine(Players[PlayerTurn].score);
                 //picGrid.Controls.Add(label);
                 Hexagons.Add(new PointF(row, col));     
             } 
@@ -300,6 +315,11 @@ namespace group2Project.Views
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void picGrid_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

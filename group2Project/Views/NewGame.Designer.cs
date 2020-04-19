@@ -37,7 +37,6 @@
             this.SelectedCourse = new System.Windows.Forms.Label();
             this.courseLabel = new System.Windows.Forms.Label();
             this.NewGamePanel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NumberOfPlayersLabel
@@ -126,23 +125,11 @@
             this.NewGamePanel.Size = new System.Drawing.Size(486, 336);
             this.NewGamePanel.TabIndex = 10;
             // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::group2Project.Properties.Resources.icons8_close_window_641;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Location = new System.Drawing.Point(656, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(38, 35);
-            this.button2.TabIndex = 17;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // NewGame
             // 
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(229)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(748, 408);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.NewGamePanel);
             this.Controls.Add(this.courseLabel);
             this.Controls.Add(this.SelectedCourse);
@@ -174,6 +161,5 @@
         private System.Windows.Forms.Label SelectedCourse;
         private System.Windows.Forms.Label courseLabel;
         private System.Windows.Forms.Panel NewGamePanel;
-        private System.Windows.Forms.Button button2;
     }
 }

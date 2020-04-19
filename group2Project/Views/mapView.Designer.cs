@@ -26,7 +26,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mapView));
             this.picGrid = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,21 +44,11 @@
             this.picGrid.Size = new System.Drawing.Size(818, 496);
             this.picGrid.TabIndex = 1;
             this.picGrid.TabStop = false;
+            this.picGrid.Click += new System.EventHandler(this.picGrid_Click);
             this.picGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.picGrid_Paint);
             this.picGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.picGrid_MouseClick);
             this.picGrid.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picGrid_MouseMove);
             this.picGrid.Resize += new System.EventHandler(this.picGrid_Resize);
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::group2Project.Properties.Resources.icons8_close_window_641;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Location = new System.Drawing.Point(736, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(38, 35);
-            this.button2.TabIndex = 18;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // mapView
             // 
@@ -67,7 +56,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(822, 503);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.picGrid);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -83,6 +71,5 @@
         #endregion
 
         private System.Windows.Forms.PictureBox picGrid;
-        private System.Windows.Forms.Button button2;
     }
 }

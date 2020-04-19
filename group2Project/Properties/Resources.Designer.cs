@@ -65,7 +65,7 @@ namespace group2Project.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap abstract_world_map {
             get {
-                object obj = ResourceManager.GetObject("abstract-world-map", resourceCulture);
+                object obj = ResourceManager.GetObject("abstract_world_map", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -76,6 +76,16 @@ namespace group2Project.Properties {
         internal static System.Drawing.Bitmap clipart2470540 {
             get {
                 object obj = ResourceManager.GetObject("clipart2470540", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clipart24705401 {
+            get {
+                object obj = ResourceManager.GetObject("clipart24705401", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,17 +105,7 @@ namespace group2Project.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_close_window_64 {
             get {
-                object obj = ResourceManager.GetObject("icons8-close-window-64", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_close_window_641 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-close-window-641", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_close_window_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,7 +115,17 @@ namespace group2Project.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_course_128 {
             get {
-                object obj = ResourceManager.GetObject("icons8-course-128", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_course_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_course_1281 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_course_1281", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,7 +135,7 @@ namespace group2Project.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_fork_lift_128 {
             get {
-                object obj = ResourceManager.GetObject("icons8-fork-lift-128", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_fork_lift_128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -135,7 +145,17 @@ namespace group2Project.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_geography_128 {
             get {
-                object obj = ResourceManager.GetObject("icons8-geography-128", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_geography_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_globe_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_globe_80", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -145,7 +165,27 @@ namespace group2Project.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_sign_out_128 {
             get {
-                object obj = ResourceManager.GetObject("icons8-sign-out-128", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_sign_out_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loading_gif_png {
+            get {
+                object obj = ResourceManager.GetObject("loading_gif_png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap triviaLogo {
+            get {
+                object obj = ResourceManager.GetObject("triviaLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -95,7 +95,7 @@
             // questionLabel
             // 
             this.questionLabel.AutoSize = true;
-            this.questionLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.questionLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(229)))), ((int)(((byte)(217)))));
             this.questionLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.questionLabel.Location = new System.Drawing.Point(233, 78);
             this.questionLabel.MaximumSize = new System.Drawing.Size(400, 150);
@@ -122,7 +122,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(229)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(933, 588);
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.questionLabel);
@@ -143,12 +143,12 @@
         #endregion
 
         private System.Windows.Forms.Timer quizTimer;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label questionLabel;
         private System.Windows.Forms.Label timerLabel;
         private System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button button4;
+        public System.Windows.Forms.Label questionLabel;
     }
 }

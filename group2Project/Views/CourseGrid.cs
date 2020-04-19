@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using group2Project.Controllers;
 using group2Project.Models;
+using group2Project.DataConnection;
 
 namespace group2Project.Views
 {
@@ -17,41 +17,17 @@ namespace group2Project.Views
         private NewGame newGame;
 
         private ListView listViewCourses;
-        private List<Course> courses;
-        private CourseManager courseManager;
-        private questionGrid questionGrid;
-        private String selectedCourse;
+        private List<Courses> courses;
+        private string courseLabel;
 
-        private bool edit;
-
-        CheckBox lastChecked;
         public CourseGrid() //our default constructor
         {
-            edit = false;
-            courseManager = new CourseManager();
-            listViewCourses = new ListView();
-            courses = CourseManager.GetCourses();
-            lastChecked = new CheckBox();
             InitializeComponent();         
-        }
-
-        public CourseGrid(bool edit) //used for when editing the courses in the MainMenu courses button
-        {
-            this.edit = edit;
-            courseManager = new CourseManager();
-            listViewCourses = new ListView();
-            courses = CourseManager.GetCourses();
-            lastChecked = new CheckBox();
-            InitializeComponent();
         }
 
         public CourseGrid(NewGame newGame) //used for when accessing the courses from the newGame screen
         {
             this.newGame = newGame;
-            courseManager = new CourseManager();
-            listViewCourses = new ListView();
-            courses = CourseManager.GetCourses();
-            lastChecked = new CheckBox();
             InitializeComponent();
         }
 
@@ -62,18 +38,8 @@ namespace group2Project.Views
             this.DialogResult = DialogResult.OK;*/
         }
 
-        private void AddCourseBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AddACourse createCourse = new AddACourse(this);
-            createCourse.ShowDialog();
-            this.Show();
-        }
-
         private void CourseGrid_Load(object sender, EventArgs e)
         {
-            if(edit) { SubmitButton.Text = "Edit"; } //if we are editing courses change the button to say Edit instead
-
             listViewCourses.Items.Clear();
             listViewCourses.Columns.Add("Course Name", 500, HorizontalAlignment.Center);
             listViewCourses.LabelEdit = true;
@@ -82,65 +48,54 @@ namespace group2Project.Views
             listViewCourses.AllowColumnReorder = true;
             listViewCourses.CheckBoxes = true;
             listViewCourses.MultiSelect = false;
-            foreach (var course in courses)
-            {
-                var courseRow = new string[] { course.GetCourseName()};
-                var lvi = new ListViewItem(courseRow);
-                Console.WriteLine(courseRow.ToString());
-                lvi.Tag = course;
-                lvi.Checked = false;
-                listViewCourses.Items.Add(lvi);
-            }
 
+            MongoClientConn database = new MongoClientConn("Courses"); //Create an instance of our DB
+            courses = database.GetAll<Courses>("Courses"); //Grab all the courses from the DB
+            if (courses != null)
+            {
+                foreach (var course in courses)
+                {
+                    var courseRow = new string[] { course.CourseName };
+                    var lvi = new ListViewItem(courseRow);
+                    if (listViewCourses.Items.Contains(lvi))
+                    {
+                        Console.WriteLine("Preventing Duplicates");
+                    }
+                    else
+                        lvi.Tag = course;
+                    lvi.Checked = false;
+                    listViewCourses.Items.Add(lvi);
+                }
+            }
             this.Controls.Add(listViewCourses);
 
         }
 
-        public void UpdateCourses()
-        {
-            listViewCourses.Items.Clear();
-            foreach (var course in courses)
-            {
-                var courseRow = new string[] { course.GetCourseName() };
-                var lvi = new ListViewItem(courseRow);
-                Console.WriteLine(courseRow);
-                lvi.Tag = course;
-                lvi.Checked = false;
-                listViewCourses.Items.Add(lvi);
-            }
-        }
-
-        Course course;
+        Courses selectedCourse;
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             if (listViewCourses.FocusedItem == null) //Check and see if there is a selected item before setting. If no item selected display an error to the user.
             {
                 var result = MessageBox.Show("Please make a selection", "No selection");
-            } 
-            else
+            } else
             {
-                selectedCourse = listViewCourses.FocusedItem.Text;
+                courseLabel = listViewCourses.FocusedItem.Text;
+                for(int i = 0; i < courses.Count; i++)
+                {
+                    if(courses[i].CourseName == courseLabel)
+                    {
+                        selectedCourse = courses[i];
+                        newGame.course = selectedCourse;
+                    }
+                }
                 if (newGame != null) //If we are creating a newGame. Submit button should update the newGame form with the selectedCourse
                 {
-                    newGame.UpdateCourseLabel(selectedCourse);
+                    newGame.UpdateCourseLabel(courseLabel);
                     this.Close();
                 }
-                else //If we are not creating a new game. Submit button should open the Questions for the checked course.
-                {
-                    this.Hide();
-                    course = (Course)listViewCourses.FocusedItem.Tag;
-                    questionGrid = new questionGrid(course);
-                    questionGrid.ShowDialog();
-                    this.Show();
-                }
-                Console.WriteLine(selectedCourse);
-            }                      
-        }
-
-        public string SelectedCourses()
-        {
-            return selectedCourse;
-            //need to pass this to NewGame.cs
+                Console.WriteLine(courseLabel);
+            }        
+                               
         }
 
         private ListViewItem lastItemChecked;
@@ -158,12 +113,27 @@ namespace group2Project.Views
             // store current item
            CoursesLabel.Text = listViewCourses.Items[e.Index].Text;        
            lastItemChecked = listViewCourses.Items[e.Index];
+
+            //grab from database
+            MongoClientConn database = new MongoClientConn("Courses");
+            for (int i = 0; i < courses.Count; i++)
+            {
+                if (courses[i].CourseName == CoursesLabel.Text)
+                {
+                    selectedCourse = courses[i];
+                    Console.WriteLine("Selected Course: " + courses[i].CourseName);
+                }
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Parent.Controls.Remove(this);
-            /*this.Close();*/
+        }
+
+        private void listViewCourses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

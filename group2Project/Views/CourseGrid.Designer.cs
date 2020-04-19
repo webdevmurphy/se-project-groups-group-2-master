@@ -33,12 +33,11 @@ namespace group2Project.Views
         {
             this.components = new System.ComponentModel.Container();
             this.CoursesLabel = new System.Windows.Forms.Label();
-            this.AddCourseBtn = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.listViewCourses = new System.Windows.Forms.ListView();
             this.SubmitButton = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.button2 = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,17 +51,6 @@ namespace group2Project.Views
             this.CoursesLabel.Size = new System.Drawing.Size(133, 45);
             this.CoursesLabel.TabIndex = 0;
             this.CoursesLabel.Text = "Courses";
-            // 
-            // AddCourseBtn
-            // 
-            this.AddCourseBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCourseBtn.Location = new System.Drawing.Point(217, 78);
-            this.AddCourseBtn.Name = "AddCourseBtn";
-            this.AddCourseBtn.Size = new System.Drawing.Size(103, 34);
-            this.AddCourseBtn.TabIndex = 1;
-            this.AddCourseBtn.Text = "Add Course";
-            this.AddCourseBtn.UseVisualStyleBackColor = true;
-            this.AddCourseBtn.Click += new System.EventHandler(this.AddCourseBtn_Click);
             // 
             // CancelButton
             // 
@@ -93,6 +81,7 @@ namespace group2Project.Views
             this.listViewCourses.TabIndex = 4;
             this.listViewCourses.UseCompatibleStateImageBehavior = false;
             this.listViewCourses.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listViewCourses_ItemCheck1);
+            this.listViewCourses.SelectedIndexChanged += new System.EventHandler(this.listViewCourses_SelectedIndexChanged);
             // 
             // SubmitButton
             // 
@@ -104,16 +93,16 @@ namespace group2Project.Views
             this.SubmitButton.UseVisualStyleBackColor = true;
             this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
-            // button2
+            // CloseButton
             // 
-            this.button2.BackgroundImage = global::group2Project.Properties.Resources.icons8_close_window_641;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Location = new System.Drawing.Point(301, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(38, 35);
-            this.button2.TabIndex = 18;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.CloseButton.BackgroundImage = global::group2Project.Properties.Resources.icons8_close_window_64;
+            this.CloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CloseButton.Location = new System.Drawing.Point(301, 12);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(38, 35);
+            this.CloseButton.TabIndex = 18;
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // CourseGrid
             // 
@@ -121,11 +110,10 @@ namespace group2Project.Views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(229)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(351, 363);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.SubmitButton);
             this.Controls.Add(this.listViewCourses);
             this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.AddCourseBtn);
             this.Controls.Add(this.CoursesLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -141,10 +129,9 @@ namespace group2Project.Views
         #endregion
 
         private System.Windows.Forms.Label CoursesLabel;
-        private System.Windows.Forms.Button AddCourseBtn;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Button SubmitButton;
-        private Button button2;
+        private Button CloseButton;
     }
 }
