@@ -101,6 +101,10 @@ namespace group2Project.Views
                     e.Graphics.DrawString(label, this.Font,
                         Brushes.Black, centerX, centerY, sf);
                 }
+                if (playerNum >= NumOfPlayers) 
+                {
+                    playerNum = 0;
+                }
                 playerNum++;
             }
             // Draw the grid.
