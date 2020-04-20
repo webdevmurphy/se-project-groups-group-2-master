@@ -11,6 +11,7 @@ using MongoDB.Bson;
 
 using group2Project.DataConnection;
 using group2Project.Models;
+using group2Project.Controllers;
 
 namespace group2Project.Views
 {
@@ -18,9 +19,10 @@ namespace group2Project.Views
     {
         public static IList<string> CourseOfferings = new List<string>();
         public static IList<string> CourseQuestions = new List<string>();
-        CheckBox lastChecked;
-        Boolean checkedBox = false;
-        int answerNum;
+        public CheckBox lastChecked;
+        public Boolean checkedBox = false;
+        public int answerNum;
+
         public AddTrivia()
         {
             InitializeComponent();
@@ -40,241 +42,38 @@ namespace group2Project.Views
             }
         }
 
-        //Add the course to the List
+        //////Logic for buttons below this line moved into TriviaHelper//////
         private void AddCourse_Click(object sender, EventArgs e)
         {
-            MongoClientConn database = new MongoClientConn("Courses");
-
-            if (AddCourseBox.Text == null || AddCourseBox.Text == "")
+            string message = "";
+            if (!TriviaHelper.AddCourse(this, ref message))
             {
-                MessageBox.Show("Must input some text, and Item must not exist");
-            }
-            else
-            {
-                Courses newCourse = new Courses
-                {
-                    CourseName = AddCourseBox.Text
-                };
-
-
-                database.InsertRecord("Courses", newCourse);
-
-                if (CoursesList.Items.Contains(newCourse.CourseName))
-                {
-                    //checkedListBox1.Items.Remove(newCourse.CourseName)
-                }
-                else
-                {
-                    CoursesList.Items.Add(newCourse.CourseName);
-                }
-
-
-
-
-
-
-
-                
-                AddCourseBox.Clear();
-
-              
+                MessageBox.Show(message);
             }
         }
 
         private void Selection_Click(object sender, EventArgs e)
         {
-            string courseName = "";
-
-            SelectedCourseBox.Items.Clear();
-            foreach (string result in CoursesList.CheckedItems)
-            {
-
-                SelectedCourseBox.Items.Add(result);
-                courseName = result.ToString();
-                Console.WriteLine("CourseName: ");
-                Console.WriteLine(courseName);
-            }
-
-            dataGridView1.Rows.Clear();
-
-            MongoClientConn database = new MongoClientConn("Courses");
-
-            var recs = database.LoadRecords<Courses>("Courses");
-            Console.WriteLine(recs);
-            foreach (var rec in recs)
-            {
-                Console.WriteLine($"{ rec.CourseName}");
-                if (rec.courseQuestions != null && rec.CourseName == courseName)
-                {
-                    courseName = rec.CourseName;
-                    string thisQuestion = rec.courseQuestions.Question;
-                    string Answer1 = rec.courseQuestions.Answer1;
-                    string Answer2 = rec.courseQuestions.Answer2;
-                    string Answer3 = rec.courseQuestions.Answer3;
-                    string Answer4 = rec.courseQuestions.Answer4;
-                    int selAnswer = rec.courseQuestions.selAnswer;
-
-                    string[] Row2 = new[] { courseName, thisQuestion, Answer1, Answer2, Answer3, Answer4, selAnswer.ToString() };
-
-                    Console.WriteLine(rec.courseQuestions.Answer1 + " : " + rec.courseQuestions.Answer2);
-                    dataGridView1.Rows.Add(Row2);
-                }
-
-            }
+            TriviaHelper.SelectCourse(this);
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Hello ");
-            Console.WriteLine(CoursesList.SelectedIndex.ToString());
-
-            MongoClientConn database = new MongoClientConn("Courses");
-
-            var records = database.LoadRecords<Courses>("Courses");
-
-            foreach (var result in records)
+            string message = "";
+            if (TriviaHelper.DeleteCourse(this, ref message))
             {
-                Console.WriteLine("Course ID: " + result.Id);
-                Console.WriteLine("Course Name: " + result.CourseName);
-
-
-                if (result.CourseName.ToString() == CoursesList.SelectedItem.ToString() && result.CourseName != null)
-                {
-
-
-                    MessageBox.Show("Deleted! " + "\n" + "Result ID: " + result.Id.ToString() + "\n" + "Course Name: " + result.CourseName + "\n" + "All Records Deleted, Course Removed.");
-                    database.DeleteRecord<Courses>("Courses", result.Id);
-
-                    dataGridView1.Rows.Clear();
-
-                }
-
-
+                MessageBox.Show(message);
             }
-
-            //Remove the item from displayed listboxes
-            SelectedCourseBox.Items.Clear();
-            CoursesList.Items.Remove(CoursesList.SelectedItem.ToString());
         }
 
         private void AddQuestion_Click(object sender, EventArgs e)
         {
-            //make listbox selected item be selected for database if user does not click
-            SelectedCourseBox.SelectedIndex = 0;
-
-            Console.WriteLine(SelectedCourseBox.SelectedIndex.ToString());
-
-            //Set the answer to the selected CheckedBox 
-            if (checkBox1.Checked)
+            string message = "";
+            if (!TriviaHelper.AddQuestion(this, ref message))
             {
-                answerNum = 1;
-            }
-            if (checkBox2.Checked)
-            {
-                answerNum = 2;
-            }
-            if (checkBox3.Checked)
-            {
-                answerNum = 3;
-            }
-            if (checkBox4.Checked)
-            {
-                answerNum = 4;
-            }
-
-
-            //clear the datagridview
-            dataGridView1.Rows.Clear();
-
-            //Make sure all textboxes contain information
-            if (QuestionBox.Text != null && QuestionBox.Text != ""
-               && Answer1Box.Text != null && Answer1Box.Text != ""
-                && Answer2Box.Text != null && Answer2Box.Text != ""
-                && Answer3Box.Text != null && Answer3Box.Text != ""
-                && Answer4Box.Text != null && Answer4Box.Text != ""
-                && checkedBox != false)
-            {
-                //OPEN a connection to MongoDB, se
-                MongoClientConn database = new MongoClientConn("Courses");
-
-                //Set values for the Model
-                Courses newCourse = new Courses
-                {
-                    CourseName = SelectedCourseBox.SelectedItem.ToString(),
-                    courseQuestions = new Trivia
-                    {
-                        Question = QuestionBox.Text,
-                        Answer1 = Answer1Box.Text,
-                        Answer2 = Answer2Box.Text,
-                        Answer3 = Answer3Box.Text,
-                        Answer4 = Answer4Box.Text,
-                        selAnswer = answerNum,
-                        isAnswer = checkedBox
-                    }
-                };
-
-                //Local form Variables
-                string thisQuestion = QuestionBox.Text;
-                string Answer1 = Answer1Box.Text;
-                string Answer2 = Answer2Box.Text;
-                string Answer3 = Answer3Box.Text;
-                string Answer4 = Answer4Box.Text;
-                int selAnswer = answerNum;
-                Boolean isAnswer = checkedBox;
-
-                //Add to the Database
-                database.InsertRecord("Courses", newCourse);
-
-                //Verify The selected answer is right on the command Line
-                Console.WriteLine("This is Selected Answers Checkmark: ");
-                Console.WriteLine(selAnswer);
-
-
-                //Layout the Datagrid, add the question to the view
-                CourseQuestions.Add(thisQuestion);
-
-                var recs = database.LoadRecords<Courses>("Courses");
-
-                foreach (var rec in recs)
-                {
-                    Console.WriteLine($"{ rec.CourseName}");
-                    if (rec.courseQuestions != null && rec.CourseName == SelectedCourseBox.SelectedItem.ToString())
-                    {
-                        string courseName = rec.CourseName;
-                        thisQuestion = rec.courseQuestions.Question;
-                        Answer1 = rec.courseQuestions.Answer1;
-                        Answer2 = rec.courseQuestions.Answer2;
-                        Answer3 = rec.courseQuestions.Answer3;
-                        Answer4 = rec.courseQuestions.Answer4;
-                        selAnswer = rec.courseQuestions.selAnswer;
-
-                        string[] Row2 = new[] { courseName, thisQuestion, Answer1, Answer2, Answer3, Answer4, selAnswer.ToString() };
-
-                        Console.WriteLine(rec.courseQuestions.Answer1 + " : " + rec.courseQuestions.Answer2);
-                        dataGridView1.Rows.Add(Row2);
-                    }
-
-                }
-
-                //Clear textboxes
-                QuestionBox.Clear();
-                Answer1Box.Clear();
-                Answer2Box.Clear();
-                Answer3Box.Clear();
-                Answer4Box.Clear();
-
-                //Clear checkedBoxes
-                checkBox1.Checked = false;
-                checkBox2.Checked = false;
-                checkBox3.Checked = false;
-                checkBox4.Checked = false;
-
-            }
-            else
-            {
-                MessageBox.Show("All Questions Fields must be complete before submission!");
-            }
-        }
+                MessageBox.Show(message);
+            }          
+        }      
 
         private void ExitAddCourse_Click(object sender, EventArgs e)
         {

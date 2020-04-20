@@ -1,18 +1,26 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using group2Project;
+using group2Project.DataConnection;
+using group2Project.Models;
+using group2Project.Views;
 
 namespace group2Project_TestingHarness
 {
+
     [TestClass]
-    public class CosmosConnection_Test
+    public class Main_Test
     {
+        //Test Registration registers a student
+        MongoClientConn database = new MongoClientConn("Student");
         [TestMethod]
-        public void CosmosConnection_getPassword()
+        public void TestMethod()
         {
-           
+
         }
     }
+
     [TestClass]
-    public class Robot_Test
+    public class Student_Test
     {
         [TestMethod]
         public void TestMethod()
@@ -20,8 +28,9 @@ namespace group2Project_TestingHarness
 
         }
     }
+
     [TestClass]
-    public class Course_Test
+    public class Trivia_Test
     {
         [TestMethod]
         public void TestMethod()
@@ -29,8 +38,9 @@ namespace group2Project_TestingHarness
 
         }
     }
+
     [TestClass]
-    public class Family_Test
+    public class LoginChecker_Test
     {
         [TestMethod]
         public void TestMethod()
@@ -38,8 +48,9 @@ namespace group2Project_TestingHarness
 
         }
     }
+
     [TestClass]
-    public class Question_Test
+    public class QuizBuilder_Test
     {
         [TestMethod]
         public void TestMethod()
@@ -47,121 +58,5 @@ namespace group2Project_TestingHarness
 
         }
     }
-    [TestClass]
-    public class triviaPlayer_Test
-    {
-        [TestMethod]
-        public void TestMethod()
-        {
 
-        }
-    }
-    [TestClass]
-    public class about_Test
-    {
-        [TestMethod]
-        public void TestMethod()
-        {
-
-        }
-    }
-    [TestClass]
-    public class CourseGrid_Test
-    {
-        [TestMethod]
-        public void TestMethod()
-        {
-
-        }
-    }
-    [TestClass]
-    public class CreateCourse_Test
-    {
-        [TestMethod]
-        public void TestMethod()
-        {
-
-        }
-    }
-    [TestClass]
-    public class CreateNewUser_Test
-    {
-        [TestMethod]
-        public void TestMethod()
-        {
-
-        }
-    }
-    [TestClass]
-    public class Login_Test
-    {
-        [TestMethod]
-        public void TestMethod()
-        {
-
-        }
-    }
-    [TestClass]
-    public class Mainmenu_test
-    {
-        [TestMethod]
-        public void TestMethod()
-        {
-
-        }
-    }
-    [TestClass]
-    public class mapView_Test
-    {
-        [TestMethod]
-        public void TestMethod()
-        {
-
-        }
-    }
-    [TestClass]
-    public class NewGame_Test
-    {
-        [TestMethod]
-        public void TestMethod()
-        {
-
-        }
-    }
-    [TestClass]
-    public class questionGrid_Test
-    {
-        [TestMethod]
-        public void TestMethod()
-        {
-
-        }
-    }
-    [TestClass]
-    public class Questions_Test
-    {
-        [TestMethod]
-        public void TestMethod()
-        {
-
-        }
-    }
-    [TestClass]
-    public class UpdateQuestion_Test
-    {
-        [TestMethod]
-        public void TestMethod()
-        {
-
-        }
-    }
-    [TestClass]
-    public class PopupQuestion_Test
-    {
-        [TestMethod]
-        public void TestMethod()
-        {
-
-        }
-    }
 }

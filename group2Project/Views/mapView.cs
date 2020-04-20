@@ -23,6 +23,11 @@ namespace group2Project.Views
         List<Student> Players = new List<Student>();
         List<Trivia> questions = new List<Trivia>();
         ScoreBoard scoreboard;
+
+        public mapView()
+        {
+            InitializeComponent();
+        }
         public mapView(int NumOfPlayers, Courses Course, List<Trivia> questions, ScoreBoard scoreBoard)
         {
             InitializeComponent();
@@ -147,7 +152,8 @@ namespace group2Project.Views
 
                         // This can be used to label the initial hexagon
 
-                        /*using (StringFormat sf = new StringFormat())
+                        
+                    /*using (StringFormat sf = new StringFormat())
                         {
                             sf.Alignment = StringAlignment.Center;
                             sf.LineAlignment = StringAlignment.Center;

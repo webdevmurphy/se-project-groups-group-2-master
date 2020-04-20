@@ -127,11 +127,11 @@ namespace group2Project.Views
         }
 
         #endregion
-
-        private System.Windows.Forms.Label CoursesLabel;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Button SubmitButton;
         private Button CloseButton;
+        public ListView listViewCourses;
+        public Label CoursesLabel;
     }
 }

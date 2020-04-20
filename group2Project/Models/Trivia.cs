@@ -17,7 +17,7 @@ namespace group2Project.Models
         public Boolean isAnswer { get; set; }
         public int selAnswer { get; set; }
 
-        //default constructor
+        //Default constructor
         public Trivia()
         {
      

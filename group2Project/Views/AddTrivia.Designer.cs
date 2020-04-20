@@ -282,13 +282,6 @@
             // 
             this.CoursesList.CheckOnClick = true;
             this.CoursesList.FormattingEnabled = true;
-            this.CoursesList.Items.AddRange(new object[] {
-            "Math",
-            "History",
-            "Science",
-            "Literature",
-            "Politics",
-            "Pop Culture"});
             this.CoursesList.Location = new System.Drawing.Point(24, 59);
             this.CoursesList.Name = "CoursesList";
             this.CoursesList.Size = new System.Drawing.Size(196, 139);
@@ -426,27 +419,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox Answer4Box;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox Answer3Box;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox Answer2Box;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Selection;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Answer1Box;
-        private System.Windows.Forms.TextBox QuestionBox;
         private System.Windows.Forms.Button AddQuestion;
-        private System.Windows.Forms.ListBox SelectedCourseBox;
-        private System.Windows.Forms.TextBox AddCourseBox;
         private System.Windows.Forms.Button ExitAddCourse;
         private System.Windows.Forms.Button AddCourse;
-        private System.Windows.Forms.CheckedListBox CoursesList;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Courses;
@@ -458,5 +438,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn theAnswerBox;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.CheckedListBox CoursesList;
+        public System.Windows.Forms.TextBox AddCourseBox;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.ListBox SelectedCourseBox;
+        public System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.CheckBox checkBox2;
+        public System.Windows.Forms.CheckBox checkBox3;
+        public System.Windows.Forms.CheckBox checkBox4;
+        public System.Windows.Forms.TextBox Answer4Box;
+        public System.Windows.Forms.TextBox Answer3Box;
+        public System.Windows.Forms.TextBox Answer2Box;
+        public System.Windows.Forms.TextBox Answer1Box;
+        public System.Windows.Forms.TextBox QuestionBox;
     }
 }

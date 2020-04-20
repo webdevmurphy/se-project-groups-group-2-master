@@ -27,10 +27,6 @@ namespace group2Project.Views
 
         private void Login_Click(object sender, EventArgs e)
         {
-                                                                       // Fast Login
-            MongoClientConn database = new MongoClientConn("Student"); // Username: d
-                                                                       // Password: d
-
             string UserName = UserNameBox.Text;
             string password = PasswordBox.Text;
 

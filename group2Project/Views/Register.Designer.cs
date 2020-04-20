@@ -43,8 +43,8 @@
             this.passBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TeacherCodeBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.UserNameBox = new System.Windows.Forms.Label();
+            this.UserNameBox = new System.Windows.Forms.TextBox();
+            this.UserNameLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.Submit = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
@@ -74,8 +74,8 @@
             this.tableLayoutPanel1.Controls.Add(this.passBox, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.TeacherCodeBox, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.UserNameBox, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.UserNameBox, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.UserNameLabel, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.label7, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.Submit, 3, 6);
             this.tableLayoutPanel1.Controls.Add(this.CloseButton, 4, 0);
@@ -243,24 +243,24 @@
             this.TeacherCodeBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.teacherCode);
             this.TeacherCodeBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeacherCodeBox_KeyPress);
             // 
-            // textBox1
-            // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Location = new System.Drawing.Point(483, 168);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(154, 20);
-            this.textBox1.TabIndex = 15;
-            // 
             // UserNameBox
             // 
-            this.UserNameBox.AutoSize = true;
             this.UserNameBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.UserNameBox.Location = new System.Drawing.Point(323, 165);
+            this.UserNameBox.Location = new System.Drawing.Point(483, 168);
             this.UserNameBox.Name = "UserNameBox";
-            this.UserNameBox.Size = new System.Drawing.Size(154, 13);
-            this.UserNameBox.TabIndex = 16;
-            this.UserNameBox.Text = "UserName";
-            this.UserNameBox.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.UserNameBox.Size = new System.Drawing.Size(154, 20);
+            this.UserNameBox.TabIndex = 15;
+            // 
+            // UserNameLabel
+            // 
+            this.UserNameLabel.AutoSize = true;
+            this.UserNameLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.UserNameLabel.Location = new System.Drawing.Point(323, 165);
+            this.UserNameLabel.Name = "UserNameLabel";
+            this.UserNameLabel.Size = new System.Drawing.Size(154, 13);
+            this.UserNameLabel.TabIndex = 16;
+            this.UserNameLabel.Text = "UserName";
+            this.UserNameLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label7
             // 
@@ -313,10 +313,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox firstNameBox;
-        private System.Windows.Forms.TextBox LastNameBox1;
-        private System.Windows.Forms.TextBox TeacherCodeBox;
-        private System.Windows.Forms.TextBox EmailBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LastNameBox;
         private System.Windows.Forms.Label label3;
@@ -324,13 +320,17 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button Submit;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox PasswordBox2;
         private System.Windows.Forms.Label PasswordBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox passBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label UserNameBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button CloseButton;
+        public System.Windows.Forms.TextBox firstNameBox;
+        public System.Windows.Forms.TextBox LastNameBox1;
+        public System.Windows.Forms.TextBox TeacherCodeBox;
+        public System.Windows.Forms.TextBox EmailBox;
+        public System.Windows.Forms.TextBox PasswordBox2;
+        public System.Windows.Forms.TextBox passBox;
+        public System.Windows.Forms.TextBox UserNameBox;
+        public System.Windows.Forms.Label UserNameLabel;
     }
 }

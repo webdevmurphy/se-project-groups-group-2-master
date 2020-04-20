@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 
+using group2Project.Views;
 namespace group2Project
 {
    public class Program
@@ -14,11 +15,14 @@ namespace group2Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Thread t = new Thread(new ThreadStart(() =>
+            Thread t = new Thread(new ThreadStart(() => 
             {
                 try
                 {
                     Application.Run(new Views.MainLayout());
+                   // mapView map = new mapView();
+                   // map.FormBorderStyle = FormBorderStyle.SizableToolWindow;
+                   // Application.Run(map);
                    // Application.Run(new Views.ScoreBoard());
                    // Application.Run(new Views.Game());
                 }

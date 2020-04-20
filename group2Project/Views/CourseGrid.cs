@@ -9,16 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using group2Project.Models;
 using group2Project.DataConnection;
+using group2Project.Controllers;
 
 namespace group2Project.Views
 {
     public partial class CourseGrid : Form
     {
-        private NewGame newGame;
-
-        private ListView listViewCourses;
-        private List<Courses> courses;
-        private string courseLabel;
+        public NewGame newGame;
+        public List<Courses> courses;
+        public string courseLabel;
 
         public CourseGrid() //our default constructor
         {
@@ -34,8 +33,6 @@ namespace group2Project.Views
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Parent.Controls.Remove(this);
-            /*listViewCourses.Dispose();
-            this.DialogResult = DialogResult.OK;*/
         }
 
         private void CourseGrid_Load(object sender, EventArgs e)
@@ -49,58 +46,14 @@ namespace group2Project.Views
             listViewCourses.CheckBoxes = true;
             listViewCourses.MultiSelect = false;
 
-            MongoClientConn database = new MongoClientConn("Courses"); //Create an instance of our DB
-            courses = database.GetAll<Courses>("Courses"); //Grab all the courses from the DB
-            List<string> duplicateList = new List<string>();
-            if (courses != null)
-            {
-                for (int i = 0; i < courses.Count; i++)
-                {
-                    Console.WriteLine(courses[i].CourseName);
-                    if (duplicateList.Contains(courses[i].CourseName))
-                    {
-                        Console.WriteLine("Preventing Duplicates");
-                    }
-                    else
-                    {
-                        var courseName = new string[] { courses[i].CourseName };
-                        var lvi = new ListViewItem(courseName);
-                        duplicateList.Add(courses[i].CourseName);
-                        lvi.Tag = courses[i];
-                        lvi.Checked = false;
-                        listViewCourses.Items.Add(lvi);
-                    }                 
-                }
-            }
-            duplicateList.Clear();
-            this.Controls.Add(listViewCourses);
+            CourseGridHelper.LoadHelper(this);
         }
 
-        Courses selectedCourse;
+        public Courses selectedCourse;
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            if (listViewCourses.FocusedItem == null) //Check and see if there is a selected item before setting. If no item selected display an error to the user.
-            {
-                var result = MessageBox.Show("Please make a selection", "No selection");
-            } else
-            {
-                courseLabel = listViewCourses.FocusedItem.Text;
-                for(int i = 0; i < courses.Count; i++)
-                {
-                    if(courses[i].CourseName == courseLabel)
-                    {
-                        selectedCourse = courses[i];
-                        newGame.course = selectedCourse;
-                    }
-                }
-                if (newGame != null) //If we are creating a newGame. Submit button should update the newGame form with the selectedCourse
-                {
-                    newGame.UpdateCourseLabel(courseLabel);
-                    this.Close();
-                }
-                Console.WriteLine(courseLabel);
-            }        
-                               
+            CourseGridHelper.Submit(this);
+            this.Close();      
         }
 
         private ListViewItem lastItemChecked;
@@ -116,11 +69,9 @@ namespace group2Project.Views
             }
 
             // store current item
-           CoursesLabel.Text = listViewCourses.Items[e.Index].Text;        
-           lastItemChecked = listViewCourses.Items[e.Index];
+            CoursesLabel.Text = listViewCourses.Items[e.Index].Text;        
+            lastItemChecked = listViewCourses.Items[e.Index];
 
-            //grab from database
-            MongoClientConn database = new MongoClientConn("Courses");
             for (int i = 0; i < courses.Count; i++)
             {
                 if (courses[i].CourseName == CoursesLabel.Text)

@@ -17,6 +17,7 @@ namespace group2Project.Views
     public partial class Register : Form
     {
         private Boolean isGood = false;
+        private string message = "";
         public Register()
         {
             InitializeComponent();
@@ -24,45 +25,15 @@ namespace group2Project.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Check email for vaild address
-            try
+            if (RegistrationHelper.Register(this, ref message))
             {
-                var eMailValidator = new System.Net.Mail.MailAddress(EmailBox.Text);
-                isGood = true;
+                MessageBox.Show(message);
+                Application.Restart();
             }
-            catch (FormatException ex)
-            {
-                MessageBox.Show("Invalid email address");
-
-                return;
-            }
-            //Check for blank textBoxes
-            if (EmailBox.Text == "" || firstNameBox.Text == "" || LastNameBox1.Text == "" || passBox.Text == "" || TeacherCodeBox.Text == "" || PasswordBox2.Text == "" || UserNameBox.Text == "" && passBox.ToString().Length != PasswordBox2.ToString().Length )
-            {
-                
-                MessageBox.Show("All Fields Must be Completed, and Passwords must match");
-               return;
-            }
-            
-            //if its good, create a new student from textbox inputs
             else
             {
-                MongoClientConn database = new MongoClientConn("Student");
-
-                Student newStudent = new Student
-                {
-                    Email = EmailBox.Text,
-                    FirstName = firstNameBox.Text,
-                    LastName = LastNameBox1.Text,
-                    UserName = textBox1.Text,
-                    PassWord = passBox.Text,
-                    TeacherCode = Convert.ToInt32(this.TeacherCodeBox.Text),
-                };
-
-                //Add the new student record into the database
-                database.InsertRecord("Student", newStudent);
-                //restart the application so user can login.
-                Application.Restart();
+                MessageBox.Show(message);
+                return;
             }
         }
 

@@ -20,22 +20,6 @@ namespace group2Project.Models
         {
             this.CourseName = "";
         }
-
-        //Overloaded constructor with only course name. Should generate a random ID if none is specified
-        public Courses(String courseName)
-        {
-            CourseName = courseName;         
-        }
-
-        public Courses(Trivia q)
-        {
-        }
-
-        //Add a question to the list
-        public void AddQuestion(Trivia q)
-        {
-
-        }
     }
 }
 
