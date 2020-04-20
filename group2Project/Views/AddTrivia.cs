@@ -43,6 +43,7 @@ namespace group2Project.Views
         //Add the course to the List
         private void AddCourse_Click(object sender, EventArgs e)
         {
+            MongoClientConn database = new MongoClientConn("Courses");
 
             if (AddCourseBox.Text == null || AddCourseBox.Text == "")
             {
@@ -50,8 +51,6 @@ namespace group2Project.Views
             }
             else
             {
-
-                MongoClientConn database = new MongoClientConn("Courses");
                 Courses newCourse = new Courses
                 {
                     CourseName = AddCourseBox.Text
@@ -60,19 +59,25 @@ namespace group2Project.Views
 
                 database.InsertRecord("Courses", newCourse);
 
-                CoursesList.Items.Add(AddCourseBox.Text);
+                if (CoursesList.Items.Contains(newCourse.CourseName))
+                {
+                    //checkedListBox1.Items.Remove(newCourse.CourseName)
+                }
+                else
+                {
+                    CoursesList.Items.Add(newCourse.CourseName);
+                }
 
-                CourseOfferings.Add(AddCourseBox.Text);
+
+
+
+
+
+
+                
                 AddCourseBox.Clear();
 
-                Console.WriteLine("RESULTS OF BASIC SHIT");
-                foreach (string results in CoursesList.Items)
-                    Console.WriteLine(results);
-
-                Console.WriteLine("CourseOfferings List type return @@@@@@@@@############@@@@@@@");
-
-                foreach (string results in CourseOfferings)
-                    Console.WriteLine(results);
+              
             }
         }
 
@@ -86,7 +91,7 @@ namespace group2Project.Views
 
                 SelectedCourseBox.Items.Add(result);
                 courseName = result.ToString();
-                Console.WriteLine("here is my name Biiitch");
+                Console.WriteLine("CourseName: ");
                 Console.WriteLine(courseName);
             }
 
@@ -120,36 +125,36 @@ namespace group2Project.Views
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-           /* MongoClientConn database = new MongoClientConn("Courses");
-            var recs = database.LoadRecords<Courses>("Courses");
-            string courseName = "";
-            SelectedCourseBox.Items.Clear();
-            foreach (string result in CoursesList.CheckedItems)
-            {
+            Console.WriteLine("Hello ");
+            Console.WriteLine(CoursesList.SelectedIndex.ToString());
 
-                SelectedCourseBox.Items.Add(result);
-                courseName = result.ToString();
-            }
-            foreach (var rec in recs)
+            MongoClientConn database = new MongoClientConn("Courses");
+
+            var records = database.LoadRecords<Courses>("Courses");
+
+            foreach (var result in records)
             {
-                Console.WriteLine($"{ rec.CourseName}");
-                if (rec.courseQuestions != null && rec.CourseName == courseName)
+                Console.WriteLine("Course ID: " + result.Id);
+                Console.WriteLine("Course Name: " + result.CourseName);
+
+
+                if (result.CourseName.ToString() == CoursesList.SelectedItem.ToString() && result.CourseName != null)
                 {
-                    courseName = rec.CourseName;
-                    string thisQuestion = rec.courseQuestions.Question;
-                    string Answer1 = rec.courseQuestions.Answer1;
-                    string Answer2 = rec.courseQuestions.Answer2;
-                    string Answer3 = rec.courseQuestions.Answer3;
-                    string Answer4 = rec.courseQuestions.Answer4;
-                    int selAnswer = rec.courseQuestions.selAnswer;
 
-                    string[] Row2 = new[] { courseName, thisQuestion, Answer1, Answer2, Answer3, Answer4, selAnswer.ToString() };
 
-                    Console.WriteLine(rec.courseQuestions.Answer1 + " : " + rec.courseQuestions.Answer2);
-                    dataGridView1.Rows.Add(Row2);
+                    MessageBox.Show("Deleted! " + "\n" + "Result ID: " + result.Id.ToString() + "\n" + "Course Name: " + result.CourseName + "\n" + "All Records Deleted, Course Removed.");
+                    database.DeleteRecord<Courses>("Courses", result.Id);
+
+                    dataGridView1.Rows.Clear();
+
                 }
 
-            }*/
+
+            }
+
+            //Remove the item from displayed listboxes
+            SelectedCourseBox.Items.Clear();
+            CoursesList.Items.Remove(CoursesList.SelectedItem.ToString());
         }
 
         private void AddQuestion_Click(object sender, EventArgs e)

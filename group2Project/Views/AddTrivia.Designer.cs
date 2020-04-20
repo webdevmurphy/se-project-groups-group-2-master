@@ -62,6 +62,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.DeleteButton = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -360,13 +361,22 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(145, 217);
+            this.DeleteButton.Location = new System.Drawing.Point(27, 443);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 23);
             this.DeleteButton.TabIndex = 51;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(108, 448);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(219, 13);
+            this.label9.TabIndex = 52;
+            this.label9.Text = "Delete The Selected Course and All Content.";
             // 
             // AddTrivia
             // 
@@ -375,6 +385,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(229)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(996, 498);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
@@ -446,5 +457,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Answer4;
         private System.Windows.Forms.DataGridViewTextBoxColumn theAnswerBox;
         private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Label label9;
     }
 }
