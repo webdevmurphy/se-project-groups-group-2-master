@@ -18,6 +18,7 @@ namespace group2Project.Views
         public NewGame newGame;
         public List<Courses> courses;
         public string courseLabel;
+        public Courses selectedCourse;
 
         public CourseGrid() //our default constructor
         {
@@ -49,7 +50,6 @@ namespace group2Project.Views
             CourseGridHelper.LoadHelper(this);
         }
 
-        public Courses selectedCourse;
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             CourseGridHelper.Submit(this);

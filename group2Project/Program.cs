@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 
-using group2Project.Views;
 namespace group2Project
 {
    public class Program

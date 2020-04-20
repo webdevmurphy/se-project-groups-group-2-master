@@ -115,7 +115,7 @@ namespace group2Project.Views
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void PlayNow_Click(object sender, EventArgs e) //Grabs a random course from the DB and starts a new game with 1 player
         {
             if (LoggedIn == false)
             {
@@ -123,6 +123,11 @@ namespace group2Project.Views
             }
             else
             {
+                BottomMainScreenTable.Hide();
+                pictureBox3.Hide();
+                Game game = PlayGame.Play(student);
+                this.GamePanel.Controls.Add(game);
+                game.Show();
             }
         }
 

@@ -80,12 +80,6 @@ namespace group2Project.Views
                 Game game = new Game(numPlayers, course, questions, student) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
                 game.FormBorderStyle = FormBorderStyle.None;
                 main.AddGame(game);
-                // MainLayout.AddGame(game);
-                /*game.Show();*/
-                /*mapView map = new mapView(numPlayers, course, questions) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                this.NewGamePanel.Size = new Size(800, 600);
-                this.NewGamePanel.Controls.Add(map);
-                map.Show();*/
             }          
         }
 

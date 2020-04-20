@@ -62,7 +62,7 @@ namespace group2Project.Controllers
                 //Add the new student record into the database
                 database.InsertRecord("Student", newStudent);
                 //return true then restart.
-                message = "HOORAY";
+                message = "Successfully Registered";
                 return true;
             }
         }

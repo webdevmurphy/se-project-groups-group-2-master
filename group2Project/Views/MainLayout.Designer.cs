@@ -51,7 +51,7 @@
             this.NewGame = new System.Windows.Forms.Button();
             this.Load = new System.Windows.Forms.Button();
             this.About = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.PlayNow = new System.Windows.Forms.Button();
             this.TeacherMenu = new System.Windows.Forms.Button();
             this.ExitApplication = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -258,7 +258,7 @@
             this.tableLayoutPanel2.Controls.Add(this.NewGame, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.Load, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.About, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.button4, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.PlayNow, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.TeacherMenu, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.ExitApplication, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.pictureBox4, 0, 1);
@@ -389,22 +389,22 @@
             this.About.UseVisualStyleBackColor = false;
             this.About.Click += new System.EventHandler(this.About_Click);
             // 
-            // button4
+            // PlayNow
             // 
-            this.button4.AutoSize = true;
-            this.button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button4.BackColor = System.Drawing.Color.Silver;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Location = new System.Drawing.Point(57, 387);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(102, 74);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.PlayNow.AutoSize = true;
+            this.PlayNow.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PlayNow.BackColor = System.Drawing.Color.Silver;
+            this.PlayNow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PlayNow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PlayNow.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayNow.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.PlayNow.Location = new System.Drawing.Point(57, 387);
+            this.PlayNow.Name = "PlayNow";
+            this.PlayNow.Size = new System.Drawing.Size(102, 74);
+            this.PlayNow.TabIndex = 4;
+            this.PlayNow.Text = "PlayNow";
+            this.PlayNow.UseVisualStyleBackColor = false;
+            this.PlayNow.Click += new System.EventHandler(this.PlayNow_Click);
             // 
             // TeacherMenu
             // 
@@ -533,7 +533,7 @@
         private System.Windows.Forms.Button NewGame;
         private System.Windows.Forms.Button Load;
         private System.Windows.Forms.Button About;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button PlayNow;
         private System.Windows.Forms.Button TeacherMenu;
         private System.Windows.Forms.Button ExitApplication;
         private System.Windows.Forms.Panel GameControlsPanel;
