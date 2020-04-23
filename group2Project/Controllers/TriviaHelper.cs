@@ -206,7 +206,6 @@ namespace group2Project.Controllers
                         Console.WriteLine(rec.courseQuestions.Answer1 + " : " + rec.courseQuestions.Answer2);
                         trivia.dataGridView1.Rows.Add(Row2);
                     }
-
                 }
 
                 //Clear textboxes

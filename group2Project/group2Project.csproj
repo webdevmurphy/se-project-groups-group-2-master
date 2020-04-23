@@ -297,11 +297,11 @@
     <Compile Include="Views\AddTrivia.designer.cs">
       <DependentUpon>AddTrivia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Game.cs">
+    <Compile Include="Views\GameBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Game.Designer.cs">
-      <DependentUpon>Game.cs</DependentUpon>
+    <Compile Include="Views\GameBoard.Designer.cs">
+      <DependentUpon>GameBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ScoreBoard.cs">
       <SubType>Form</SubType>
@@ -367,8 +367,8 @@
     <EmbeddedResource Include="Views\AddTrivia.resx">
       <DependentUpon>AddTrivia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Game.resx">
-      <DependentUpon>Game.cs</DependentUpon>
+    <EmbeddedResource Include="Views\GameBoard.resx">
+      <DependentUpon>GameBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ScoreBoard.resx">
       <DependentUpon>ScoreBoard.cs</DependentUpon>

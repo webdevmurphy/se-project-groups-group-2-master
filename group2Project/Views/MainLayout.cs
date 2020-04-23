@@ -125,7 +125,7 @@ namespace group2Project.Views
             {
                 BottomMainScreenTable.Hide();
                 pictureBox3.Hide();
-                Game game = PlayGame.Play(student);
+                GameBoard game = PlayGame.Play(student);
                 this.GamePanel.Controls.Add(game);
                 game.Show();
             }
@@ -149,7 +149,7 @@ namespace group2Project.Views
 
         }
 
-        public void AddGame(Game game)
+        public void AddGame(GameBoard game)
         {
             GamePanel.Controls.Clear();
             GamePanel.Controls.Add(game);

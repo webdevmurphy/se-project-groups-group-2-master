@@ -13,7 +13,7 @@ namespace group2Project.Controllers
 {
     class PlayGame
     {
-        public static Game Play(Student student)
+        public static GameBoard Play(Student student)
         {
             List<Courses> courses;
             MongoClientConn database = new MongoClientConn("Courses"); //Create an instance of our DB
@@ -29,7 +29,7 @@ namespace group2Project.Controllers
                     questions.Add(courses[i].courseQuestions);
                 }
             }
-            Game game = new Game(1, course, questions, student) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            GameBoard game = new GameBoard(1, course, questions, student) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             game.FormBorderStyle = FormBorderStyle.None;
             return game;
         }

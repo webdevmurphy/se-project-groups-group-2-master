@@ -17,6 +17,7 @@ namespace group2Project.Views
         public int NumOfPlayers;
         public Courses Course;
         public int PlayerTurn = 0;
+        private Label label = new Label();
 
         public int QuestionIndex { get; set; }
         
@@ -184,8 +185,8 @@ namespace group2Project.Views
         private void picGrid_MouseClick(object sender, MouseEventArgs e)
         {
             int row, col;
-            Label label = new Label();
-            label.Text = ""; //should be player number later on once we get that working
+            //Label label = new Label();
+            //label.Text = ""; //should be player number later on once we get that working
             QuizGame quiz = new QuizGame(this, Course, questions, QuestionIndex);
             quiz.FormBorderStyle = FormBorderStyle.None;
             quiz.ShowDialog();
@@ -321,6 +322,7 @@ namespace group2Project.Views
 
         private void mapView_Load(object sender, EventArgs e)
         {
+            label.Text = "";
             initializePlayers(NumOfPlayers);
         }
 

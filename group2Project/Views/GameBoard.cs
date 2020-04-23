@@ -12,19 +12,19 @@ using group2Project.Models;
 
 namespace group2Project.Views
 {
-    public partial class Game : Form
+    public partial class GameBoard : Form
     {
         int numPlayers;
         Courses course;
         List<Trivia> questions;
         Student student;
 
-        public Game()
+        public GameBoard()
         {
             InitializeComponent();
         }
 
-        public Game(int numPlayers, Courses course, List<Trivia> questions, Student student)
+        public GameBoard(int numPlayers, Courses course, List<Trivia> questions, Student student)
         {
             this.student = student;
             this.numPlayers = numPlayers;

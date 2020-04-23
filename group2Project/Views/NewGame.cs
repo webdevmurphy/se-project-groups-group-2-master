@@ -77,7 +77,7 @@ namespace group2Project.Views
                         questions.Add(courseList[i].courseQuestions);
                     }
                 }              
-                Game game = new Game(numPlayers, course, questions, student) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                GameBoard game = new GameBoard(numPlayers, course, questions, student) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
                 game.FormBorderStyle = FormBorderStyle.None;
                 main.AddGame(game);
             }          
