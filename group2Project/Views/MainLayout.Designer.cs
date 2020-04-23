@@ -402,7 +402,7 @@
             this.PlayNow.Name = "PlayNow";
             this.PlayNow.Size = new System.Drawing.Size(102, 74);
             this.PlayNow.TabIndex = 4;
-            this.PlayNow.Text = "PlayNow";
+            this.PlayNow.Text = "Play Now";
             this.PlayNow.UseVisualStyleBackColor = false;
             this.PlayNow.Click += new System.EventHandler(this.PlayNow_Click);
             // 
