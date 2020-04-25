@@ -17,7 +17,6 @@ namespace group2Project.Views
         public int NumOfPlayers;
         public Courses Course;
         public int PlayerTurn = 0;
-        private Label label = new Label();
 
         public int QuestionIndex { get; set; }
         
@@ -185,8 +184,8 @@ namespace group2Project.Views
         private void picGrid_MouseClick(object sender, MouseEventArgs e)
         {
             int row, col;
-            //Label label = new Label();
-            //label.Text = ""; //should be player number later on once we get that working
+            Label label = new Label();
+            label.Text = ""; //should be player number later on once we get that working
             QuizGame quiz = new QuizGame(this, Course, questions, QuestionIndex);
             quiz.FormBorderStyle = FormBorderStyle.None;
             quiz.ShowDialog();
@@ -195,12 +194,13 @@ namespace group2Project.Views
              *      check if player is in cooldown;
              *      enter a contested territory mode;
              * }*/
-            if (quiz.returnCorrect() == true)
+            if (quiz.returnCorrect())
             {
                 scoreboard.territories++;
                 QuestionIndex++;
+                PlayerTurn++;
+                Console.WriteLine(PlayerTurn + " In correct block");
                 scoreboard.UpdateList();
-                Console.WriteLine(scoreboard.territories);
                 if (QuestionIndex >= questions.Count()) //If we reach the end of the questions reset Index back to 0
                 {
                     QuestionIndex = 0;
@@ -211,22 +211,21 @@ namespace group2Project.Views
                 label.BackColor = Color.LightBlue;
                 //Console.WriteLine(Players[PlayerTurn].score);
                 //Players[PlayerTurn].score++;
-                label.Text = (PlayerTurn + 1).ToString();
+                label.Text = PlayerTurn.ToString();
                 //Console.WriteLine(Players[PlayerTurn].score);
                 //picGrid.Controls.Add(label);
                 Hexagons.Add(new PointF(row, col));     
             } 
-                if (PlayerTurn + 1 < Players.Count) {
-                    PlayerTurn++;
-                }
-                else
-                {
-                    PlayerTurn = 0;
-                }
-                
-                picGrid.Refresh();
-            
-           
+            else if (PlayerTurn < NumOfPlayers) {
+                PlayerTurn++;
+                Console.WriteLine(PlayerTurn + " In incorrect block");
+            }
+            else
+            {
+                PlayerTurn = 0;
+                Console.WriteLine(PlayerTurn + " In reset block");
+            }               
+              picGrid.Refresh();                      
         }
         // Return the width of a hexagon.
         private float HexWidth(float height)
@@ -322,7 +321,6 @@ namespace group2Project.Views
 
         private void mapView_Load(object sender, EventArgs e)
         {
-            label.Text = "";
             initializePlayers(NumOfPlayers);
         }
 

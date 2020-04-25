@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using MongoDB.Bson;
-
+using group2Project.Interfaces;
 namespace group2Project.DataConnection
 {
-    public class MongoClientConn
+    public class MongoClientConn : DBInterface
     {
         private IMongoDatabase db;
 

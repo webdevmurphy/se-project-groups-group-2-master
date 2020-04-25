@@ -115,9 +115,10 @@ namespace group2Project.Views
             }
         }
 
-        private void PlayNow_Click(object sender, EventArgs e) //Grabs a random course from the DB and starts a new game with 1 player
+        private void FutureStuff_Click(object sender, EventArgs e) 
         {
-            if (LoggedIn == false)
+            //Grabs a random course from the DB and starts a new game with 1 player
+            /*if (LoggedIn == false)
             {
                 MessageBox.Show("please log in!");
             }
@@ -128,7 +129,7 @@ namespace group2Project.Views
                 GameBoard game = PlayGame.Play(student);
                 this.GamePanel.Controls.Add(game);
                 game.Show();
-            }
+            }*/
         }
 
         private void Load_Click(object sender, EventArgs e)
