@@ -14,7 +14,7 @@ namespace group2Project.DataConnection
 
         public MongoClientConn(string database)
         {
-            var client = new MongoClient("mongodb+srv://mmurph789:564Wa218351@trivanationcluster-0xyhb.azure.mongodb.net/test?retryWrites=true&w=majority");
+            var client = new MongoClient("");
             db = client.GetDatabase(database);
         }
 
@@ -57,7 +57,7 @@ namespace group2Project.DataConnection
 
 
 
-        // mongodb+srv://mmurph789:<password>@trivanationcluster-0xyhb.azure.mongodb.net/test?retryWrites=true&w=majority
+        // mongodb+srv://@trivanationcluster-0xyhb.azure.mongodb.net/test?retryWrites=true&w=majority
         public void UpsertRecord<T>(string table, Guid id, T record)
         {
             var collection = db.GetCollection<T>(table);
