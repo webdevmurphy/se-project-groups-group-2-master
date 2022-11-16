@@ -187,7 +187,9 @@ namespace group2Project.Views
             Label label = new Label();
             label.Text = ""; //should be player number later on once we get that working
             QuizGame quiz = new QuizGame(this, Course, questions, QuestionIndex);
-            quiz.FormBorderStyle = FormBorderStyle.None;
+            //Below line commented out for playability, with no border it flattens into the map and menu.. have to fix this!
+            //quiz.FormBorderStyle = FormBorderStyle.None;
+           
             quiz.ShowDialog();
             /*if (coordinate already has been clicked) 
              * {

@@ -31,9 +31,6 @@
             // 
             // picGrid
             // 
-            this.picGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.picGrid.BackColor = System.Drawing.Color.White;
             this.picGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picGrid.BackgroundImage")));
             this.picGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
